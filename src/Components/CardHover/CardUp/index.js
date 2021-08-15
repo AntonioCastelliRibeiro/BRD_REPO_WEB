@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { Link } from "react-router-dom";
-import { Box, Button, Typography } from "@material-ui/core";
+import { Box, Button, CardActionArea, Typography } from "@material-ui/core";
 import { motion, useAnimation } from "framer-motion";
 import styled from "styled-components";
 
@@ -79,6 +79,21 @@ const DescContent = styled(DescBase)`
   user-select: ${(props) => (props.mobile ? "none" : "")};
 `;
 
+const CardActionAreaComp = styled(CardActionArea)`
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  border-top-left-radius: ${props => props.isLeft ? "15px" : "0px"};
+  border-top-right-radius: ${props => props.isLeft ? "0px" : "15px"};
+  border-bottom-left-radius: ${props => props.isLeft ? "15px" : "0px"};
+  border-bottom-right-radius: ${props => props.isLeft ? "0px" : "15px"};
+  @media (max-width: 600px) {
+  border-radius: 15px;
+  };
+`;
+
+
+
 const initialMenu = {
   y: 25
 };
@@ -94,7 +109,7 @@ export default memo(function CardUp(props) {
   const buttonControls = useAnimation();
 
   const sequenceUp = () => {
-    props.setImage(props.left ? 1 : 2);
+    props.setImage(props.isLeft ? 1 : 2);
     menuControls.start({ y: -25, transition: { transition } });
     itemControls.start({ opacity: 1, y: -20, transition: { transition } });
     return buttonControls.start({
@@ -105,7 +120,7 @@ export default memo(function CardUp(props) {
   };
 
   const sequenceDown = () => {
-    if (!props.left) {
+    if (!props.isLeft) {
       props.setImage(1);
     }
     itemControls.start({ y: 0, opacity: 0, transition: { transition } });
@@ -124,37 +139,42 @@ export default memo(function CardUp(props) {
       onHoverStart={props.mobile ? "" : sequenceUp}
       onHoverEnd={props.mobile ? "" : sequenceDown}
     >
-      <ContentHover whileTap={{ scale: props.mobile ? 1.03 : 1 }}>
-        <ContentDesc>
-          <Box display="flex" flexDirection="column">
-            <DescTitle
-              mobile={props.mobile}
-              fontSize="33px"
-              initial={initialMenu}
-              animate={menuControls}
-            >
-              {props.title}
-            </DescTitle>
-            <DescContent
-              mobile={props.mobile}
-              fontSize="18px"
-              lineHeight="1.75"
-              marginRight="35px"
-              marginLeft="35px"
-              initial={initialItem}
-              animate={itemControls}
-              children={props.desc}
-            />
-            <ContentButton
-              style={{ zIndex: 5 }}
-              initial={initialItem}
-              animate={buttonControls}
-            >
-              <ButtonComp children={props.btnDesc} />
-            </ContentButton>
-          </Box>
-        </ContentDesc>
-      </ContentHover>
+      <CardActionAreaComp isLeft={props.isLeft}>
+        <ContentHover
+        // whileTap={{ scale: props.mobile ? 1.03 : 1 }}
+        >
+          <ContentDesc>
+            <Box display="flex" flexDirection="column">
+              <DescTitle
+
+                mobile={props.mobile}
+                fontSize="33px"
+                initial={initialMenu}
+                animate={menuControls}
+              >
+                {props.title}
+              </DescTitle>
+              <DescContent
+                mobile={props.mobile}
+                fontSize="18px"
+                lineHeight="1.75"
+                marginRight="35px"
+                marginLeft="35px"
+                initial={initialItem}
+                animate={itemControls}
+                children={props.desc}
+              />
+              <ContentButton
+                style={{ zIndex: 5 }}
+                initial={initialItem}
+                animate={buttonControls}
+              >
+                <ButtonComp children={props.btnDesc} />
+              </ContentButton>
+            </Box>
+          </ContentDesc>
+        </ContentHover>
+      </CardActionAreaComp>
     </ContentImgLeft>
   );
 });

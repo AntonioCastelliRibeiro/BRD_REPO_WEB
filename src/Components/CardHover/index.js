@@ -63,7 +63,9 @@ export default function CardHover(props) {
             <Hidden xsDown>
               <Content>
                 <CardUp
-                  left
+                  key="0"
+                  isLeft
+                  mobile={false}
                   setImage={setImageChange}
                   borderRight
                   title={data.titleLeft}
@@ -72,6 +74,9 @@ export default function CardHover(props) {
                   pathName={data.pathNameLeft}
                 />
                 <CardUp
+                  key="1"
+                  isLeft={false}
+                  mobile={false}
                   setImage={setImageChange}
                   title={data.titleRight}
                   desc={data.descRight}
@@ -84,6 +89,7 @@ export default function CardHover(props) {
             <Hidden smUp>
               <Content>
                 <CardUp
+                  key="0"
                   mobile
                   setImage={setImageChange}
                   title={data.titleLeft}
@@ -95,6 +101,7 @@ export default function CardHover(props) {
               <div style={{ padding: 10 }} />
               <Content>
                 <CardUp
+                  key="1"
                   mobile
                   setImage={setImageChange}
                   title={data.titleRight}
