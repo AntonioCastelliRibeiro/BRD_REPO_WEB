@@ -10,6 +10,7 @@ const transition = {
 };
 
 const ButtonComp = styled(Typography)`
+  font-family: inherit;
   cursor: pointer;
   user-select: none;
   padding: 8px 18px;
@@ -83,6 +84,7 @@ const CardActionAreaComp = styled(CardActionArea)`
   height: 100%;
   width: 100%;
   color: #fff;
+  font-family: inherit;
   border-top-left-radius: ${props => props.isLeft ? "15px" : "0px"};
   border-top-right-radius: ${props => props.isLeft ? "0px" : "15px"};
   border-bottom-left-radius: ${props => props.isLeft ? "15px" : "0px"};
@@ -140,13 +142,10 @@ export default memo(function CardUp(props) {
       onHoverEnd={props.mobile ? "" : sequenceDown}
     >
       <CardActionAreaComp isLeft={props.isLeft}>
-        <ContentHover
-        // whileTap={{ scale: props.mobile ? 1.03 : 1 }}
-        >
+        <ContentHover>
           <ContentDesc>
             <Box display="flex" flexDirection="column">
               <DescTitle
-
                 mobile={props.mobile}
                 fontSize="33px"
                 initial={initialMenu}

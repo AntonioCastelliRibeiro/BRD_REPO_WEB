@@ -17,7 +17,7 @@ import ButtonComp from "../../ButtonComp";
 
 import Slider from "../../../Slider";
 
-import objData from "../../data.js";
+import objData from "../../../CardHoverUp/data.js";
 import CardNextPrev from "./CardNextPrev";
 
 // import logo from "../../Image/logo.svg";
@@ -172,7 +172,7 @@ export default function MaterItem(props) {
                   height: "inherit",
                   width: "inherit"
                 }}
-                image={dataMater.data.image}
+                image={dataMater.data.img}
               ></CardMedia>
             </Card>
           </CardActionArea>

@@ -1,11 +1,19 @@
-import { Box } from "@material-ui/core";
-
+import { Box, CardActionArea, CardMedia } from "@material-ui/core";
 import { StickyContainer, Sticky } from "react-sticky";
+import styled from "styled-components";
 
-// const image =
-//   "https://images.ctfassets.net/wds1hqrprqxb/3LhjzvlhPE8kwH0eEokA0M/951ae4c0e4a5f2e3a9ea2f4796c67758/2aa16a626623f8bf13a52618267ee97067ec5835.jpg?w=1395&h=1500&q=95&fm=webp";
-// "https://images.unsplash.com/photo-1624555700555-40084d2586c0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80";
-// "https://images.unsplash.com/photo-1597767856622-8dd15a35a27b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80";
+const CardActionAreaComp = styled(CardActionArea)`
+  height: 40vw;
+  width: 44vw;
+  border-radius: 4px;
+  color: #fff;
+`;
+
+const CardMediaComp = styled(CardMedia)`
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+`;
 
 export default function ImageTextSticky(props) {
   function retornarTitle() {
@@ -29,18 +37,9 @@ export default function ImageTextSticky(props) {
   return (
     <>
       <StickyContainer>
-        {/* Other elements can be in between `StickyContainer` and `Sticky`,
-            but certain styles can break the positioning logic used. */}
         <Sticky bottomOffset={-80}>
           {({
             style
-
-            // the following are also available but unused in this example
-            // isSticky,
-            // wasSticky,
-            // distanceFromTop,
-            // distanceFromBottom,
-            // calculatedHeight
           }) => (
             <header style={style}>
               <Box display="flex" width="100%">
@@ -73,11 +72,12 @@ export default function ImageTextSticky(props) {
           marginTop="-177px"
         >
           <Box data-aos="fade-up" data-aos-delay="200">
-            <img
-              src={props.img}
-              style={{ height: "44vw", width: "44vw" }}
-              alt="imgTxtSticky"
-            />
+            <CardActionAreaComp>
+              <CardMediaComp
+                image={props.img}
+                alt="imgTxtSticky"
+              />
+            </CardActionAreaComp>
           </Box>
         </Box>
       </StickyContainer>

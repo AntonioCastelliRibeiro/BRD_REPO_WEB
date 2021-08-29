@@ -15,6 +15,7 @@ import CardSec from "./Mater/MaterCapa/CardSec";
 import MaterCapaApresent from "./MaterCapaApresent";
 
 import C_TIME_FADE from "../../Comum/Fade";
+import CardHoverUp from "../CardHoverUp";
 
 export default function GridMater(props) {
   const match = useRouteMatch();
@@ -76,7 +77,7 @@ export default function GridMater(props) {
         position="relative"
         style={{ backgroundColor: "#fff" }}
       >
-        <Container maxWidth="xl">
+        <Container maxWidth="lg">
           <Box
             fontFamily={props.fontFamily}
             paddingTop="40px"
@@ -90,8 +91,8 @@ export default function GridMater(props) {
               Sudoeste do Paraná
             </Box>
           </Box>
-
-          <Grid container spacing={2} style={{ paddingTop: "70px" }}>
+          <CardHoverUp fontFamily={props.fontFamily} onSetMaterItem={(e) => onSetMaterItem(e)} />
+          {/* <Grid container spacing={2} style={{ paddingTop: "70px" }}>
             {objMater.map((e, count) => (
               <Grid
                 key={count + 1}
@@ -106,7 +107,7 @@ export default function GridMater(props) {
                 {count === 0 ? retornarPrinc(e) : retornarSec(e)}
               </Grid>
             ))}
-          </Grid>
+          </Grid> */}
         </Container>
       </Box>
     </>

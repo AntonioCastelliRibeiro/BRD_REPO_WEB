@@ -180,7 +180,7 @@ export default function CardRightComp(props) {
             >
               <DescTitleRight isMobile={props.isMobile} children={"Próximo"} />
               <DescRight isMobile={props.isMobile} children={props.type} />
-              <DescSubRight isMobile={props.isMobile} children={props.title} />
+              <DescSubRight isMobile={props.isMobile} children={props.titleBtnNextPrev} />
             </ContentLeftFlex>
           </ContentLeft>
         </Content>

@@ -183,7 +183,7 @@ export default function CardLeftComp(props) {
             >
               <DescTitleLeft isMobile={props.isMobile} children={"Anterior"} />
               <DescLeft isMobile={props.isMobile} children={props.type} />
-              <DescSubLeft isMobile={props.isMobile} children={props.title} />
+              <DescSubLeft isMobile={props.isMobile} children={props.titleBtnNextPrev} />
             </ContentRightFlex>
           </ContentLeft>
         </Content>
