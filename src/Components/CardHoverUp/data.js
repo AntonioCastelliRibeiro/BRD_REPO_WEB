@@ -9,14 +9,14 @@ const C_DESC_SEC_MOBILE =
 const link = "Vnxn46sMNyk";
 
 const slideImage = [
-    "https://d33wubrfki0l68.cloudfront.net/dd23708ebc4053551bb33e18b7174e73b6e1710b/dea24/static/images/wallpapers/shared-colors@2x.png",
-    "https://d33wubrfki0l68.cloudfront.net/49de349d12db851952c5556f3c637ca772745316/cfc56/static/images/wallpapers/bridge-02@2x.png",
-    "https://d33wubrfki0l68.cloudfront.net/594de66469079c21fc54c14db0591305a1198dd6/3f4b1/static/images/wallpapers/bridge-01@2x.png",
-    "https://images.unsplash.com/photo-1620118733503-ab4e1cb6025d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80",
-    "https://images.unsplash.com/photo-1624881253265-b33a7b7edd92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80",
-    "https://images.unsplash.com/photo-1623603807271-21a9cbb295bb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=708&q=80",
-    "https://images.unsplash.com/photo-1623439010018-3c3efd694463?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
-    "https://images.unsplash.com/photo-1623408861528-27ff44f27da5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80"
+    "https://images.unsplash.com/photo-1577368163048-4aac95ca7488?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    "https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=982&q=80",
+    "https://images.unsplash.com/photo-1492496913980-501348b61469?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80",
+    "https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80",
+    "https://images.unsplash.com/photo-1622770742416-04431011b208?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80",
+    "https://images.unsplash.com/photo-1622630196242-57fe99286fc2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80",
+    "https://images.unsplash.com/photo-1595263930044-33a008c0e32b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80",
+    "https://images.unsplash.com/photo-1527847263472-aa5338d178b8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1353&q=80",
 ];
 
 
@@ -27,10 +27,10 @@ export default [
         desc: C_DESC,
         descSec: C_DESC_SEC,
         descSecMobile: C_DESC_SEC_MOBILE,
-        buttonDesc: "Explorar",
+        buttonDesc: "Asisstir",
         link: link,
         img:
-            "https://images.unsplash.com/photo-1615411490726-3ee584bb999f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
+            "https://images.unsplash.com/photo-1577368163048-4aac95ca7488?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
         slideImage: slideImage,
         titleBtnNextPrev: "Familia Gaio"
     },
@@ -40,10 +40,10 @@ export default [
         desc: C_DESC,
         descSec: C_DESC_SEC,
         descSecMobile: C_DESC_SEC_MOBILE,
-        buttonDesc: "Explorar",
+        buttonDesc: "Asisstir",
         link: link,
         img:
-            "https://images.unsplash.com/photo-1615411490726-3ee584bb999f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
+            "https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=982&q=80",
         slideImage: slideImage,
         titleBtnNextPrev: "Familia Gaio1"
     }, {
@@ -52,10 +52,10 @@ export default [
         desc: C_DESC,
         descSec: C_DESC_SEC,
         descSecMobile: C_DESC_SEC_MOBILE,
-        buttonDesc: "Explorar",
+        buttonDesc: "Asisstir",
         link: link,
         img:
-            "https://images.unsplash.com/photo-1615411490726-3ee584bb999f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
+            "https://images.unsplash.com/photo-1492496913980-501348b61469?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80",
         slideImage: slideImage,
         titleBtnNextPrev: "Familia Gaio2"
     }, {
@@ -64,10 +64,10 @@ export default [
         desc: C_DESC,
         descSec: C_DESC_SEC,
         descSecMobile: C_DESC_SEC_MOBILE,
-        buttonDesc: "Explorar",
+        buttonDesc: "Asisstir",
         link: link,
         img:
-            "https://images.unsplash.com/photo-1615411490726-3ee584bb999f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
+            "https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80",
         slideImage: slideImage,
         titleBtnNextPrev: "Familia Gaio3"
     }, {
@@ -76,10 +76,10 @@ export default [
         desc: C_DESC,
         descSec: C_DESC_SEC,
         descSecMobile: C_DESC_SEC_MOBILE,
-        buttonDesc: "Explorar",
+        buttonDesc: "Asisstir",
         link: link,
         img:
-            "https://images.unsplash.com/photo-1615411490726-3ee584bb999f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
+            "https://images.unsplash.com/photo-1622770742416-04431011b208?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80",
         slideImage: slideImage,
         titleBtnNextPrev: "Familia Gaio4"
     }, {
@@ -88,10 +88,10 @@ export default [
         desc: C_DESC,
         descSec: C_DESC_SEC,
         descSecMobile: C_DESC_SEC_MOBILE,
-        buttonDesc: "Explorar",
+        buttonDesc: "Asisstir",
         link: link,
         img:
-            "https://images.unsplash.com/photo-1615411490726-3ee584bb999f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
+            "https://images.unsplash.com/photo-1622630196242-57fe99286fc2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80",
         slideImage: slideImage,
         titleBtnNextPrev: "Familia Gaio5"
     }, {
@@ -100,10 +100,10 @@ export default [
         desc: C_DESC,
         descSec: C_DESC_SEC,
         descSecMobile: C_DESC_SEC_MOBILE,
-        buttonDesc: "Explorar",
+        buttonDesc: "Asisstir",
         link: link,
         img:
-            "https://images.unsplash.com/photo-1615411490726-3ee584bb999f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
+            "https://images.unsplash.com/photo-1595263930044-33a008c0e32b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80",
         slideImage: slideImage,
         titleBtnNextPrev: "Familia Gaio6"
     }, {
@@ -112,10 +112,10 @@ export default [
         desc: C_DESC,
         descSec: C_DESC_SEC,
         descSecMobile: C_DESC_SEC_MOBILE,
-        buttonDesc: "Explorar",
+        buttonDesc: "Asisstir",
         link: link,
         img:
-            "https://images.unsplash.com/photo-1615411490726-3ee584bb999f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
+            "https://images.unsplash.com/photo-1527847263472-aa5338d178b8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1353&q=80",
         slideImage: slideImage,
         titleBtnNextPrev: "Familia Gaio7"
     },
@@ -125,10 +125,10 @@ export default [
         desc: C_DESC,
         descSec: C_DESC_SEC,
         descSecMobile: C_DESC_SEC_MOBILE,
-        buttonDesc: "Explorar",
+        buttonDesc: "Asisstir",
         link: link,
         img:
-            "https://images.unsplash.com/photo-1615411490726-3ee584bb999f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
+            "https://images.unsplash.com/photo-1530267981375-f0de937f5f13?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
         slideImage: slideImage,
         titleBtnNextPrev: "Familia Gaio8"
     }, {
@@ -137,10 +137,10 @@ export default [
         desc: C_DESC,
         descSec: C_DESC_SEC,
         descSecMobile: C_DESC_SEC_MOBILE,
-        buttonDesc: "Explorar",
+        buttonDesc: "Asisstir",
         link: link,
         img:
-            "https://images.unsplash.com/photo-1615411490726-3ee584bb999f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
+            "https://images.unsplash.com/photo-1563201515-adbe35c669c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1353&q=80",
         slideImage: slideImage,
         titleBtnNextPrev: "Familia Gaio9"
     }, {
@@ -149,10 +149,10 @@ export default [
         desc: C_DESC,
         descSec: C_DESC_SEC,
         descSecMobile: C_DESC_SEC_MOBILE,
-        buttonDesc: "Explorar",
+        buttonDesc: "Asisstir",
         link: link,
         img:
-            "https://images.unsplash.com/photo-1615411490726-3ee584bb999f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
+            "https://images.unsplash.com/photo-1623211269755-569fec0536d2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
         slideImage: slideImage,
         titleBtnNextPrev: "Familia Gaio10"
     },
@@ -162,10 +162,10 @@ export default [
         desc: C_DESC,
         descSec: C_DESC_SEC,
         descSecMobile: C_DESC_SEC_MOBILE,
-        buttonDesc: "Explorar",
+        buttonDesc: "Asisstir",
         link: link,
         img:
-            "https://images.unsplash.com/photo-1615411490726-3ee584bb999f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
+            "https://images.unsplash.com/photo-1606701587683-c4b1b22c59d4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=676&q=80",
         slideImage: slideImage,
         titleBtnNextPrev: "Familia Gaio11"
     }, {
@@ -174,10 +174,10 @@ export default [
         desc: C_DESC,
         descSec: C_DESC_SEC,
         descSecMobile: C_DESC_SEC_MOBILE,
-        buttonDesc: "Explorar",
+        buttonDesc: "Asisstir",
         link: link,
         img:
-            "https://images.unsplash.com/photo-1615411490726-3ee584bb999f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
+            "https://images.unsplash.com/photo-1505471768190-275e2ad7b3f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80",
         slideImage: slideImage,
         titleBtnNextPrev: "Familia Gaio12"
     },
@@ -187,10 +187,10 @@ export default [
         desc: C_DESC,
         descSec: C_DESC_SEC,
         descSecMobile: C_DESC_SEC_MOBILE,
-        buttonDesc: "Explorar",
+        buttonDesc: "Asisstir",
         link: link,
         img:
-            "https://images.unsplash.com/photo-1615411490726-3ee584bb999f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
+            "https://images.unsplash.com/photo-1609583120830-7ede0764d401?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
         slideImage: slideImage,
         titleBtnNextPrev: "Familia Gaio13"
     },
@@ -200,10 +200,10 @@ export default [
         desc: C_DESC,
         descSec: C_DESC_SEC,
         descSecMobile: C_DESC_SEC_MOBILE,
-        buttonDesc: "Explorar",
+        buttonDesc: "Asisstir",
         link: link,
         img:
-            "https://images.unsplash.com/photo-1615411490726-3ee584bb999f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
+            "https://images.unsplash.com/photo-1600266189529-58cc5dc3d63d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
         slideImage: slideImage,
         titleBtnNextPrev: "Familia Gaio14"
     },
@@ -213,10 +213,10 @@ export default [
         desc: C_DESC,
         descSec: C_DESC_SEC,
         descSecMobile: C_DESC_SEC_MOBILE,
-        buttonDesc: "Explorar",
+        buttonDesc: "Asisstir",
         link: link,
         img:
-            "https://images.unsplash.com/photo-1615411490726-3ee584bb999f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
+            "https://images.unsplash.com/photo-1565321643328-3f919879cd3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=664&q=80",
         slideImage: slideImage,
         titleBtnNextPrev: "Familia Gaio15"
     },

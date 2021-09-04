@@ -3,6 +3,7 @@ import imgJean from "../../Image/jean.jpg";
 import imgEduardo from "../../Image/eduardo.jpg";
 import imgLuiz from "../../Image/luiz.jpg";
 import imgCarine from "../../Image/carine.jpg";
+import imgTarcisio from "../../Image/tarcisio.jpg";
 
 const desc1 =
   "Ainda assim, existem dúvidas a respeito de como o início da atividade geral de formação de atitudes apresenta tendências no sentido de aprovar a manutenção dos relacionamentos verticais entre as hierarquias.";
@@ -48,8 +49,7 @@ export default [
     cargo: "Diretor",
     descricao1: desc1,
     descricao2: desc2,
-    img:
-      "https://scontent.ffbe4-1.fna.fbcdn.net/v/t31.18172-1/p200x200/12771950_1402089163171419_4558210806032630462_o.jpg?_nc_cat=103&ccb=1-3&_nc_sid=7206a8&_nc_ohc=jKkT00hme7sAX8z7Lto&tn=jbEuPUOYf1jQJIiU&_nc_ht=scontent.ffbe4-1.fna&tp=6&oh=4f90d58168da34437c230f6c434ed3f5&oe=60F24004",
+    img: imgTarcisio,
     hexa: "#4e9b31"
   },
   {

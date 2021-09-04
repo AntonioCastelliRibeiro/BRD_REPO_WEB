@@ -11,8 +11,8 @@ import Foot from "../../Components/Foot";
 
 import Movie from "../../Components/Movie";
 import CardHover from "../CardHover";
-import Opinion from "../Opinion/index.js";
-import TextureImage from "../TextureImg/index.js";
+import Opinion from "../Opinion";
+import TextureImage from "../TextureImg";
 
 const imgPrinc =
   "https://images.unsplash.com/photo-1620548473886-eb53c0402440?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80";
@@ -77,7 +77,7 @@ export default function Principal(props) {
         </TextureImage>
         <Box
           // data-aos="fade-up"
-          // padding="30px"
+          paddingTop="94px"
           margin={"0 auto"}
           position="relative"
           overflow="hidden"
@@ -101,8 +101,7 @@ export default function Principal(props) {
             }}
             // height="240px"
             width={"100%"}
-            paddingTop={5}
-            paddingBottom={10}
+            paddingBottom={8}
           >
             Ainda assim, existem dúvidas a respeito de como a revolução dos
             costumes assume importantes posições no estabelecimento de

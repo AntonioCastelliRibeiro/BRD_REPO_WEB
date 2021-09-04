@@ -9,7 +9,7 @@ import { CardMedia, IconButton, Tooltip } from "@material-ui/core";
 import IconExpand from "@material-ui/icons/AspectRatio";
 import IconArrowRight from "@material-ui/icons/ArrowForwardIos";
 import CloseIcon from "@material-ui/icons/Close";
-import CardCrlSel from "../CardCrSel";
+// import CardCrlSel from "../Opinion/CardCrSel";
 
 const BoxPrinc = styled.div`
   width: ${(props) => (props.onModal ? "100vw" : "inherit")};
@@ -263,10 +263,10 @@ export default function Slider(props) {
           }}
         >
           <ContentCrlSel>
-            <CardCrlSel
+            {/* <CardCrlSel
               fontFamily={props.fontFamily}
               image={images[imageIndex].img}
-            />
+            /> */}
           </ContentCrlSel>
         </CompSlider>
       );

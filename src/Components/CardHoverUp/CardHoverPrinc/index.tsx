@@ -229,7 +229,7 @@ interface iContentPadding {
     fontFamily: string;
 }
 
-const ContentPadding = styled.div<iContentPadding>`
+const ContentPadding = styled(motion.div) <iContentPadding>`
   font-family: ${(props) => props.fontFamily};
   width: 100%;
   padding-top: 40px;
@@ -242,6 +242,8 @@ const ContentPadding = styled.div<iContentPadding>`
 export default function CardHoverPrinc(props: iProps) {
     return (
         <ContentPadding
+            key={props.count}
+            layout
             fontFamily={props.fontFamily}
             onClick={() => props.onSetMaterItem(props.search)}
         >

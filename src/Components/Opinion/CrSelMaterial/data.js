@@ -9,7 +9,19 @@ const img1 =
 const img2 =
   "https://demos.creative-tim.com/material-kit-pro-react/static/media/christian.3dc80c1d.jpg";
 
-export const images = [
+const data = [
+  {
+    img: img1,
+    desc: desc1,
+    name: name1,
+    cargo: cargo1
+  },
+  {
+    img: img2,
+    desc: desc1,
+    name: name1,
+    cargo: cargo1
+  },
   {
     img: img1,
     desc: desc1,
@@ -23,3 +35,6 @@ export const images = [
     cargo: cargo1
   }
 ];
+
+
+export default data;

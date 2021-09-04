@@ -50,7 +50,7 @@ export default function GridEquipe(props) {
           position="relative"
           style={{ backgroundColor: "#fff" }}
         >
-          <Container maxWidth="xl">
+          <Container maxWidth="lg">
             <Box
               fontFamily={props.fontFamily}
               paddingTop="40px"

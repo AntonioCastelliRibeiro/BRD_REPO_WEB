@@ -5,7 +5,7 @@ import Carousel from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import CardCrlSel from "../CardCrSel";
+// import CardCrlSel from "../Opinion/CardCrSel";
 
 const imgAvatar1 =
   "https://demos.creative-tim.com/material-kit-pro-react/static/media/kendall.19201574.jpg";
@@ -39,8 +39,8 @@ export default function SectionCarousel(props) {
         slidesToScroll={1}
         slide={2}
       >
-        <CardCrlSel fontFamily={props.fontFamily} image={imgAvatar1} />
-        <CardCrlSel fontFamily={props.fontFamily} image={imgAvatar2} />
+        {/* <CardCrlSel fontFamily={props.fontFamily} image={imgAvatar1} />
+        <CardCrlSel fontFamily={props.fontFamily} image={imgAvatar2} /> */}
       </Carousel>
     </div>
   );

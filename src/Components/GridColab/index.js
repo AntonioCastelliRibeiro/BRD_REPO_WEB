@@ -64,7 +64,7 @@ export default memo(function GridColab(props) {
             Louis Pasteur
           </Button>
         </Box>
-        <Container maxWidth="xl">
+        <Container maxWidth="lg">
           <Grid
             container
             spacing={2}

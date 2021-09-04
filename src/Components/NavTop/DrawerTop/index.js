@@ -26,6 +26,7 @@ const ContentAHref = styled.div`
 `;
 
 const ContentPrincAHref = styled.div`
+  font-family: ${(props) => props.fontFamily};
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -57,7 +58,7 @@ export default function DrawerTop(props) {
       open={props.open}
       onClose={props.toggleDrawer(false)}
     >
-      <ContentPrincAHref>
+      <ContentPrincAHref fontFamily={props.fontFamily}>
         <ContentAHref
           data-aos="fade-up"
           data-aos-delay="800"
