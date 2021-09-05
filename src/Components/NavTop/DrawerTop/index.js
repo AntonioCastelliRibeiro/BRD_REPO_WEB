@@ -63,7 +63,7 @@ export default function DrawerTop(props) {
           data-aos="fade-up"
           data-aos-delay="800"
         >
-          <AHrefHover desc={"Bom Dia Rural"} fontSize={"4.6976vw"} lineHeight={"0.7vw"}
+          <AHrefHover desc={"Bom dia rural"} fontSize={"4.6976vw"} lineHeight={"0.7vw"}
             onClick={() => onCloseProps("/")}
             onHoverStart={() => setPage(1)}
           />

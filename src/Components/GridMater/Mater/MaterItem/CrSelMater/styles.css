@@ -1,4 +1,4 @@
-.crSelPoint {
+/* .crSelPoint {
   position: absolute;
   bottom: -25px;
   display: block;
@@ -57,4 +57,10 @@
 .crSelPoint li.slick-active button:before {
   opacity: 0.75;
   color: #fff;
+} */
+
+
+.CarouselMaterClass{
+  background-color:#4e9b31;
+  border-radius: 20px;
 }

@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-    CardActionArea,
-    CardMedia,
-    Typography,
-    Grid,
-    IconButton
+  CardActionArea,
+  CardMedia,
+  Typography,
+  Grid,
+  IconButton
 } from "@material-ui/core";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 import styled from "styled-components";
@@ -218,6 +218,7 @@ const GridContainer = styled(Grid)`
   font-family: inherit;
   border-radius: 18px;
   background-color: #4cad45;
+  background-image: linear-gradient(#67cc6a, #4cad45);
 `;
 
 const GridComp = styled(Grid)`
@@ -226,7 +227,7 @@ const GridComp = styled(Grid)`
 `;
 
 interface iContentPadding {
-    fontFamily: string;
+  fontFamily: string;
 }
 
 const ContentPadding = styled(motion.div) <iContentPadding>`
@@ -240,52 +241,52 @@ const ContentPadding = styled(motion.div) <iContentPadding>`
 `;
 
 export default function CardHoverPrinc(props: iProps) {
-    return (
-        <ContentPadding
-            key={props.count}
-            layout
-            fontFamily={props.fontFamily}
-            onClick={() => props.onSetMaterItem(props.search)}
-        >
-            <CardActionAreaComp>
-                <ContentPrinc>
-                    <CardComponent>
-                        <GridContainer
-                            style={{ width: "100%", margin: 0 }}
-                            container
-                            spacing={0}
-                        >
-                            <GridComp key={0} item xl={7} md={7} sm={6} xs={12}>
-                                <ContentButtonIcon>
-                                    <IconButtonComp
-                                        disableFocusRipple
-                                        disableRipple
-                                        size={"small"}
-                                        children={<IconPlay />}
-                                    />
-                                </ContentButtonIcon>
-                                <CardMediaBase>
-                                    <CardMediaComp image={props.image} />
-                                </CardMediaBase>
-                            </GridComp>
-                            <GridComp key={1} item xl={5} md={5} sm={6} xs={12}>
-                                <ContentDesc>
-                                    <ContentItemDesc>
-                                        <ContentItemDescSec>
-                                            <DescTop children={props.title} />
-                                            <DescTitle variant="h1" children={props.desc} />
-                                            <DescSec variant="h2" children={props.descSec} />
-                                            <ContentButton>
-                                                <ButtonComp children={props.buttonDesc} />
-                                            </ContentButton>
-                                        </ContentItemDescSec>
-                                    </ContentItemDesc>
-                                </ContentDesc>
-                            </GridComp>
-                        </GridContainer>
-                    </CardComponent>
-                </ContentPrinc>
-            </CardActionAreaComp>
-        </ContentPadding>
-    );
+  return (
+    <ContentPadding
+      key={props.count}
+      layout
+      fontFamily={props.fontFamily}
+      onClick={() => props.onSetMaterItem(props.search)}
+    >
+      <CardActionAreaComp>
+        <ContentPrinc>
+          <CardComponent>
+            <GridContainer
+              style={{ width: "100%", margin: 0 }}
+              container
+              spacing={0}
+            >
+              <GridComp key={0} item xl={7} md={7} sm={6} xs={12}>
+                <ContentButtonIcon>
+                  <IconButtonComp
+                    disableFocusRipple
+                    disableRipple
+                    size={"small"}
+                    children={<IconPlay />}
+                  />
+                </ContentButtonIcon>
+                <CardMediaBase>
+                  <CardMediaComp image={props.image} />
+                </CardMediaBase>
+              </GridComp>
+              <GridComp key={1} item xl={5} md={5} sm={6} xs={12}>
+                <ContentDesc>
+                  <ContentItemDesc>
+                    <ContentItemDescSec>
+                      <DescTop children={props.title} />
+                      <DescTitle variant="h1" children={props.desc} />
+                      <DescSec variant="h2" children={props.descSec} />
+                      <ContentButton>
+                        <ButtonComp children={props.buttonDesc} />
+                      </ContentButton>
+                    </ContentItemDescSec>
+                  </ContentItemDesc>
+                </ContentDesc>
+              </GridComp>
+            </GridContainer>
+          </CardComponent>
+        </ContentPrinc>
+      </CardActionAreaComp>
+    </ContentPadding>
+  );
 }

@@ -152,7 +152,8 @@ const ContentPrincUp = styled.div`
   position: absolute;
   border-radius: 18px;
   z-index: 1;
-  background-color: #4cad43;
+  background-color: #4cad45;
+  background-image: linear-gradient(#67cc6a, #4cad45);
   color: black;
   transform: translateY(-80px);
   user-select: none;
@@ -173,7 +174,7 @@ const CardActionAreaComp = styled(CardActionArea)`
 `;
 
 interface iContentPrinc {
-    fontFamily: string;
+  fontFamily: string;
 }
 
 const ContentPrinc = styled(motion.div) <iContentPrinc>`
@@ -212,40 +213,40 @@ const ContentPrinc = styled(motion.div) <iContentPrinc>`
 `;
 
 export default function CardComp(props: iProps) {
-    return (
-        <ContentPrinc
-            fontFamily={props.fontFamily}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            layout
-            key={props.count}
-            onClick={() => props.onSetMaterItem(props.datacard.search)}
-        >
-            <ContentSec>
-                <CardActionComp>
-                    <CardComponent>
-                        <DescTop children={props.datacard.title} />
-                        <CardMediaComp image={props.datacard.img} />
-                    </CardComponent>
-                    <ContentDescCard>
-                        <ContentPrincUp>
-                            <CardActionAreaComp>
-                                <ContentDesc>
-                                    <ContentItemDesc>
-                                        <ContentItemDescSec>
-                                            <DescTitle variant="h1" children={props.datacard.desc} />
-                                            <DescSec variant="h2" children={props.datacard.descSec} />
-                                            <ContentButton>
-                                                <ButtonComp children={props.datacard.buttonDesc} />
-                                            </ContentButton>
-                                        </ContentItemDescSec>
-                                    </ContentItemDesc>
-                                </ContentDesc>
-                            </CardActionAreaComp>
-                        </ContentPrincUp>
-                    </ContentDescCard>
-                </CardActionComp>
-            </ContentSec>
-        </ContentPrinc>
-    );
+  return (
+    <ContentPrinc
+      fontFamily={props.fontFamily}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      layout
+      key={props.count}
+      onClick={() => props.onSetMaterItem(props.datacard.search)}
+    >
+      <ContentSec>
+        <CardActionComp>
+          <CardComponent>
+            <DescTop children={props.datacard.title} />
+            <CardMediaComp image={props.datacard.img} />
+          </CardComponent>
+          <ContentDescCard>
+            <ContentPrincUp>
+              <CardActionAreaComp>
+                <ContentDesc>
+                  <ContentItemDesc>
+                    <ContentItemDescSec>
+                      <DescTitle variant="h1" children={props.datacard.desc} />
+                      <DescSec variant="h2" children={props.datacard.descSec} />
+                      <ContentButton>
+                        <ButtonComp children={props.datacard.buttonDesc} />
+                      </ContentButton>
+                    </ContentItemDescSec>
+                  </ContentItemDesc>
+                </ContentDesc>
+              </CardActionAreaComp>
+            </ContentPrincUp>
+          </ContentDescCard>
+        </CardActionComp>
+      </ContentSec>
+    </ContentPrinc>
+  );
 }

@@ -1,3 +1,5 @@
+const C_TEXT_PRINC = "Passei férias ao longo da costa de Amalfi e me apaixonei pelos proprietários e pela equipe da Lo Scoglio em Nerano.Eles me influenciaram de uma forma que parece muito mais substancial do que qualquer outro momento ou evento já me tocou.";
+
 
 const C_DESC = "Proprietário rural sai da falência com $ 8,5 milhões";
 const C_DESC_SEC =
@@ -9,14 +11,13 @@ const C_DESC_SEC_MOBILE =
 const link = "Vnxn46sMNyk";
 
 const slideImage = [
-    "https://images.unsplash.com/photo-1577368163048-4aac95ca7488?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    "https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=982&q=80",
-    "https://images.unsplash.com/photo-1492496913980-501348b61469?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80",
-    "https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80",
-    "https://images.unsplash.com/photo-1622770742416-04431011b208?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80",
-    "https://images.unsplash.com/photo-1622630196242-57fe99286fc2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80",
-    "https://images.unsplash.com/photo-1595263930044-33a008c0e32b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80",
-    "https://images.unsplash.com/photo-1527847263472-aa5338d178b8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1353&q=80",
+    "https://images.unsplash.com/photo-1577368163048-4aac95ca7488?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1024&q=80",
+    "https://images.unsplash.com/photo-1577368163048-4aac95ca7488?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1024&q=80",
+    "https://images.unsplash.com/photo-1577368163048-4aac95ca7488?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1024&q=80",
+    "https://images.unsplash.com/photo-1577368163048-4aac95ca7488?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1024&q=80",
+    "https://images.unsplash.com/photo-1577368163048-4aac95ca7488?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1024&q=80",
+    "https://images.unsplash.com/photo-1577368163048-4aac95ca7488?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1024&q=80",
+    "https://images.unsplash.com/photo-1577368163048-4aac95ca7488?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1024&q=80",
 ];
 
 
@@ -32,7 +33,10 @@ export default [
         img:
             "https://images.unsplash.com/photo-1577368163048-4aac95ca7488?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
         slideImage: slideImage,
-        titleBtnNextPrev: "Familia Gaio"
+        titleBtnNextPrev: "Familia Gaio",
+        textPrinc: C_TEXT_PRINC,
+        textSec: C_TEXT_PRINC,
+        textThird: C_TEXT_PRINC,
     },
     {
         search: "Segundo",
@@ -43,9 +47,12 @@ export default [
         buttonDesc: "Asisstir",
         link: link,
         img:
-            "https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=982&q=80",
+            "https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1024&q=80",
         slideImage: slideImage,
-        titleBtnNextPrev: "Familia Gaio1"
+        titleBtnNextPrev: "Familia Gaio1",
+        textPrinc: C_TEXT_PRINC,
+        textSec: C_TEXT_PRINC,
+        textThird: C_TEXT_PRINC,
     }, {
         search: "terceiro",
         title: "empréstimos alternativos de terra",
@@ -57,7 +64,10 @@ export default [
         img:
             "https://images.unsplash.com/photo-1492496913980-501348b61469?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80",
         slideImage: slideImage,
-        titleBtnNextPrev: "Familia Gaio2"
+        titleBtnNextPrev: "Familia Gaio2",
+        textPrinc: C_TEXT_PRINC,
+        textSec: C_TEXT_PRINC,
+        textThird: C_TEXT_PRINC,
     }, {
         search: "quarto",
         title: "empréstimos alternativos de terra",
@@ -69,7 +79,10 @@ export default [
         img:
             "https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80",
         slideImage: slideImage,
-        titleBtnNextPrev: "Familia Gaio3"
+        titleBtnNextPrev: "Familia Gaio3",
+        textPrinc: C_TEXT_PRINC,
+        textSec: C_TEXT_PRINC,
+        textThird: C_TEXT_PRINC,
     }, {
         search: "quinto",
         title: "empréstimos alternativos de terra",
@@ -81,7 +94,10 @@ export default [
         img:
             "https://images.unsplash.com/photo-1622770742416-04431011b208?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80",
         slideImage: slideImage,
-        titleBtnNextPrev: "Familia Gaio4"
+        titleBtnNextPrev: "Familia Gaio4",
+        textPrinc: C_TEXT_PRINC,
+        textSec: C_TEXT_PRINC,
+        textThird: C_TEXT_PRINC,
     }, {
         search: "sexto",
         title: "empréstimos alternativos de terra",
@@ -93,7 +109,10 @@ export default [
         img:
             "https://images.unsplash.com/photo-1622630196242-57fe99286fc2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80",
         slideImage: slideImage,
-        titleBtnNextPrev: "Familia Gaio5"
+        titleBtnNextPrev: "Familia Gaio5",
+        textPrinc: C_TEXT_PRINC,
+        textSec: C_TEXT_PRINC,
+        textThird: C_TEXT_PRINC,
     }, {
         search: "setimo",
         title: "empréstimos alternativos de terra",
@@ -105,7 +124,10 @@ export default [
         img:
             "https://images.unsplash.com/photo-1595263930044-33a008c0e32b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80",
         slideImage: slideImage,
-        titleBtnNextPrev: "Familia Gaio6"
+        titleBtnNextPrev: "Familia Gaio6",
+        textPrinc: C_TEXT_PRINC,
+        textSec: C_TEXT_PRINC,
+        textThird: C_TEXT_PRINC,
     }, {
         search: "oitavo",
         title: "empréstimos alternativos de terra",
@@ -117,7 +139,10 @@ export default [
         img:
             "https://images.unsplash.com/photo-1527847263472-aa5338d178b8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1353&q=80",
         slideImage: slideImage,
-        titleBtnNextPrev: "Familia Gaio7"
+        titleBtnNextPrev: "Familia Gaio7",
+        textPrinc: C_TEXT_PRINC,
+        textSec: C_TEXT_PRINC,
+        textThird: C_TEXT_PRINC,
     },
     {
         search: "nono",
@@ -130,7 +155,10 @@ export default [
         img:
             "https://images.unsplash.com/photo-1530267981375-f0de937f5f13?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
         slideImage: slideImage,
-        titleBtnNextPrev: "Familia Gaio8"
+        titleBtnNextPrev: "Familia Gaio8",
+        textPrinc: C_TEXT_PRINC,
+        textSec: C_TEXT_PRINC,
+        textThird: C_TEXT_PRINC,
     }, {
         search: "decimo",
         title: "empréstimos alternativos de terra",
@@ -142,7 +170,10 @@ export default [
         img:
             "https://images.unsplash.com/photo-1563201515-adbe35c669c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1353&q=80",
         slideImage: slideImage,
-        titleBtnNextPrev: "Familia Gaio9"
+        titleBtnNextPrev: "Familia Gaio9",
+        textPrinc: C_TEXT_PRINC,
+        textSec: C_TEXT_PRINC,
+        textThird: C_TEXT_PRINC,
     }, {
         search: "decimoSeg",
         title: "empréstimos alternativos de terra",
@@ -154,7 +185,10 @@ export default [
         img:
             "https://images.unsplash.com/photo-1623211269755-569fec0536d2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
         slideImage: slideImage,
-        titleBtnNextPrev: "Familia Gaio10"
+        titleBtnNextPrev: "Familia Gaio10",
+        textPrinc: C_TEXT_PRINC,
+        textSec: C_TEXT_PRINC,
+        textThird: C_TEXT_PRINC,
     },
     {
         search: "decimoTerc",
@@ -167,7 +201,10 @@ export default [
         img:
             "https://images.unsplash.com/photo-1606701587683-c4b1b22c59d4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=676&q=80",
         slideImage: slideImage,
-        titleBtnNextPrev: "Familia Gaio11"
+        titleBtnNextPrev: "Familia Gaio11",
+        textPrinc: C_TEXT_PRINC,
+        textSec: C_TEXT_PRINC,
+        textThird: C_TEXT_PRINC,
     }, {
         search: "14",
         title: "empréstimos alternativos de terra",
@@ -179,7 +216,10 @@ export default [
         img:
             "https://images.unsplash.com/photo-1505471768190-275e2ad7b3f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80",
         slideImage: slideImage,
-        titleBtnNextPrev: "Familia Gaio12"
+        titleBtnNextPrev: "Familia Gaio12",
+        textPrinc: C_TEXT_PRINC,
+        textSec: C_TEXT_PRINC,
+        textThird: C_TEXT_PRINC,
     },
     {
         search: "15",
@@ -192,7 +232,10 @@ export default [
         img:
             "https://images.unsplash.com/photo-1609583120830-7ede0764d401?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
         slideImage: slideImage,
-        titleBtnNextPrev: "Familia Gaio13"
+        titleBtnNextPrev: "Familia Gaio13",
+        textPrinc: C_TEXT_PRINC,
+        textSec: C_TEXT_PRINC,
+        textThird: C_TEXT_PRINC,
     },
     {
         search: "16",
@@ -205,7 +248,10 @@ export default [
         img:
             "https://images.unsplash.com/photo-1600266189529-58cc5dc3d63d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
         slideImage: slideImage,
-        titleBtnNextPrev: "Familia Gaio14"
+        titleBtnNextPrev: "Familia Gaio14",
+        textPrinc: C_TEXT_PRINC,
+        textSec: C_TEXT_PRINC,
+        textThird: C_TEXT_PRINC,
     },
     {
         search: "17",
@@ -218,6 +264,9 @@ export default [
         img:
             "https://images.unsplash.com/photo-1565321643328-3f919879cd3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=664&q=80",
         slideImage: slideImage,
-        titleBtnNextPrev: "Familia Gaio15"
+        titleBtnNextPrev: "Familia Gaio15",
+        textPrinc: C_TEXT_PRINC,
+        textSec: C_TEXT_PRINC,
+        textThird: C_TEXT_PRINC,
     },
 ];

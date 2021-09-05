@@ -56,7 +56,7 @@ const useStyles = makeStyles(({ props, typography, palette, breakpoints }) => ({
     }
   },
   itemSobre: {
-    fontFamily: (props)=>props.fontFamily,
+    fontFamily: (props) => props.fontFamily,
     fontSize: 10,
     color: "rgba(0, 0, 0, 0.54)",
     cursor: "pointer",
@@ -94,7 +94,7 @@ const Foot = React.memo(function FootComp(props) {
             <div style={{ flexGrow: 2 }}>
               <div style={{ display: "flex", alignItems: "center" }}>
                 <div style={{ paddingRight: 2 }}>
-                  <Avatar style={{ height: 38, width: 38 }} src={logo} />
+                  <Avatar style={{ height: "56px", width: "56px" }} src={logo} />
                 </div>
                 <div style={{ paddingLeft: 8 }}>
                   <Typography
@@ -102,11 +102,11 @@ const Foot = React.memo(function FootComp(props) {
                     variant={"h6"}
                     color={"textSecondary"}
                   >
-                    Bom Dia Rural
+                    Bom dia rural
                   </Typography>
                 </div>
               </div>
-              <div style={{ display: "flex", flexWrap: "wrap"  }}>
+              <div style={{ display: "flex", flexWrap: "wrap" }}>
                 <Button className={classes.itemSobre} size="small">
                   Equipe
                 </Button>
@@ -161,7 +161,7 @@ const Foot = React.memo(function FootComp(props) {
                   component={"p"}
                   variant={"caption"}
                   color={"textSecondary"}
-                  style={{fontFamily: props.fontFamily}}
+                  style={{ fontFamily: props.fontFamily }}
 
                 >
                   Designer Antonio Castelli © Tony Studios 2019-2021 Todos os

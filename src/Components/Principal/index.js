@@ -44,7 +44,7 @@ export default function Principal(props) {
           width={"100%"}
           position="fixed"
         >
-          Bom Dia Rural
+          Bom dia rural
         </Box>
         <div style={{ height: "105vh" }} />
       </Hidden>
@@ -67,7 +67,7 @@ export default function Principal(props) {
           width={"100%"}
           position="fixed"
         >
-          Bom Dia Rural
+          Bom dia rural
         </Box>
         <div style={{ height: "105vh" }} />
       </Hidden>

@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-    CardActionArea,
-    CardMedia,
-    Typography,
-    IconButton
+  CardActionArea,
+  CardMedia,
+  Typography,
+  IconButton
 } from "@material-ui/core";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 import styled from "styled-components";
@@ -113,6 +113,7 @@ const ContentPrincUp = styled.div`
   border-radius: 18px;
   z-index: 0;
   background-color: #4cad45;
+  background-image: linear-gradient(#67cc6a, #4cad45);
   color: black;
   margin-top: -80px;
   user-select: none;
@@ -144,7 +145,7 @@ const IconPlay = styled(PlayCircleOutlineIcon)`
 
 
 interface iContentPadding {
-    fontFamily: string;
+  fontFamily: string;
 }
 
 const ContentPrinc = styled(motion.div) <iContentPadding>`
@@ -179,40 +180,40 @@ const ContentPrinc = styled(motion.div) <iContentPadding>`
 `;
 
 export default function CardCompMobile(props: iProps) {
-    return (
-        <ContentPrinc
-            fontFamily={props.fontFamily}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            layout
-            key={props.count}
-            onClick={() => props.onSetMaterItem(props.datacard.search)}
-        >
-            <ContentSec>
-                <CardActionComp>
-                    <CardComponent>
-                        <DescTop children={props.datacard.title} />
-                        <ContentButton>
-                            <IconButtonComp
-                                disableFocusRipple
-                                disableRipple
-                                size={"small"}
-                                children={<IconPlay />}
-                            />
-                        </ContentButton>
-                        <CardMediaComp image={props.datacard.img} />
-                    </CardComponent>
-                    <ContentDescCard>
-                        <ContentPrincUp>
-                            <ContentDesc>
-                                <ContentItemDesc>
-                                    <DescTitle variant="h1" children={props.datacard.desc} />
-                                </ContentItemDesc>
-                            </ContentDesc>
-                        </ContentPrincUp>
-                    </ContentDescCard>
-                </CardActionComp>
-            </ContentSec>
-        </ContentPrinc>
-    );
+  return (
+    <ContentPrinc
+      fontFamily={props.fontFamily}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      layout
+      key={props.count}
+      onClick={() => props.onSetMaterItem(props.datacard.search)}
+    >
+      <ContentSec>
+        <CardActionComp>
+          <CardComponent>
+            <DescTop children={props.datacard.title} />
+            <ContentButton>
+              <IconButtonComp
+                disableFocusRipple
+                disableRipple
+                size={"small"}
+                children={<IconPlay />}
+              />
+            </ContentButton>
+            <CardMediaComp image={props.datacard.img} />
+          </CardComponent>
+          <ContentDescCard>
+            <ContentPrincUp>
+              <ContentDesc>
+                <ContentItemDesc>
+                  <DescTitle variant="h1" children={props.datacard.desc} />
+                </ContentItemDesc>
+              </ContentDesc>
+            </ContentPrincUp>
+          </ContentDescCard>
+        </CardActionComp>
+      </ContentSec>
+    </ContentPrinc>
+  );
 }

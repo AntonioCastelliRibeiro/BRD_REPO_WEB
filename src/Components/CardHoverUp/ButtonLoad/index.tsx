@@ -5,18 +5,19 @@ import { motion } from "framer-motion";
 import iButtonLoad from "./interface";
 
 interface iButtonComp {
-    fontFamily: string;
+  fontFamily: string;
 }
 
 const ButtonComp = styled(Button) <iButtonComp>`
   font-family: ${(props) => props.fontFamily};
   border: 1px solid #66bb6a;
   color: #66bb6a;
+  transition: 0.7s ease;
   &:hover {
     border: 1px solid #66bb6a;
     background-color: #66bb6a;
+    // background-image: linear-gradient(to right, #67cc6a, #4cad45);
     color: #fff;
-    transition: 0.7s ease;
   }
 `;
 
@@ -29,18 +30,18 @@ const ContentButtonLoad = styled(motion.div)`
 `;
 
 export default function ButtonLoad(props: iButtonLoad) {
-    function retornarButtonLoad() {
-        if (props.numPost >= props.sizeObj) return false;
-        return (
-            <ContentButtonLoad>
-                <ButtonComp
-                    fontFamily={props.fontFamily}
-                    onClick={(e) => props.onClick(e)}
-                    children={"Carregar mais"}
-                />
-            </ContentButtonLoad>
-        );
-    }
+  function retornarButtonLoad() {
+    if (props.numPost >= props.sizeObj) return false;
+    return (
+      <ContentButtonLoad>
+        <ButtonComp
+          fontFamily={props.fontFamily}
+          onClick={(e) => props.onClick(e)}
+          children={"Carregar mais"}
+        />
+      </ContentButtonLoad>
+    );
+  }
 
-    return <>{retornarButtonLoad()}</>;
+  return <>{retornarButtonLoad()}</>;
 }

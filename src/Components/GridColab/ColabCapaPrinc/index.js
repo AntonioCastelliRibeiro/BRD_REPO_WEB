@@ -93,7 +93,7 @@ const BottomBar = styled.span`
 const Style = styled.button`
   font-style: ${(props) => props.fontSize};
   padding: 0;
-  border: 0;
+  border: 1px solid #ebebeb;
   position: relative;
   flex-shrink: 0;
   width: ${cardWidth};

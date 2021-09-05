@@ -160,7 +160,7 @@ export default function CardLeftComp(props) {
       >
         <ContentImage
           isMobile={props.isMobile}
-          image={props.image}
+          image={props.img}
           onHoverStart={props.isMobile ? false : sequenceUp}
           onHoverEnd={props.isMobile ? false : sequenceDown}
         />
