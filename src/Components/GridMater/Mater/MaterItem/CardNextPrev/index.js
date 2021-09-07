@@ -8,7 +8,7 @@ const Content = styled(motion.div)`
   display: flex;
   width: 100%;
   /* max-width: 900px; */
-  min-width: 250px;
+  /* min-width: 250px; */
   max-height: 200px;
   min-height: 200px;
   overflow: hidden;

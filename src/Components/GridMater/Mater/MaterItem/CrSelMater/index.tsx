@@ -31,7 +31,7 @@ const ContentSec = styled.div`
 export default function CrSelMater(props: IProps) {
     const [onIndex, setOnIndex] = useState(0);
 
-    useEffect(() => { window.scrollTo(0, 0) }, [])
+    // useEffect(() => { props.setScrollTop() }, [])
 
     return (
         // <ContentPrinc fontFamily={props.fontFamily}>
@@ -39,13 +39,14 @@ export default function CrSelMater(props: IProps) {
         <Carousel
             className="CarouselMaterClass"
             statusFormatter={(current, total) => `${current} de ${total}`}
-            autoFocus
+            // autoFocus
             onClickItem={() => console.log(onIndex)}
             selectedItem={onIndex}
             onChange={(index, intem) => setOnIndex(index)}
             emulateTouch
             showIndicators
-            // dynamicHeight
+            dynamicHeight
+            infiniteLoop
             showThumbs={true}
             showStatus={true}
             swipeable

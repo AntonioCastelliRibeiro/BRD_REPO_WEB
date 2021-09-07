@@ -10,7 +10,8 @@ import {
   CardMedia,
   makeStyles,
   Modal,
-  IconButton
+  IconButton,
+  CircularProgress
 } from "@material-ui/core";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 
@@ -272,10 +273,20 @@ const ContentHeightWidth = styled.div`
 `;
 
 const IframeComp = styled.iframe`
-  border: "none";
+`;
+
+const ContentCircular = styled.div`
+  height: 100vh;
   width: 100%;
-  height: inherit;
-  background-color: #4e9b31;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const CircularProgressComp = styled(CircularProgress)`
+  height: 100px;
+  width: 100px;
+  color: #4e9b31;
 `;
 
 
@@ -298,7 +309,6 @@ export default function MaterItem(props) {
   });
 
   useEffect(() => {
-
     setRefresh(false);
     window.scrollTo(0, 0);
     const state = retornarState();
@@ -330,6 +340,12 @@ export default function MaterItem(props) {
     if (onPlayMovie) {
       return (
         <IframeComp
+          style={{
+            border: "none",
+            width: "100%",
+            height: "inherit",
+            backgroundColor: "#4e9b31"
+          }}
           // allowfullscreen
           allow="fullscreen"
           title="movie"
@@ -376,6 +392,7 @@ export default function MaterItem(props) {
     });
     setPlayMovie(false);
     setRefresh(true); // refresh para renderizar o componente e buscar o novo estado
+    // window.scrollTo(0, 0);
   }
 
   const C_INDEXPREV = (dataMater.index === 0 ? data.length - 1 : dataMater.index - 1);
@@ -431,6 +448,7 @@ export default function MaterItem(props) {
               {/* <Slider */}
               <CrSelMater
                 fontFamily={props.fontFamily}
+                // setScrollTop={() => window.scrollTo(0, 0)}
                 // color="#4e9b31"
                 // Mater
                 // onModal={false}
@@ -459,5 +477,11 @@ export default function MaterItem(props) {
     );
   }
 
-  return dataMater.open ? retornarConteudo() : false;
+  function retornarLoadForm() {
+    return (
+      <ContentCircular children={<CircularProgressComp style={{ height: 70, width: 70 }} disableShrink />} />
+    )
+  }
+
+  return dataMater.open ? retornarConteudo() : retornarLoadForm();
 }

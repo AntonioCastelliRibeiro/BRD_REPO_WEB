@@ -61,6 +61,22 @@
 
 
 .CarouselMaterClass{
+  padding-top: 18px;
+
   background-color:#4e9b31;
-  border-radius: 20px;
+  border-radius: 9px;
+
 }
+
+  @media (min-width: 600px) {
+    .CarouselMaterClass{
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+  }
+  @media (min-width: 900px) {
+    .CarouselMaterClass{
+      padding-right: 18px;
+      padding-left: 18px;
+    }
+  };
