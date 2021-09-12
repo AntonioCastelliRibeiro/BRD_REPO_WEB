@@ -9,13 +9,14 @@ import ColabCapaPrinc from "./ColabCapaPrinc";
 
 import dataColab from "./data.js";
 
-import C_TIME_FADE from "../../Comum/Fade";
+import objPrinc from "../../Comum";
 
 const C_ABOUT_COLAB =
   "https://images.unsplash.com/photo-1600275669439-14e40452d20b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80";
 // "https://images.unsplash.com/photo-1533310266094-8898a03807dd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80";
 
 export default memo(function GridColab(props) {
+  const C_TIME_FADE = objPrinc.timeFade;
   const match = useRouteMatch();
   const history = useHistory();
 

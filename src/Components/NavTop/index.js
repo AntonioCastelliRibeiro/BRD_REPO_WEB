@@ -6,6 +6,8 @@ import { AppBar, Container, Toolbar, IconButton } from "@material-ui/core";
 
 import { Menu, Close } from "@material-ui/icons";
 
+import dataModal from "./DrawerTop/data.js";
+
 export default React.memo(function TemporaryDrawer(props) {
   const [open, setOpen] = React.useState(false);
 
@@ -18,6 +20,17 @@ export default React.memo(function TemporaryDrawer(props) {
     }
     setOpen(open);
   };
+
+  function setOpenModal() {
+    dataModal.map((image, count) => {
+      const newImage = new Image();
+      newImage.src = image;
+      window[image] = newImage;
+    });
+    setTimeout(() => {
+      setOpen(!open);
+    }, 200)
+  }
 
   return (
     <div>
@@ -41,10 +54,10 @@ export default React.memo(function TemporaryDrawer(props) {
                 }}
                 edge="start"
                 aria-label="open drawer"
-                onClick={() =>
-                  setTimeout(() => {
-                    setOpen(!open);
-                  }, 200)
+                onClick={() => setOpenModal()
+                  // setTimeout(() => {
+                  //   setOpen(!open);
+                  // }, 200)
                 }
               >
                 {open ? <Close style={{ color: "white" }} /> : <Menu />}

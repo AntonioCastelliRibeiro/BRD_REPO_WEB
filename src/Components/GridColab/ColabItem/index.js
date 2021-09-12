@@ -90,7 +90,7 @@ export default function ColabItem(props) {
 
   function retornarConteudo(ADataColab) {
     return (
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Box
           fontFamily={props.fontFamily}
           paddingTop={"70px"}
@@ -176,7 +176,8 @@ export default function ColabItem(props) {
                   <CardActionArea
                     style={{
                       height: "inherit",
-                      width: "calc(100%)"
+                      width: "calc(100%)",
+                      color: "#fff",
                     }}
                   >
                     {/* <CardMedia

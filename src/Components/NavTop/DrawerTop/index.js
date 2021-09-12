@@ -4,7 +4,7 @@ import { Drawer } from "@material-ui/core";
 import AHrefHover from "../../AHrefHover";
 import { useHistory } from "react-router-dom";
 import Slider from "../../Slider";
-import { images } from "./data.js";
+import images from "./data.js";
 
 const CompDrawer = styled(Drawer)``;
 

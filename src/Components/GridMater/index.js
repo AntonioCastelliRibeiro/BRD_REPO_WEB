@@ -14,10 +14,11 @@ import CardSec from "./Mater/MaterCapa/CardSec";
 
 import MaterCapaApresent from "./MaterCapaApresent";
 
-import C_TIME_FADE from "../../Comum/Fade";
+import objPrinc from "../../Comum";
 import CardHoverUp from "../CardHoverUp";
 
 export default function GridMater(props) {
+  const C_TIME_FADE = objPrinc.timeFade;
   const match = useRouteMatch();
   const history = useHistory();
 

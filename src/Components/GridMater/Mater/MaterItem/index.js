@@ -15,7 +15,7 @@ import {
 } from "@material-ui/core";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 
-import C_TIME_FADE from "../../../../Comum/Fade";
+import objPrinc from "../../../../Comum";
 
 import ButtonComp from "../../ButtonComp";
 
@@ -291,6 +291,7 @@ const CircularProgressComp = styled(CircularProgress)`
 
 
 export default function MaterItem(props) {
+  const C_TIME_FADE = objPrinc.timeFade;
   const { id } = useParams();
   const data = objData;
   const history = useHistory();
@@ -344,7 +345,7 @@ export default function MaterItem(props) {
             border: "none",
             width: "100%",
             height: "inherit",
-            backgroundColor: "#4e9b31"
+            backgroundColor: "rgb(222, 222, 222)"
           }}
           // allowfullscreen
           allow="fullscreen"

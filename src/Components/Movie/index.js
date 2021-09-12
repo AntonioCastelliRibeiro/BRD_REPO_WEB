@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import { useScroll } from "react-use-gesture";
 
 export default function CompMovie() {
+  // const [onPlay, setOnPlay] = useState(false);
   const [render, setRender] = useState(true);
   const scroll = useScroll(
     ({ offset: [x, y] }) => {
@@ -69,6 +70,8 @@ export default function CompMovie() {
 
   return (
     <video
+      // onPlay={() => setOnPlay(true)}
+      // onPause={() => setOnPlay(false)}
       id="video"
       ref={ref}
       autoPlay
