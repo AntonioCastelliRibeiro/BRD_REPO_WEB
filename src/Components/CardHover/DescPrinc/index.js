@@ -3,6 +3,7 @@ import styled from "styled-components";
 const Content = styled.div`
   display: flex;
   flex-direction: column;
+  font-family: ${props => props.fontFamily || "inherit"};
   // padding-right: 10vw;
   padding-bottom: 30px;
   // // padding-left: 10vw;

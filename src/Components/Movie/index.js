@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-
+import mopvieIntro from "../../Video/timelapse.mp4";
 import { useScroll } from "react-use-gesture";
 
 export default function CompMovie() {
@@ -72,6 +72,7 @@ export default function CompMovie() {
     <video
       // onPlay={() => setOnPlay(true)}
       // onPause={() => setOnPlay(false)}
+      style={{ filter: 'brightness(94%)' }}
       id="video"
       ref={ref}
       autoPlay
@@ -82,7 +83,8 @@ export default function CompMovie() {
       muted
     >
       <source
-        src="https://css-tricks-post-videos.s3.us-east-1.amazonaws.com/708209935.mp4"
+        // src="https://css-tricks-post-videos.s3.us-east-1.amazonaws.com/708209935.mp4"
+        src={mopvieIntro}
         // src={video}
         type="video/mp4"
       />
