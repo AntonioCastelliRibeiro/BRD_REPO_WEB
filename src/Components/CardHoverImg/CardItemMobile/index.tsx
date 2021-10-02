@@ -43,20 +43,20 @@ const CardActionAreaComp = styled(CardActionArea)`
 // https://www.beyourselfcannabis.com/shop
 
 export default function CardItem(props: IProps) {
-    return (
-        <CardCompPrinc key={props.count}>
-            <CardActionAreaComp style={{ borderRadius: 18 }} key={props.count}>
-                <CardMediaComp image={props.image}>
-                    <CardMediaCompIconPrinc>
-                        <CardMedia
-                            image={props.logo}
-                            style={{ height: 80, width: 80, transform: "translateY(-10px)" }}
-                        />
-                        {/* <IconMotion height="120px" width="150px" /> */}
-                        <DescOpacity fontFamily={props.fontFamily} hover={true} mobile={true} desc={props.descHover} />
-                    </CardMediaCompIconPrinc>
-                </CardMediaComp>
-            </CardActionAreaComp>
-        </CardCompPrinc>
-    );
+  return (
+    <CardCompPrinc data-aos="fade-up" data-aos-delay="300" key={props.count}>
+      <CardActionAreaComp style={{ borderRadius: 18 }} key={props.count}>
+        <CardMediaComp image={props.image}>
+          <CardMediaCompIconPrinc>
+            <CardMedia
+              image={props.logo}
+              style={{ height: 80, width: 80, transform: "translateY(-10px)" }}
+            />
+            {/* <IconMotion height="120px" width="150px" /> */}
+            <DescOpacity fontFamily={props.fontFamily} hover={true} mobile={true} desc={props.descHover} />
+          </CardMediaCompIconPrinc>
+        </CardMediaComp>
+      </CardActionAreaComp>
+    </CardCompPrinc>
+  );
 }

@@ -34,8 +34,8 @@ const ContentDescSec = styled.div`
 export default function DescPrinc(props) {
   return (
     <Content fontFamily={props.fontFamily} paddingTop={props.paddingTop}>
-      <ContentDescFirst>{props.descFirst}</ContentDescFirst>
-      <ContentDescSec>{props.descSec}</ContentDescSec>
+      <ContentDescFirst data-aos="fade-up" children={props.descFirst} />
+      <ContentDescSec data-aos="fade-up" children={props.descSec} />
     </Content>
   );
 }

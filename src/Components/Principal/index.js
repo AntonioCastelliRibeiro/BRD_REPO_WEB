@@ -54,7 +54,7 @@ const ContentPrincTimeLine = styled(motion.div)`
 `;
 
 const ContentSecTimeLine = styled(motion.div)`
-  padding-top: 94px;
+  /* padding-top: 94px; */
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -130,15 +130,15 @@ export default function Principal(props) {
                 <ContentSpaceDescPrinc />
               </Hidden>
               <ContentPrincTimeLine>
-                <TextureImage />
+                {/* <TextureImage /> */}
                 <ContentSecTimeLine>
                   {/* <DescSecTimeLine fontFamily={props.fontFamily} firstDescScroll={data.firstDescScroll} /> */}
                   {/* <ContentCardTerc children={<CardTerc fontFamily={props.fontFamily} />} /> */}
-                  <ContentCardHoverLeftRight data-aos="fade-up" data-aos-delay="300" children={<CardHoverLeftRight firstDescScroll={data.firstDescScroll} fontFamily={props.fontFamily} />} />
-                  <ContentCardHoverImg data-aos="fade-up" data-aos-delay="300" children={<CardHoverImg fontFamily={props.fontFamily} />} />
-                  <ContentCardHover data-aos="fade-up" data-aos-delay="300" children={<CardHover fontFamily={props.fontFamily} />} />
-                  <ContentPatroc data-aos="fade-up" data-aos-delay="300" children={<Patroc fontFamily={props.fontFamily} />} />
-                  <ContentOpinion data-aos="fade-up" children={<Opinion fontFamily={props.fontFamily} />} />
+                  <ContentCardHoverLeftRight children={<CardHoverLeftRight firstDescScroll={data.firstDescScroll} fontFamily={props.fontFamily} />} />
+                  <ContentCardHoverImg children={<CardHoverImg fontFamily={props.fontFamily} />} />
+                  <ContentCardHover /*data-aos="fade-up" data-aos-delay="300"*/ children={<CardHover fontFamily={props.fontFamily} />} />
+                  <ContentPatroc /*data-aos="fade-up" data-aos-delay="300"*/ children={<Patroc fontFamily={props.fontFamily} />} />
+                  <ContentOpinion /*data-aos="fade-up"*/ children={<Opinion fontFamily={props.fontFamily} />} />
                 </ContentSecTimeLine>
               </ContentPrincTimeLine>
             </motion.div>

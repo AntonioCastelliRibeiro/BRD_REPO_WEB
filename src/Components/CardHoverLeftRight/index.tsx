@@ -144,136 +144,138 @@ export default function CardHoverLeftRight(props: IProps) {
         <ContentFirst>
             <Container maxWidth="lg">
                 <DescPrinc fontFamily={props.fontFamily} descFirst={props.firstDescScroll} descSec={C_DESC_SEC} />
-                <Hidden smDown>
-                    <ContentPrinc mobile={false}>
-                        <ContentLeft
-                            mobile={false}
-                            hover={onHoverRight}
-                            onMouseEnter={() => setHoverLeft(true)}
-                            onMouseLeave={() => setHoverLeft(false)}
-                        >
-                            <CardMediaComp image={dataLeft.img}>
-                                <ContentDesc fontFamily={props.fontFamily}>
-                                    <DescHover
-                                        mobile={false}
-                                        hover={onHoverLeft}
-                                        desc={dataLeft.title}
-                                    />
-                                    <DescHoverSec
-                                        mobile={false}
-                                        hover={onHoverLeft}
-                                        desc={dataLeft.desc}
-                                    />
-                                    <ButtonHover
-                                        mobile={false}
-                                        key={"esquerdo"}
-                                        desc={dataLeft.buttonDesc}
-                                        left={true}
-                                        hoverLeft={onHoverLeft}
-                                        hoverRight={onHoverRight}
-                                    />
-                                </ContentDesc>
-                            </CardMediaComp>
-                        </ContentLeft>
-                        <ContentRight
-                            mobile={false}
-                            hover={onHoverLeft}
-                            onMouseEnter={() => setHoverRight(true)}
-                            onMouseLeave={() => setHoverRight(false)}
-                        >
-                            <CardMediaComp image={dataRight.img}>
-                                <ContentDesc fontFamily={props.fontFamily}>
-                                    <DescHover
-                                        mobile={false}
-                                        hover={onHoverRight}
-                                        desc={dataRight.title}
-                                    />
-                                    <DescHoverSec
-                                        mobile={false}
-                                        hover={onHoverRight}
-                                        desc={dataRight.desc}
-                                    />
-                                    <ButtonHover
-                                        mobile={false}
-                                        key={"direito"}
-                                        desc={dataRight.buttonDesc}
-                                        left={false}
-                                        hoverLeft={onHoverLeft}
-                                        hoverRight={onHoverRight}
-                                    />
-                                </ContentDesc>
-                            </CardMediaComp>
-                        </ContentRight>
-                    </ContentPrinc>
-                    <DescMidComp
-                        fontFamily={props.fontFamily}
-                        logo={logoNeg}
-                        right={onHoverRight}
-                        left={onHoverLeft}
-                        hover={onHoverRight || onHoverLeft}
-                        setHoverLeft={() => setHoverLeft(true)}
-                        setHoverRight={() => setHoverRight(true)}
-                    />
-                </Hidden>
-                <Hidden mdUp>
-                    <ContentPrincMobile>
-                        <ContentLeft mobile hover={false}>
-                            <CardActionAreaComp>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <Hidden smDown>
+                        <ContentPrinc mobile={false}>
+                            <ContentLeft
+                                mobile={false}
+                                hover={onHoverRight}
+                                onMouseEnter={() => setHoverLeft(true)}
+                                onMouseLeave={() => setHoverLeft(false)}
+                            >
                                 <CardMediaComp image={dataLeft.img}>
                                     <ContentDesc fontFamily={props.fontFamily}>
-                                        <LogoMid image={logoNeg} />
                                         <DescHover
-                                            mobile={true}
-                                            hover={true}
+                                            mobile={false}
+                                            hover={onHoverLeft}
                                             desc={dataLeft.title}
                                         />
                                         <DescHoverSec
-                                            mobile={true}
-                                            hover={true}
+                                            mobile={false}
+                                            hover={onHoverLeft}
                                             desc={dataLeft.desc}
                                         />
                                         <ButtonHover
-                                            mobile
+                                            mobile={false}
                                             key={"esquerdo"}
                                             desc={dataLeft.buttonDesc}
                                             left={true}
-                                            hoverLeft={true}
-                                            hoverRight={false}
+                                            hoverLeft={onHoverLeft}
+                                            hoverRight={onHoverRight}
                                         />
                                     </ContentDesc>
                                 </CardMediaComp>
-                            </CardActionAreaComp>
-                        </ContentLeft>
-                        <div style={{ padding: 9 }} />
-                        <ContentRight mobile hover={onHoverLeft}>
-                            <CardActionAreaComp>
+                            </ContentLeft>
+                            <ContentRight
+                                mobile={false}
+                                hover={onHoverLeft}
+                                onMouseEnter={() => setHoverRight(true)}
+                                onMouseLeave={() => setHoverRight(false)}
+                            >
                                 <CardMediaComp image={dataRight.img}>
                                     <ContentDesc fontFamily={props.fontFamily}>
-                                        <LogoMid image={logoNeg} />
                                         <DescHover
-                                            mobile={true}
-                                            hover={true}
+                                            mobile={false}
+                                            hover={onHoverRight}
                                             desc={dataRight.title}
                                         />
                                         <DescHoverSec
-                                            mobile={true}
-                                            hover={true}
+                                            mobile={false}
+                                            hover={onHoverRight}
                                             desc={dataRight.desc}
                                         />
                                         <ButtonHover
-                                            mobile
+                                            mobile={false}
                                             key={"direito"}
                                             desc={dataRight.buttonDesc}
                                             left={false}
-                                            hoverLeft={false}
-                                            hoverRight={true}
+                                            hoverLeft={onHoverLeft}
+                                            hoverRight={onHoverRight}
                                         />
                                     </ContentDesc>
                                 </CardMediaComp>
-                            </CardActionAreaComp>
-                        </ContentRight>
-                    </ContentPrincMobile>
-                </Hidden>
+                            </ContentRight>
+                        </ContentPrinc>
+                        <DescMidComp
+                            fontFamily={props.fontFamily}
+                            logo={logoNeg}
+                            right={onHoverRight}
+                            left={onHoverLeft}
+                            hover={onHoverRight || onHoverLeft}
+                            setHoverLeft={() => setHoverLeft(true)}
+                            setHoverRight={() => setHoverRight(true)}
+                        />
+                    </Hidden>
+                    <Hidden mdUp>
+                        <ContentPrincMobile>
+                            <ContentLeft mobile hover={false}>
+                                <CardActionAreaComp>
+                                    <CardMediaComp image={dataLeft.img}>
+                                        <ContentDesc fontFamily={props.fontFamily}>
+                                            <LogoMid image={logoNeg} />
+                                            <DescHover
+                                                mobile={true}
+                                                hover={true}
+                                                desc={dataLeft.title}
+                                            />
+                                            <DescHoverSec
+                                                mobile={true}
+                                                hover={true}
+                                                desc={dataLeft.desc}
+                                            />
+                                            <ButtonHover
+                                                mobile
+                                                key={"esquerdo"}
+                                                desc={dataLeft.buttonDesc}
+                                                left={true}
+                                                hoverLeft={true}
+                                                hoverRight={false}
+                                            />
+                                        </ContentDesc>
+                                    </CardMediaComp>
+                                </CardActionAreaComp>
+                            </ContentLeft>
+                            <div style={{ padding: 9 }} />
+                            <ContentRight mobile hover={onHoverLeft}>
+                                <CardActionAreaComp>
+                                    <CardMediaComp image={dataRight.img}>
+                                        <ContentDesc fontFamily={props.fontFamily}>
+                                            <LogoMid image={logoNeg} />
+                                            <DescHover
+                                                mobile={true}
+                                                hover={true}
+                                                desc={dataRight.title}
+                                            />
+                                            <DescHoverSec
+                                                mobile={true}
+                                                hover={true}
+                                                desc={dataRight.desc}
+                                            />
+                                            <ButtonHover
+                                                mobile
+                                                key={"direito"}
+                                                desc={dataRight.buttonDesc}
+                                                left={false}
+                                                hoverLeft={false}
+                                                hoverRight={true}
+                                            />
+                                        </ContentDesc>
+                                    </CardMediaComp>
+                                </CardActionAreaComp>
+                            </ContentRight>
+                        </ContentPrincMobile>
+                    </Hidden>
+                </div>
             </Container>
         </ContentFirst>
     );

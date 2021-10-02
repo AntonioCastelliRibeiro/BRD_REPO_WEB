@@ -10,8 +10,8 @@ import IProps from "./interface";
 const transition = "ease-in-out 0.3s";
 
 interface iCardCompPrinc {
-    hover?: boolean;
-    fontFamily?: string;
+  hover?: boolean;
+  fontFamily?: string;
 }
 
 const CardCompPrinc = styled(motion.div) <iCardCompPrinc>`
@@ -19,7 +19,7 @@ const CardCompPrinc = styled(motion.div) <iCardCompPrinc>`
   width: 100%;
   border-radius: 18px;
   border: ${(props) =>
-        props.hover ? "2px solid transparent" : "2px solid #fff"};
+    props.hover ? "2px solid transparent" : "2px solid #fff"};
   overflow: hidden;
   transition: ${transition};
 `;
@@ -119,43 +119,49 @@ const CardActionAreaComp = styled(CardActionArea)`
   }
 `;
 
+const ContentFade = styled.div``;
+
 // https://www.beyourselfcannabis.com/shop
 
 export default function CardItem(props: IProps) {
-    const [onHover, setHover] = useState(false);
-    return (
-        <CardCompPrinc
-            key={props.count}
-            onHoverStart={() => setHover(true)}
-            onHoverEnd={() => setHover(false)}
-            hover={onHover}
+  const [onHover, setHover] = useState(false);
+  return (
+    <ContentFade data-aos="fade-up" data-aos-delay="300">
+      <CardCompPrinc
+
+        key={props.count}
+        onHoverStart={() => setHover(true)}
+        onHoverEnd={() => setHover(false)}
+        hover={onHover}
+      >
+        <CardActionAreaComp
+
+          style={{ borderRadius: 18 }}
+          key={props.count}
+        // onMouseOver={() => setHover(true)}
+        // onMouseLeave={() => setHover(false)}
         >
-            <CardActionAreaComp
-                style={{ borderRadius: 18 }}
-                key={props.count}
-            // onMouseOver={() => setHover(true)}
-            // onMouseLeave={() => setHover(false)}
-            >
-                <CardDescPrinc>
-                    <ContentDescSec>
-                        <ContentDescTerc fontFamily={props.fontFamily}>
-                            <DescPrinc children={props.title} />
-                            <DescSec children={props.desc} />
-                        </ContentDescTerc>
-                    </ContentDescSec>
-                </CardDescPrinc>
-                <CardMediaComp image={props.image}>
-                    <CardMediaCompIconPrinc>
-                        {onHover ? <IconMotion height="120" width="150" /> : false}
-                        <DescOpacity
-                            fontFamily={props.fontFamily}
-                            hover={onHover}
-                            mobile={false}
-                            desc={props.descHover}
-                        />
-                    </CardMediaCompIconPrinc>
-                </CardMediaComp>
-            </CardActionAreaComp>
-        </CardCompPrinc>
-    );
+          <CardDescPrinc>
+            <ContentDescSec>
+              <ContentDescTerc fontFamily={props.fontFamily}>
+                <DescPrinc children={props.title} />
+                <DescSec children={props.desc} />
+              </ContentDescTerc>
+            </ContentDescSec>
+          </CardDescPrinc>
+          <CardMediaComp image={props.image}>
+            <CardMediaCompIconPrinc>
+              {onHover ? <IconMotion height="120" width="150" /> : false}
+              <DescOpacity
+                fontFamily={props.fontFamily}
+                hover={onHover}
+                mobile={false}
+                desc={props.descHover}
+              />
+            </CardMediaCompIconPrinc>
+          </CardMediaComp>
+        </CardActionAreaComp>
+      </CardCompPrinc>
+    </ContentFade>
+  );
 }

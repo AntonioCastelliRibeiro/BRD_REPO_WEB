@@ -53,7 +53,7 @@ export default function CardHoverImg(props: IProps) {
                     {data.map((e, count) => (
                         <React.Fragment key={count}>
                             <Hidden xsDown>
-                                <Grid key={count} item md={12} xl={4}>
+                                <Grid key={count} item xs={12} sm={12} md={4} xl={3}>
                                     <CardItem
                                         fontFamily={props.fontFamily}
                                         count={count}
