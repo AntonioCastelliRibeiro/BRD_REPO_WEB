@@ -10,13 +10,12 @@ interface iButtonComp {
 
 const ButtonComp = styled(Button) <iButtonComp>`
   font-family: ${(props) => props.fontFamily};
-  border: 1px solid #66bb6a;
-  color: #66bb6a;
+  border: 1px solid #fff;
+  color: #fff;
   transition: 0.7s ease;
   &:hover {
     border: 1px solid #66bb6a;
     background-color: #66bb6a;
-    // background-image: linear-gradient(to right, #67cc6a, #4cad45);
     color: #fff;
   }
 `;

@@ -13,7 +13,7 @@ export default [
         right: true,
         title: "Conteúdo Rural",
         desc: "Descrição Right",
-        buttonDesc: "Rural",
+        buttonDesc: "Direito",
         img:
             "https://images.unsplash.com/photo-1627013709337-af306ea9ba0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=717&q=80"
     }

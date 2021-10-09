@@ -10,6 +10,7 @@ const transition = {
 };
 
 const ButtonComp = styled(Typography)`
+        // whileTap={{ scale: props.mobile ? 1.03 : 1 }}
   font-family: inherit;
   cursor: pointer;
   user-select: none;

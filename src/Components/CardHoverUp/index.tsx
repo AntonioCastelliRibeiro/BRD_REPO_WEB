@@ -12,7 +12,7 @@ import CardHoverPrinc from "./CardHoverPrinc";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import iCard from "./interface";
-import objCard from "./data.js";
+import objCard from "../GridMater/data.js";
 import { AnimateSharedLayout } from "framer-motion";
 import ButtonLoad from "./ButtonLoad";
 

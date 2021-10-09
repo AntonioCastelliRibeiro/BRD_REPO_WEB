@@ -47,7 +47,7 @@ const ContentSec = styled(motion.div)`
     }
     ${ButtonComp} {
       color: #fff;
-      background-color: rgb(68, 133, 69);
+      background-color: rgb(8, 127, 35);
     }
   }
 `;
@@ -56,18 +56,18 @@ const ContentDescCard = styled(motion.div)`
   transition: ${transition};
 `;
 
+const CardActionAreaComp = styled(CardActionArea)`
+  color: #fff;
+`;
+
 export default function CardComp(props: iProps) {
   return (
     <ContentPrinc key={props.count}>
       <ContentSec>
-        <CardActionArea style={{ color: "#fff" }}>
-          <CardComponent>
-            <CardMediaComp image={props.datacard.img} />
-          </CardComponent>
-          <ContentDescCard
-            children={<DescCard ButtonComp={ButtonComp} {...props} />}
-          />
-        </CardActionArea>
+        <CardActionAreaComp>
+          <CardComponent children={<CardMediaComp image={props.datacard.img} />} />
+          <ContentDescCard children={<DescCard ButtonComp={ButtonComp} {...props} />} />
+        </CardActionAreaComp>
       </ContentSec>
     </ContentPrinc>
   );

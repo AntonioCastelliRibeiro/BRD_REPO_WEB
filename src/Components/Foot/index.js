@@ -58,7 +58,7 @@ const useStyles = makeStyles(({ props, typography, palette, breakpoints }) => ({
   itemSobre: {
     fontFamily: (props) => props.fontFamily,
     fontSize: 10,
-    color: "rgba(0, 0, 0, 0.54)",
+    color: "#fff",
     cursor: "pointer",
     display: "flex",
     padding: "8px 16px",
@@ -85,7 +85,7 @@ const Foot = React.memo(function FootComp(props) {
       // data-aos="fade"
       position="absolute"
       fontFamily={props.fontFamily}
-      bgcolor={"#fff"}
+      bgcolor={"rgb(8, 127, 35)"}
       width={"100%"}
     >
       <Container>
@@ -98,9 +98,8 @@ const Foot = React.memo(function FootComp(props) {
                 </div>
                 <div style={{ paddingLeft: 8 }}>
                   <Typography
-                    style={{ fontFamily: props.fontFamily }}
+                    style={{ fontFamily: props.fontFamily, color: "#fff" }}
                     variant={"h6"}
-                    color={"textSecondary"}
                   >
                     Bom dia rural
                   </Typography>
@@ -131,14 +130,14 @@ const Foot = React.memo(function FootComp(props) {
               }}
             >
               <Box textAlign={"center"} mt={{ xs: 2, md: 0 }} my={2}>
-                <IconButton size="medium" children={<FacebookIcon />} />
-                <IconButton size="medium" children={<InstagramIcon />} />
-                <IconButton size="medium" children={<YouTubeIcon />} />
+                <IconButton style={{ color: "#fff" }} size="medium" children={<FacebookIcon />} />
+                <IconButton style={{ color: "#fff" }} size="medium" children={<InstagramIcon />} />
+                <IconButton style={{ color: "#fff" }} size="medium" children={<YouTubeIcon />} />
               </Box>
             </div>
           </div>
         </Box>
-        <Divider />
+        <Divider style={{ backgroundColor: "#fff" }} />
         <Box pt={2} pb={10}>
           <div className={classes.boxNavTermos}>
             <div style={{ flexGrow: 1, flexShrink: 0, marginLeft: "-16px" }}>
@@ -156,12 +155,12 @@ const Foot = React.memo(function FootComp(props) {
               </div>
             </div>
             <div>
-              <Box py={1} textAlign={{ xs: "center", md: "right" }}>
+              <Box py={1} textAlign={{ xs: "center", md: "right" }} >
                 <Typography
                   component={"p"}
                   variant={"caption"}
                   color={"textSecondary"}
-                  style={{ fontFamily: props.fontFamily }}
+                  style={{ fontFamily: props.fontFamily, color: "#fff" }}
 
                 >
                   Designer Antonio Castelli © Tony Studios 2019-2021 Todos os

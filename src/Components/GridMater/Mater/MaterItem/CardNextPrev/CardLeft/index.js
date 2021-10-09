@@ -7,7 +7,7 @@ const Content = Styled(motion.div)`
   width: 100%;
   max-height: inherit;
   min-height: inherit;
-  background-color: #4e9b31;//rgb(55, 103, 185);
+  background-color: #4caf50;//rgb(55, 103, 185);
   overflow: hideen;
   z-index: 1;
 `;

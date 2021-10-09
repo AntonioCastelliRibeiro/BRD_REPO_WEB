@@ -1,48 +1,43 @@
 import { Box, Container } from "@material-ui/core";
+import styled from "styled-components";
+
+const ContentPrinc = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  font-family: ${props => props.fontFamily};
+  padding: ${props => props.padding}; 
+`;
+
+const DescTitle = styled.div`
+  text-align: center;
+  padding-bottom: 12px;
+  font-size: 23px;
+  font-weight: 500;
+  color: #fff;
+`;
+
+const CompDesc = styled.div`
+ text-align: center;
+  font-size: ${props => props.fontSize};
+  font-weight: ${props => props.fontWeight};
+  line-height: ${props => props.lineHeight};
+  color:  ${props => props.color};
+`;
 
 export default function TextCenter(props) {
-  function retornarTitle() {
-    if (props.title) {
-      return (
-        <Box
-          data-aos="fade-up"
-          data-aos-delay="200"
-          textAlign="center"
-          paddingBottom={"12px"}
-          fontSize={"23px"}
-          fontWeight={500}
-          style={{ color: "#1F1F1F" }}
-        >
-          {props.title}
-        </Box>
-      );
-    } else return false;
-  }
-
   return (
-    <Box>
-      <Container maxWidth="xl">
-        <Box
-          fontFamily={props.fontFamily}
-          display="flex"
-          flexDirection={"column"}
-          justifyContent="center"
-          padding={props.padding}
-        >
-          {retornarTitle()}
-          <Box
-            data-aos="fade-up"
-            data-aos-delay="200"
-            textAlign="center"
-            fontSize={props.fontSize}
-            fontWeight={props.fontWeight}
-            lineHeight={props.lineHeight ? props.lineHeight : "1.1667"}
-            style={{ color: props.color ? props.color : "#1F1F1F" }}
-          >
-            {props.desc}
-          </Box>
-        </Box>
-      </Container>
-    </Box>
+    <Container maxWidth="xl">
+      <ContentPrinc fontFamily={props.fontFamily} padding={props.padding}>
+        {props.title ? <DescTitle chidlren={props.title} /> : false}
+        <CompDesc
+          fontSize={props.fontSize}
+          fontWeight={props.fontWeight}
+          lineHeight={props.lineHeight || "1.1667"}
+          color={props.color || "#fff"}
+          children={props.desc}
+        />
+      </ContentPrinc>
+    </Container>
   );
 }

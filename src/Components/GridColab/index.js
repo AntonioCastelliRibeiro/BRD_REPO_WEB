@@ -1,5 +1,6 @@
 import { useEffect, memo } from "react";
 import { useHistory, useRouteMatch } from "react-router-dom";
+import styled from "styled-components";
 
 import { Box, Button, Grid, Container } from "@material-ui/core";
 
@@ -11,9 +12,64 @@ import dataColab from "./data.js";
 
 import objPrinc from "../../Comum";
 
-const C_ABOUT_COLAB =
-  "https://images.unsplash.com/photo-1600275669439-14e40452d20b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80";
-// "https://images.unsplash.com/photo-1533310266094-8898a03807dd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80";
+const ContentPrinc = styled.div`
+  background-color: rgb(8, 127, 35);
+`;
+
+const ContentBgColor = styled.div`
+  position: relative;
+  background-color: inherit;
+`;
+
+const ContentDescTop = styled.div`
+  font-family: ${props => props.fontFamily};
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+`;
+
+const DescCenterTop = styled.div`
+  text-align: center;
+  font-size: 30px;
+`;
+
+const BtnCenterTop = styled(Button)`
+  width: 180px;
+  margin: 30px 0 30px;
+  font-weight: 700;
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: transparent;
+  transition: ease 0.3s;
+  &:hover{
+    color: black;
+    background-color: #fff;
+  }
+`;
+
+const propColabImg = (props) => ({
+  fontFamily: props.fontFamily,
+  img: C_ABOUT_COLAB,
+  title: "NOSSOS COLABORADORES",
+  fontSize: "7vw"
+});
+
+
+const styleGrid = {
+  paddingBottom: "48px",
+  width: "100%",
+  margin: 0
+}
+
+const propStyleGrid = {
+  container: true,
+  spacing: 2,
+  style: styleGrid
+};
+
+const C_ABOUT_COLAB = "https://images.unsplash.com/photo-1600275669439-14e40452d20b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80";
 
 export default memo(function GridColab(props) {
   const C_TIME_FADE = objPrinc.timeFade;
@@ -31,50 +87,15 @@ export default memo(function GridColab(props) {
   }
 
   return (
-    <>
-      <Box>
-        <ColabImgCapa
-          fontFamily={props.fontFamily}
-          img={C_ABOUT_COLAB}
-          title={"NOSSOS COLABORADORES"}
-          fontSize={"7vw"}
-        />
-      </Box>
-      <Box
-        data-aos="fade-up"
-        position="relative"
-        style={{ backgroundColor: "#fff" }}
-      >
-        <Box
-          fontFamily={props.fontFamily}
-          paddingTop="40px"
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          data-aos="fade"
-        >
-          <Box textAlign="center" fontSize="30px">"A sorte favorece a mente preparada"</Box>
-          <Button
-            style={{
-              width: "180px",
-              margin: "30px 0 30px",
-              fontWeight: 700,
-              border: "1px solid black"
-            }}
-          >
-            Louis Pasteur
-          </Button>
-        </Box>
+    <ContentPrinc>
+      <ColabImgCapa {...propColabImg(props)} />
+      <ContentBgColor data-aos="fade-up">
+        <ContentDescTop /*data-aos="fade"*/ fontFamily={props.fontFamily}>
+          <DescCenterTop children={"A sorte favorece a mente preparada"} />
+          <BtnCenterTop children={"Louis Pasteur"} />
+        </ContentDescTop>
         <Container maxWidth="lg">
-          <Grid
-            container
-            spacing={2}
-            style={{
-              paddingBottom: "20px",
-              width: "100%",
-              margin: 0
-            }}
-          >
+          <Grid {...propStyleGrid} >
             {dataColab.map((e, key) => {
               return (
                 <Grid
@@ -88,33 +109,21 @@ export default memo(function GridColab(props) {
                   style={{ display: "flex", justifyContent: "center" }}
                 >
                   <ColabCapaPrinc
-                    // isProfile
-                    // key={website.description}
                     fontFamily={props.fontFamily}
                     search={e.search}
                     hexa={e.hexa}
                     title={e.nome + " " + e.sobreNome}
                     description={e.cargo}
                     image={e.img}
+                    nome={e.nome}
                     setarColabItem={() => onSetColabItem(e.search)}
                   />
-                  {/* <ColabCapa
-                    fontFamily={props.fontFamily}
-                    nome={e.nome}
-                    sobreNome={e.sobreNome}
-                    search={e.search}
-                    cargo={e.cargo}
-                    setarColabItem={() => onSetColabItem(e.search)}
-                    src={e.img}
-                  /> */}
                 </Grid>
               );
             })}
           </Grid>
         </Container>
-      </Box>
-    </>
+      </ContentBgColor>
+    </ContentPrinc>
   );
 });
-
-// export default memo(GridColab());

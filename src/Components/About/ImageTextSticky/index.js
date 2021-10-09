@@ -15,72 +15,60 @@ const CardMediaComp = styled(CardMedia)`
   border-radius: 4px;
 `;
 
-export default function ImageTextSticky(props) {
-  function retornarTitle() {
-    if (props.title) {
-      return (
-        <Box
-          data-aos="fade-up"
-          data-aos-delay="200"
-          textAlign="center"
-          paddingBottom={"12px"}
-          fontSize={"23px"}
-          fontWeight={500}
-          style={{ color: "#1F1F1F" }}
-        >
-          {props.title}
-        </Box>
-      );
-    } else return false;
-  }
+const ContentDescLeftFlex = styled.div`
+  display: flex;
+  width: 100%;
+`;
 
+const ContentDescLeft = styled.div`
+  font-family: ${props => props.fontFamily};
+  width: 50%;
+  text-align: center;
+  font-size: 18px;
+  font-weight:300;
+  padding-left: 2vw;
+  padding-bottom: 103px;
+  padding-top: 103px;
+  line-height: 1.1333;
+  color: #fff;
+`;
+
+const DescLeft = styled.div`
+  text-align: center;
+  padding-bottom: 12px;
+  font-size: 23px;
+  font-weight: 500;
+  color: #fff;
+`;
+
+const ContentImage = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin-top:-177px;
+`;
+
+export default function ImageTextSticky(props) {
   return (
-    <>
-      <StickyContainer>
-        <Sticky bottomOffset={-80}>
-          {({
-            style
-          }) => (
-            <header style={style}>
-              <Box display="flex" width="100%">
-                <Box
-                  fontFamily={props.fontFamily}
-                  width="50%"
-                  textAlign="center"
-                  fontSize="18px"
-                  fontWeight={300}
-                  paddingLeft="2vw"
-                  paddingBottom="103px"
-                  paddingTop="103px"
-                  lineHeight="1.1333"
-                  style={{ color: "#484848" }}
-                >
-                  {retornarTitle()}
-                  <Box data-aos="fade-up" data-aos-delay="200">
-                    {props.desc}
-                  </Box>
-                </Box>
-                <Box width="50%"></Box>
-              </Box>
-            </header>
-          )}
-        </Sticky>
-        <Box
-          display="flex"
-          width="100%"
-          justifyContent="flex-end"
-          marginTop="-177px"
-        >
-          <Box data-aos="fade-up" data-aos-delay="200">
-            <CardActionAreaComp>
-              <CardMediaComp
-                image={props.img}
-                alt="imgTxtSticky"
-              />
-            </CardActionAreaComp>
-          </Box>
-        </Box>
-      </StickyContainer>
-    </>
+    <StickyContainer>
+      <Sticky bottomOffset={-80}>
+        {({
+          style
+        }) => (
+          <header style={style}>
+            <ContentDescLeftFlex>
+              <ContentDescLeft fontFamily={props.fontFamily}>
+                {props.title ? <DescLeft data-aos="fade-up" data-aos-delay="200" children={props.title} /> : false}
+                <Box data-aos="fade-up" data-aos-delay="200" children={props.desc} />
+              </ContentDescLeft>
+              <Box width="50%" />
+            </ContentDescLeftFlex>
+          </header>
+        )}
+      </Sticky>
+      <ContentImage data-aos="fade-up" data-aos-delay="200">
+        <CardActionAreaComp children={<CardMediaComp image={props.img} alt="Imagem de Fundo Sobre" />} />
+      </ContentImage>
+    </StickyContainer>
   );
 }

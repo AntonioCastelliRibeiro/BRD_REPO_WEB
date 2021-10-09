@@ -4,7 +4,7 @@ import TextureImage from "../../TextureImg";
 
 export default function MaterCapaApresent(props) {
   return (
-    <TextureImage>
+    <>
       <ImageColab
         fontFamily={props.fontFamily}
         img={props.img}
@@ -12,6 +12,6 @@ export default function MaterCapaApresent(props) {
         fontSize={props.fontSize}
       />
       <Box height="60vh" />
-    </TextureImage>
+    </>
   );
 }

@@ -4,7 +4,8 @@ import TextureImage from "../../TextureImg";
 
 export default function ColabImgCapa(props) {
   return (
-    <TextureImage>
+    <>
+      {/* <TextureImage> */}
       <ImageColab
         fontFamily={props.fontFamily}
         img={props.img}
@@ -12,6 +13,7 @@ export default function ColabImgCapa(props) {
         fontSize={props.fontSize}
       />
       <Box height="60vh" />
-    </TextureImage>
+      {/* </TextureImage> */}
+    </>
   );
 }

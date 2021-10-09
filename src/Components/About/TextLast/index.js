@@ -9,9 +9,14 @@ const Content = styled.div`
   height: 65vh;
   text-align: center;
   align-items: center;
-  widht: 100%;
+  width: 100%;
   color: #fff;
-  background-color: rgb(68, 133, 69);
+  background-color: rgb(8, 127, 35);
+`;
+
+const DescSec = styled.div`
+  width: 100%;
+  font-size: 16px;
 `;
 
 const useStyles = makeStyles((theme) => ({
@@ -36,17 +41,9 @@ const useStyles = makeStyles((theme) => ({
 export default function TextLast(props) {
   const styles = useStyles();
   return (
-    <Content
-      data-aos="fade-up"
-      data-aos-delay="200"
-      fontFamily={props.fontFamily}
-    >
-      <Box data-aos="fade-up" data-aos-delay="200" className={styles.firstText}>
-        {props.desc}
-      </Box>
-      <Box data-aos="fade-up" data-aos-delay="200" width="100%" fontSize="16px">
-        {props.name}
-      </Box>
+    <Content fontFamily={props.fontFamily}>
+      <Box data-aos="fade-up" data-aos-delay="200" className={styles.firstText} children={props.desc} />
+      <DescSec data-aos="fade-up" data-aos-delay="200" children={props.name} />
     </Content>
   );
 }

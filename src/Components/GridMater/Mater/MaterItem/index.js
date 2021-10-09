@@ -14,16 +14,10 @@ import {
   CircularProgress
 } from "@material-ui/core";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
-
 import objPrinc from "../../../../Comum";
-
 import ButtonComp from "../../ButtonComp";
-
 import Slider from "../../../Slider";
-
-// import objData from "../../data.js";
-
-import objData from "../../../CardHoverUp/data.js";
+import objData from "../../data.js";
 import CardNextPrev from "./CardNextPrev";
 import CrSelMater from "./CrSelMater";
 
@@ -37,45 +31,6 @@ import CrSelMater from "./CrSelMater";
 // const img2 = "https://drive.google.com/uc?id=1n9mYBgENNF47LbUTNxuUb8Qhu5P2bK1n";
 
 const useStyles = makeStyles((theme) => ({
-  paperPrinc: {
-    fontFamily: (props) => props.fontFamily,
-    paddingTop: "70px",
-    border: "none",
-    display: "flex",
-    // flexDirection: "row-reverse",
-    // flexDirection: "column-reverse",
-    justifyContent: "space-evenly",
-    placeContent: "center space-evenly",
-    alignItems: "center",
-
-    width: "100%",
-    backgroundColor: "transparent",
-    [theme.breakpoints.up("xs")]: {
-      flexDirection: "column-reverse",
-      height: "750px",
-      width: "100%"
-    },
-    [theme.breakpoints.up("sm")]: {
-      flexDirection: "column-reverse",
-      height: "750px",
-      width: "100%"
-    },
-    [theme.breakpoints.up("md")]: {
-      height: "550px",
-      flexDirection: "row-reverse"
-    }
-  },
-  boxDescRoot: {
-    height: "100%",
-    display: "flex",
-    alignItems: "center",
-    [theme.breakpoints.up("sm")]: {
-      width: "100%"
-    },
-    [theme.breakpoints.up("md")]: {
-      width: "45%"
-    }
-  },
   boxDesc: {
     height: "188px",
     display: "flex",
@@ -90,16 +45,6 @@ const useStyles = makeStyles((theme) => ({
       height: "50%"
     }
   },
-  boxImg: {
-    height: "100%",
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: "100%"
-    },
-    [theme.breakpoints.up("md")]: {
-      width: "100%"
-    }
-  }
 }));
 
 // https://bobbyflay.com/
@@ -111,6 +56,8 @@ const useStyles = makeStyles((theme) => ({
 const transition = "ease 0.3s";
 
 const ContentOverFlowHidden = styled.div`
+  height: 100%;
+  background-color: rgb(8, 127, 35);
   overflow: hidden;
 `;
 
@@ -150,6 +97,7 @@ const ContentDescSec = styled.div`
 `;
 
 const ContentFlex = styled.div`
+  color: #fff;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -190,6 +138,7 @@ const ContentImageSec = styled.div`
 `;
 
 const ContentTextPrinc = styled.div`
+  color: #fff;
   font-family: ${(props) => props.fontFamily};
 `;
 
@@ -438,7 +387,7 @@ export default function MaterItem(props) {
             </PaperComp>
           </HeaderComp>
           <ArticleComp>
-            <ContentTextPrinc fontFamily={props.fontFamily} padding="9vw 9vw 8vw 9vw">
+            <ContentTextPrinc fontFamily={props.fontFamily}>
               <TextPrinc data-aos="fade-up" children={dataMater.data.textPrinc} />
               <TextPrinc data-aos="fade-up" children={dataMater.data.textSec} />
               <TextPrinc data-aos="fade-up" children={dataMater.data.textThird} />

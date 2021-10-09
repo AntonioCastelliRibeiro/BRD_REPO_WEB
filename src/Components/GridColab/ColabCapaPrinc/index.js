@@ -13,7 +13,7 @@ const transition = "all 0.45s ease";
 
 const DivScreenshot = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: center;  
 `;
 
 const Screenshot = styled.img`
@@ -24,10 +24,7 @@ const Screenshot = styled.img`
   width: 100%;
   height: 260px;
   max-width: 290px;
-  /* background: url(${(props) => props.image}) 0 0 no-repeat;
-  background-size: cover;
-  background-position: center; */
-  border-radius: ${borderRadius}px ${borderRadius}px 0 0;
+  border-radius: ${props => props.borderRadius};
   overflow: hidden;
   backface-visibility: hidden;
   transition: ${transition};
@@ -61,6 +58,7 @@ const Content = styled.div`
   z-index: 200;
   position: relative;
   padding: 20px 20px 30px;
+  color: #fff;
 `;
 
 const Title = styled.span`
@@ -74,7 +72,6 @@ const Title = styled.span`
 const Description = styled.span`
   display: block;
   font-size: 0.875em;
-  color: #999999;
   transition: ${transition};
   transition-delay: 0.04s;
 `;
@@ -93,12 +90,13 @@ const BottomBar = styled.span`
 const Style = styled.button`
   font-style: ${(props) => props.fontSize};
   padding: 0;
-  border: 1px solid #ebebeb;
+  border: 0px solid #ebebeb;
   position: relative;
   flex-shrink: 0;
   width: ${cardWidth};
   text-align: left;
-  background: #ffffff;
+  /* background: #ffffff; */
+  background-color: #4caf50;
   border-radius: ${borderRadius}px;
   cursor: pointer;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.12), 0 20px 20px -10px rgba(0, 0, 0, 0.125);
@@ -128,7 +126,7 @@ const Style = styled.button`
 
     ${Screenshot} {
       transform: translateY(4px) scale(0.92);
-      border-radius: ${borderRadius - 2}px;
+      /* border-radius: ${borderRadius - 2}px; */
 
       &::before {
         background: rgba(0, 0, 0, 0.1);
@@ -155,6 +153,7 @@ function retornarStyle(props, location) {
           <DivScreenshot
             children={
               <Screenshot
+                borderRadius={props.nome === "Cresol" ? "50%" : "0%"}
                 draggable={false}
                 alt="patrocImage"
                 src={props.image}
@@ -169,7 +168,7 @@ function retornarStyle(props, location) {
           <BottomBar background={props.hexa} />
         </Content>
       </Link>
-    </Style>
+    </Style >
   );
 }
 

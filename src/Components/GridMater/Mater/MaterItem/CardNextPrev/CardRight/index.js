@@ -30,10 +30,10 @@ const ContentImage = Styled(motion.figure)`
 
 const DescCenter = Styled(motion.div)`
   font-family: ${(props) => props.fontFamily};
-  -webkit-text-fill-color: #4e9b31;//#3767B9;
+  -webkit-text-fill-color: #4caf50;//#3767B9;
   display: flex;
   width: inherit;
-  color: rgb(55, 103, 185);
+  color: #4caf50;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -74,11 +74,11 @@ const DescRight = Styled(motion.div)`
   letter-spacing: 0px;
   line-height: 1.2;
   text-align: left;
-  color: #4e9b31;//#477DDC;
+  color: #4caf50;//#477DDC;
 `;
 
 const DescSubRight = Styled(motion.div)`
-  color: #4e9b31;//#477DDC;
+  color: #4caf50;//#477DDC;
   font-size: ${(props) => (props.isMobile ? "8vw" : "3vw")};
   font-style: normal;
   font-weight: 400;

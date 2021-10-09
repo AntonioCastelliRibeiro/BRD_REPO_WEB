@@ -4,5 +4,5 @@ export default interface IProps {
     title: string;
     desc: string;
     buttonDesc: string;
-    img: string;
+    img: string;    
 }
