@@ -62,6 +62,7 @@ export default function CrSelMater(props: IProps) {
                 return (
                     <div key={count}>
                         <img
+                            style={{ backgroundColor: "#4caf50" }}
                             alt=""
                             src={e}
                         />

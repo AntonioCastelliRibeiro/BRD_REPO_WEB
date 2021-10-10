@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import IProps from "./interface";
 
-const transition = "ease-in-out 0.7s";
+const transition = "ease-in-out 0.3s";
 
 interface IContent {
     hover?: boolean;
@@ -53,7 +53,7 @@ const ContentButtonLeft = styled(motion.div) <IContent>`
   text-align: center;
   transition: ${transition};
   transform: translateX(${props => props.hover ? "0px" : props.left ? "25%" : "-25%"});
-  transition-delay: 290ms;
+  transition-delay: 100ms;
 `;
 
 const BgBtnColor = styled.div<IContent>`
@@ -61,8 +61,8 @@ const BgBtnColor = styled.div<IContent>`
   height: 60px;
   width: 200px;
   z-index: 1;
-  background-color: #37993a;
-  background-image: linear-gradient(#37993a,#3a8d36);
+  background-color: rgb(0,69,0);
+  background-image: linear-gradient(180deg, rgba(0,69,0,1) 0%, rgba(76,175,80,1) 0%);
   margin-left: -30px;
   opacity: ${(props) => (props.hover ? 0 : 1)};
   transition: ${transition};
@@ -106,7 +106,7 @@ export default function Butthover(props: IProps) {
                                 hover={!hover
                                 }
                                 children={props.desc}
-                                transitionDelay={hoverBg ? "800ms" : "0ms"}
+                                transitionDelay={hoverBg ? "350ms" : "0ms"}
                             />
                         </CardActionAreaComp>
                     )}

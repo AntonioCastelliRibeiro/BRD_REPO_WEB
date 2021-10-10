@@ -7,7 +7,8 @@ const Content = Styled(motion.div)`
   width: 100%;
   max-height: inherit;
   min-height: inherit;
-  background-color: #4caf50;//rgb(55, 103, 185);
+  background-color: #4caf50;
+  background-image: linear-gradient(180deg, rgba(0,69,0,1) 0%, rgba(76,175,80,1) 0%);
   overflow: hideen;
   z-index: 1;
 `;
@@ -15,6 +16,7 @@ const Content = Styled(motion.div)`
 const ContentImage = Styled(motion.figure)`
   opacity: ${(props) => (props.isMobile ? 0 : 1)};
   margin: 0;
+  background-color: rgba(0,69,0,1);
   background-image: url(${(props) => props.image});
   background-size: cover;
   background-position: center;

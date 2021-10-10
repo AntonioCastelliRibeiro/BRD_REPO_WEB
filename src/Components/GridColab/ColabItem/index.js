@@ -33,6 +33,8 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   cardMedia: {
+    // color: "#4caf50",
+    backgroundColor: "#4caf50",
     borderRadius: 0,
     // marginLeft: "-4vw",
     // marginRight: "-4vw",
@@ -42,10 +44,11 @@ const useStyles = makeStyles((theme) => ({
       height: "inherit"
     },
     [theme.breakpoints.up("md")]: {
-      height: "60vh"
+      height: "100%"
     }
   },
   cardPrinc: {
+    backgroundColor: "#4caf50",
     width: "100%",
     [theme.breakpoints.down("sm")]: {
       height: "100vw"
@@ -195,7 +198,7 @@ export default function ColabItem(props) {
                       <img
                         // onLoad={() => refSkeleton.current.remove()}
                         className={styles.cardMedia}
-                        alt={"imgColab"}
+                        alt={"Imagem Colaborador"}
                         key={props.key}
                         src={
                           ADataColab.imgItem ? ADataColab.imgItem : ADataColab.img

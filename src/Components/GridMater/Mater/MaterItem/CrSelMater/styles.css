@@ -62,12 +62,9 @@
 
 .CarouselMaterClass{
   padding-top: 18px;
-
-  /* background-color:#4e9b31; */
-  /* background-color: rgb(222, 222, 222); */
   background-color: #4caf50;
+  background-image: linear-gradient(180deg, rgba(0,69,0,1) 0%, rgba(76,175,80,1) 0%);
   border-radius: 9px;
-
 }
 
   @media (min-width: 600px) {

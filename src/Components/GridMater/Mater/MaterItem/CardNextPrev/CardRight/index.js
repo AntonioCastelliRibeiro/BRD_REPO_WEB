@@ -15,11 +15,11 @@ const Content = Styled(motion.div)`
 const ContentImage = Styled(motion.figure)`
   opacity: ${(props) => (props.isMobile ? 0 : 1)};
   margin: 0;
+  background-color: rgba(0,69,0,1);
   background-image: url(${(props) => props.image});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   z-index: 0;
   position: absolute;
   max-height: inherit;
@@ -30,7 +30,7 @@ const ContentImage = Styled(motion.figure)`
 
 const DescCenter = Styled(motion.div)`
   font-family: ${(props) => props.fontFamily};
-  -webkit-text-fill-color: #4caf50;//#3767B9;
+  /* -webkit-text-fill-color: #4caf50;//#3767B9; */
   display: flex;
   width: inherit;
   color: #4caf50;

@@ -20,7 +20,7 @@ import DescPrinc from "../CardHover/DescPrinc";
 
 // import IState from "./interface";
 
-const transition = "ease-in-out 1s";
+const transition = "ease-in-out 0.4s";
 const C_SIZE_HEIGHT = "500px";
 
 interface IContent {

@@ -222,6 +222,8 @@ const ContentHeightWidth = styled.div`
 `;
 
 const IframeComp = styled.iframe`
+  background-color: rgb(0,69,0);
+  background-image: linear-gradient(180deg, rgba(0,69,0,1) 0%, rgba(76,175,80,1) 0%);
 `;
 
 const ContentCircular = styled.div`

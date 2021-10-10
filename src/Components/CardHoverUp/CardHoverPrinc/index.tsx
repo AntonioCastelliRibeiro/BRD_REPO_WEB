@@ -217,8 +217,8 @@ const ContentPrinc = styled.div`
 const GridContainer = styled(Grid)`
   font-family: inherit;
   border-radius: 18px;
-  background-color: #4cad45;
-  background-image: linear-gradient(#67cc6a, #4cad45);
+  background-color: rgb(0,69,0);
+  background-image: linear-gradient(180deg, rgba(0,69,0,1) 0%, rgba(76,175,80,1) 0%);
 `;
 
 const GridComp = styled(Grid)`

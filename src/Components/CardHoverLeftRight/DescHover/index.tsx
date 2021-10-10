@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import IProps from "./interface";
 
-const transition = "ease-in-out 0.5s";
+const transition = "ease-in-out 0.3s";
 
 interface IDescHoverUp {
   hover: boolean;
@@ -32,7 +32,7 @@ export default function DescHover(props: IProps) {
       mobile={props.mobile}
       hover={props.hover}
       children={props.desc}
-      transitionDelay={props.hover ? "600ms" : "0ms"}
+      transitionDelay={props.hover ? "300ms" : "0ms"}
     />
   );
 }

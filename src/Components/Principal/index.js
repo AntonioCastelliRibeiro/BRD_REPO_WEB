@@ -135,7 +135,7 @@ export default function Principal(props) {
                   {/* <DescSecTimeLine fontFamily={props.fontFamily} firstDescScroll={data.firstDescScroll} /> */}
                   {/* <ContentCardTerc children={<CardTerc fontFamily={props.fontFamily} />} /> */}
                   <ContentCardHoverLeftRight children={<CardHoverLeftRight firstDescScroll={data.firstDescScroll} fontFamily={props.fontFamily} />} />
-                  <ContentCardHoverImg children={<CardHoverImg fontFamily={props.fontFamily} />} />
+                  {/* <ContentCardHoverImg children={<CardHoverImg fontFamily={props.fontFamily} />} /> */}
                   <ContentCardHover /*data-aos="fade-up" data-aos-delay="300"*/ children={<CardHover fontFamily={props.fontFamily} />} />
                   <ContentPatroc /*data-aos="fade-up" data-aos-delay="300"*/ children={<Patroc fontFamily={props.fontFamily} />} />
                   <ContentOpinion /*data-aos="fade-up"*/ children={<Opinion fontFamily={props.fontFamily} />} />
