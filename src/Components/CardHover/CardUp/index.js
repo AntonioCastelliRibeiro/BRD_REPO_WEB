@@ -86,10 +86,10 @@ const CardActionAreaComp = styled(CardActionArea)`
   width: 100%;
   color: #fff;
   font-family: inherit;
-  border-top-left-radius: ${props => props.isLeft ? "15px" : "0px"};
-  border-top-right-radius: ${props => props.isLeft ? "0px" : "15px"};
-  border-bottom-left-radius: ${props => props.isLeft ? "15px" : "0px"};
-  border-bottom-right-radius: ${props => props.isLeft ? "0px" : "15px"};
+  border-top-left-radius: ${props => props.isLeft ? "15px" : props.isMid ? "0px" : "0px"};
+  border-top-right-radius: ${props => props.isLeft ? "0px" : props.isMid ? "0px" : "15px"};
+  border-bottom-left-radius: ${props => props.isLeft ? "15px" : props.isMid ? "0px" : "0px"};
+  border-bottom-right-radius: ${props => props.isLeft ? "0px" : props.isMid ? "0px" : "15px"};
   @media (max-width: 600px) {
   border-radius: 15px;
   };
@@ -112,7 +112,7 @@ export default memo(function CardUp(props) {
   const buttonControls = useAnimation();
 
   const sequenceUp = () => {
-    props.setImage(props.isLeft ? 1 : 2);
+    props.setImage(props.isLeft ? 1 : props.isMid ? 2 : 3);
     menuControls.start({ y: -25, transition: { transition } });
     itemControls.start({ opacity: 1, y: -20, transition: { transition } });
     return buttonControls.start({
@@ -142,7 +142,7 @@ export default memo(function CardUp(props) {
       onHoverStart={props.mobile ? "" : sequenceUp}
       onHoverEnd={props.mobile ? "" : sequenceDown}
     >
-      <CardActionAreaComp isLeft={props.isLeft}>
+      <CardActionAreaComp isLeft={props.isLeft} isMid={props.isMid} >
         <ContentHover>
           <ContentDesc>
             <Box display="flex" flexDirection="column">

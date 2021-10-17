@@ -14,7 +14,7 @@ const ContentPrinc = styled.div<IContentPrinc>`
   user-select: none;
   overflow: hidden;
   width: 100%;
-  background: inherit
+  background: inherit;
 `;
 
 const ContentSec = styled.div`
@@ -26,7 +26,7 @@ const ContentSec = styled.div`
 `;
 
 const PaperAvatar = styled(Paper)`
-  border-radius: 36px
+  border-radius: 36px;
 `;
 
 const AvatarComp = styled(Avatar)`
@@ -42,7 +42,7 @@ const ContentDesc = styled.div`
   line-height: 1.55em;
   font-style: italic;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.76);
+  color: #fff;
   text-align: center;
 `;
 
@@ -53,7 +53,7 @@ const DescName = styled.div`
   text-align: center;
   line-height: 1.5em;
   font-weight: 700;
-  color: #FFF
+  color: #fff;
 `;
 
 const DescCargo = styled.div`
@@ -61,7 +61,7 @@ const DescCargo = styled.div`
   font-size: .75rem;
   text-transform: uppercase;
   font-weight: 500;
-  color: #6c757d;
+  color: #fff;
   line-height: 1.5em;
 `;
 
@@ -70,12 +70,12 @@ const ContentStar = styled.div`
 `;
 
 const StarComp = styled(Star)`
-  color: #ff9800
+  color: #ff9800;
 `;
 
 export default function CardCrSel(props: IProps) {
   return (
-    <ContentPrinc fontFamily={props.fontFamily} key={props.count}>
+    <ContentPrinc data-aos="fade-up" data-aos-delay={300} fontFamily={props.fontFamily} key={props.count}>
       <ContentSec>
         <PaperAvatar elevation={3}>
           <AvatarComp

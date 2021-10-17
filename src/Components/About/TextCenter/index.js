@@ -29,7 +29,7 @@ export default function TextCenter(props) {
   return (
     <Container maxWidth="xl">
       <ContentPrinc fontFamily={props.fontFamily} padding={props.padding}>
-        {props.title ? <DescTitle chidlren={props.title} /> : false}
+        <DescTitle children={props.title} />
         <CompDesc
           fontSize={props.fontSize}
           fontWeight={props.fontWeight}

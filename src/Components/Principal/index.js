@@ -16,6 +16,7 @@ import DescSecTimeLine from "./DescSecTimeLine";
 import SuspenseImage from "../PreloadImage/SuspenseImg";
 import CardHoverLeftRight from "../CardHoverLeftRight";
 import CardHoverImg from "../CardHoverImg";
+import CardInformation from "../CardInformation";
 // import PreloadImages from "../PreloadImage";
 
 const ContentLogoLoad = styled(motion.div)`
@@ -54,7 +55,6 @@ const ContentPrincTimeLine = styled(motion.div)`
 `;
 
 const ContentSecTimeLine = styled(motion.div)`
-  /* padding-top: 94px; */
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -64,6 +64,9 @@ const ContentSecTimeLine = styled(motion.div)`
 
 const ContentCardTerc = styled.div`
   padding-bottom: "80px";
+`;
+
+const ContentCardInformation = styled.div`
 `;
 
 const ContentCardHover = styled.div``;
@@ -136,6 +139,7 @@ export default function Principal(props) {
                   {/* <ContentCardTerc children={<CardTerc fontFamily={props.fontFamily} />} /> */}
                   <ContentCardHoverLeftRight children={<CardHoverLeftRight firstDescScroll={data.firstDescScroll} fontFamily={props.fontFamily} />} />
                   {/* <ContentCardHoverImg children={<CardHoverImg fontFamily={props.fontFamily} />} /> */}
+                  <ContentCardInformation children={<CardInformation fontFamily={props.fontFamily} />} />
                   <ContentCardHover /*data-aos="fade-up" data-aos-delay="300"*/ children={<CardHover fontFamily={props.fontFamily} />} />
                   <ContentPatroc /*data-aos="fade-up" data-aos-delay="300"*/ children={<Patroc fontFamily={props.fontFamily} />} />
                   <ContentOpinion /*data-aos="fade-up"*/ children={<Opinion fontFamily={props.fontFamily} />} />

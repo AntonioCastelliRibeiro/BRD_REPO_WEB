@@ -58,19 +58,20 @@ const Content = styled.div`
   z-index: 200;
   position: relative;
   padding: 20px 20px 30px;
-  color: #fff;
+  color: rgb(6 91 25);
 `;
 
 const Title = styled.span`
   display: block;
   margin-bottom: 4px;
   font-size: 1.25em;
-  font-weight: 500;
+  font-weight: 800;
   transition: ${transition};
 `;
 
 const Description = styled.span`
   display: block;
+  font-weight: 600;
   font-size: 0.875em;
   transition: ${transition};
   transition-delay: 0.04s;
@@ -161,7 +162,6 @@ function retornarStyle(props, location) {
             }
           />
         )}
-
         <Content>
           <Title>{props.title}</Title>
           <Description>{props.description}</Description>
@@ -179,15 +179,15 @@ function retornarPatroc(props, location) {
   return (
     <motion.div
       style={{ width: "100%", paddingTop: 10 }}
-      drag
-      dragElastic={0.03}
-      dragConstraints={{
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0
-      }}
-      transition={{ type: "spring", duration: 1 }}
+    // drag
+    // dragElastic={0.03}
+    // dragConstraints={{
+    //   top: 0,
+    //   left: 0,
+    //   right: 0,
+    //   bottom: 0
+    // }}
+    // transition={{ type: "spring", duration: 1 }}
     >
       {retornarStyle(props, location)}
     </motion.div>

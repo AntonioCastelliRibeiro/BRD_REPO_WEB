@@ -11,16 +11,25 @@ const descSec =
 export default {
   descFirst: descFirst,
   descSec: descSec,
+
   titleLeft: "Matérias",
   descLeft: descLeft,
   btnLeft: "Assistir",
   pathNameLeft: "/materias",
-  titleRight: "Equipe",
+
+  titleMid: "Equipe",
+  descMid: descRight,
+  btnMid: "Conheça",
+  pathNameMid: "/equipe",
+
+  titleRight: "Sobre",
   descRight: descRight,
   btnRight: "Conheça",
-  pathNameRight: "/equipe",
+  pathNameRight: "/sobre",
+
   image: [
     "https://images.unsplash.com/photo-1597932570098-5a11a0bbdd81?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    "https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1351&q=80"
+    "https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1351&q=80",
+    "https://images.unsplash.com/photo-1524287860394-2aaaef89eaa9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
   ]
 };

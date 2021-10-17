@@ -12,10 +12,11 @@ const ContentPrinc = styled.div<IProps>`
   flex-direction: column;
   overflow: hidden;
   width: 100%;
+  background-color: rgb(8, 127, 35);
 `;
 
 const ContentDesc = styled.div`
-  background-color: #151515;
+  /* background-color: #151515; */
   overflow: hidden;
 `;
 

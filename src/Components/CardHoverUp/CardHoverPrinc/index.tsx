@@ -63,7 +63,6 @@ const DescTitle = styled(Typography)`
   font-family: inherit;
   font-weight: 700;
   margin: 0;
-  color: #000;
   text-align: left;
   font-size: 26px;
   line-height: 38px;
@@ -76,10 +75,8 @@ const DescTitle = styled(Typography)`
 
 const DescSec = styled(Typography)`
   font-family: inherit;
-  color: rgba(0, 0, 0, 0.7);
   font-size: 14px;
   line-height: 26px;
-  color: #000;
   opacity: 0.7;
   overflow: hidden;
   transition: color 500ms;
@@ -100,6 +97,7 @@ const ContentItemDesc = styled(motion.div)`
 `;
 
 const ContentItemDescSec = styled(motion.div)`
+  color: #004500;
   font-family: inherit;
   height: 100%;
   padding: 16px;
@@ -123,7 +121,6 @@ const DescTop = styled(motion.div)`
   font-family: inherit;
   user-select: none;
   z-index: 3;
-  color: black;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.63px;

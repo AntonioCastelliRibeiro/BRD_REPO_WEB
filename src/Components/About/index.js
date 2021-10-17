@@ -51,24 +51,22 @@ export default function AboutComp(props) {
           fontSize="30px"
           fontWeight={200}
         />
-        <Box>
-          <Hidden mdUp>
-            <ImageText
-              fontFamily={props.fontFamily}
-              title={data.secDescTitle}
-              desc={data.secDesc}
-              img={data.secImg}
-            />
-          </Hidden>
-          <Hidden smDown>
-            <ImageTextSticky
-              fontFamily={props.fontFamily}
-              title={data.secDescTitle}
-              desc={data.secDesc}
-              img={data.secImg}
-            />
-          </Hidden>
-        </Box>
+        <Hidden mdUp>
+          <ImageText
+            fontFamily={props.fontFamily}
+            title={data.secDescTitle}
+            desc={data.secDesc}
+            img={data.secImg}
+          />
+        </Hidden>
+        <Hidden smDown>
+          <ImageTextSticky
+            fontFamily={props.fontFamily}
+            title={data.secDescTitle}
+            desc={data.secDesc}
+            img={data.secImg}
+          />
+        </Hidden>
         <TextCenter
           fontFamily={props.fontFamily}
           desc={data.thirDesc}

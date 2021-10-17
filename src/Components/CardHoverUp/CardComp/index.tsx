@@ -84,7 +84,7 @@ const ContentDesc = styled.div`
 
 const DescTitle = styled(Typography)`
   font-family: inherit;
-  color: #000;
+  /* color: #000; */
   text-align: left;
   font-size: 16px;
   font-weight: 700;
@@ -100,7 +100,7 @@ const DescTitle = styled(Typography)`
 const DescSec = styled(Typography)`
   font-family: inherit;
   /* margin-top: 15px; */
-  color: rgba(0, 0, 0, 0.7);
+  /* color: rgba(0, 0, 0, 0.7); */
   font-size: 14px;
   letter-spacing: 0;
   line-height: 24px;
@@ -120,6 +120,7 @@ const ContentItemDesc = styled(motion.div)`
 `;
 
 const ContentItemDescSec = styled(motion.div)`
+  color: #004500;
   font-family: inherit;
   height: 100%;
   padding: 16px 16px 16px 16px;
@@ -198,7 +199,7 @@ const ContentPrinc = styled(motion.div) <iContentPrinc>`
       opacity: 1;
     }
     ${DescTop} {
-      color: black;
+      color: #004500;
     }
     ${ContentItemDescSec} {
       padding: 32px 16px 16px 16px;

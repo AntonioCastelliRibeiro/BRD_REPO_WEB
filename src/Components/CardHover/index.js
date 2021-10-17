@@ -19,8 +19,9 @@ const ContentPrinc = styled.div`
   display: flex;
   height: 100%;
   width: 100%;
-  background-color: ${(props) =>
-    props.image === data.image[0] ? "#8b582f" : "#766517"};
+  background-color: rgb(8, 127, 35);
+  /* background-color: ${(props) =>
+    props.image === data.image[0] ? "#8b582f" : "#766517"}; */
   /* filter: brightness(80%); */
   -web-kit-transition: background-color 300ms linear;
   -ms-transition: background-color 300ms linear;
@@ -49,7 +50,8 @@ export default function CardHover(props) {
   }, []);
 
   const setImageChange = (e) => {
-    return setImage(e === 1 ? data.image[0] : data.image[1]);
+    return setImage(data.image[e - 1]);
+    // return setImage(e === 1 ? data.image[0] : data.image[1]);
   };
 
   function retornarComp() {
@@ -76,7 +78,18 @@ export default function CardHover(props) {
                   />
                   <CardUp
                     key="1"
-                    isLeft={false}
+                    isMid
+                    mobile={false}
+                    borderRight
+                    setImage={setImageChange}
+                    title={data.titleMid}
+                    desc={data.descMid}
+                    btnDesc={data.btnMid}
+                    pathName={data.pathNameMid}
+                  />
+                  <CardUp
+                    key="2"
+                    isRight
                     mobile={false}
                     setImage={setImageChange}
                     title={data.titleRight}
@@ -93,11 +106,13 @@ export default function CardHover(props) {
                 <Content>
                   <CardUp
                     key="0"
+                    isLeft
                     mobile
                     setImage={setImageChange}
                     title={data.titleLeft}
                     desc={data.descLeft}
                     btnDesc={data.btnLeft}
+                    pathName={data.pathNameLeft}
                   />
                 </Content>
                 <ImageComp mobile image={data.image[0]} />
@@ -107,14 +122,32 @@ export default function CardHover(props) {
                 <Content>
                   <CardUp
                     key="1"
+                    isMid
+                    mobile
+                    setImage={setImageChange}
+                    title={data.titleMid}
+                    desc={data.descMid}
+                    btnDesc={data.btnMid}
+                    pathName={data.pathNameMid}
+                  />
+                </Content>
+                <ImageComp image={data.image[1]} />
+              </ContentFade>
+              <div style={{ padding: 10 }} />
+              <ContentFade data-aos="fade-up" data-aos-delay="300">
+                <Content>
+                  <CardUp
+                    key="2"
+                    isRight
                     mobile
                     setImage={setImageChange}
                     title={data.titleRight}
                     desc={data.descRight}
                     btnDesc={data.btnRight}
+                    pathName={data.pathNameRight}
                   />
                 </Content>
-                <ImageComp image={data.image[1]} />
+                <ImageComp image={data.image[2]} />
               </ContentFade>
             </Hidden>
           </ContainerPrinc>

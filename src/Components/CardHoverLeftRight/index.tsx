@@ -44,8 +44,8 @@ const ContentFirst = styled.div<IContent>`
   height: 100%;
   user-select: none;
   width: 100%;
-  background-color: #37993a;
-  background-image: linear-gradient(#37993a,#3a8d36);
+  background-color: rgb(8, 127, 35);
+  /* background-image: linear-gradient(#37993a,#3a8d36); */
   padding-top: 30px;
   padding-bottom: 130px;
   overflow: hidden;

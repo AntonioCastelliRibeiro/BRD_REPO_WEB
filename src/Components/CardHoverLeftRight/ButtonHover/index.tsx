@@ -38,7 +38,7 @@ const ButtonCompLeft = styled.div<IContent>`
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 3px;
-  background-color: ${(props) => (props.hoverBg ? "#37993a" : "#fff")};
+  background-color: ${(props) => (props.hoverBg ? "rgb(8, 127, 35)" : "#fff")};
   transition: ${transition};
   transition-delay: ${(props) => props.transitionDelay};
   transition-property: all;
