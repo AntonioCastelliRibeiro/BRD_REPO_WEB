@@ -87,7 +87,7 @@ const PaperComp = styled(Paper)`
   border: none;
   box-shadow: 0;
   height: 350px;
-  background-color: #4caf50;
+  background-color: #fff;
   width: 100%;
   min-width: 290px;
   box-shadow: none;

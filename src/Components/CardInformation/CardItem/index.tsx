@@ -5,9 +5,10 @@ import ICardItem from "./interface";
 
 const ContentPrinc = styled.div`
   height: 100%;
-  max-width: 300px;
+  width: 100%;
   border-radius: 5px;
-  background-color: #4caf50;
+  border: 1px solid #fff;
+  /* background-color: #4caf50; */
 `;
 
 const CardActionAreaComp = styled(CardActionArea)`
@@ -15,6 +16,7 @@ const CardActionAreaComp = styled(CardActionArea)`
   height: 100%;
   width: 100%;
   border-radius: 5px;
+  background-color: #0124017a;
 `;
 
 interface IContentFlex {
@@ -33,18 +35,18 @@ const TitleFirst = styled.div`
   text-transform: uppercase;
   font-size: 26px;
   line-height: 1.4;
-  color: #004500;
+  color: #fff;
 `;
 const TitleSec = styled.div`
   font-weight: 700;
   font-size: 60px;
   text-transform: uppercase;
-  -webkit-text-stroke: 0.5px rgb(8, 127, 35);
+  /* -webkit-text-stroke: 0.5px rgb(8,127,35); */
   color: #fff;
 `;
 const Desc = styled.div`
   font-size: 14px;
-  color: #004500;
+  color: #fff;
 `;
 
 export default function CardItem(props: ICardItem) {

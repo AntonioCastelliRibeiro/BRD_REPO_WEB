@@ -22,7 +22,8 @@ const ContentPrinc = styled.div<IContentPrinc>`
   /* background-image: url(${(props) => props.bgImage});
   background-size: cover;
   background-position: 50%; */
-  background-color: rgb(8, 127, 35);
+  background-color: transparent;
+  /* background-color: rgb(8, 127, 35); */
 `;
 
 const bgImage =

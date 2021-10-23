@@ -1,5 +1,5 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
+import React, { useEffect } from "react";
+// import { useLocation } from "react-router-dom";
 
 import logo from "../../Image/logo.svg";
 import InstagramIcon from "@material-ui/icons/Instagram";
@@ -70,9 +70,14 @@ const useStyles = makeStyles(({ props, typography, palette, breakpoints }) => ({
   }
 }));
 
-const Foot = React.memo(function FootComp(props) {
+const Foot = function FootComp(props) {
   const classes = useStyles(props);
-  // const history = useHistory();
+  // const location = useLocation();
+  // // const history = useHistory();
+
+  // useEffect(() => {
+  //   console.log(location.pathname);
+  // }, [location.pathname]);
 
   function setarRouter(AQueryParams) {
     // history.push(AQueryParams);
@@ -85,7 +90,8 @@ const Foot = React.memo(function FootComp(props) {
       // data-aos="fade"
       position="absolute"
       fontFamily={props.fontFamily}
-      bgcolor={"rgb(8, 127, 35)"}
+      // bgcolor={"rgb(8, 127, 35)"}
+      bgcolor={"transparent"}
       width={"100%"}
     >
       <Container>
@@ -101,7 +107,7 @@ const Foot = React.memo(function FootComp(props) {
                     style={{ fontFamily: props.fontFamily, color: "#fff" }}
                     variant={"h6"}
                   >
-                    Bom dia rural
+                    bom dia rural
                   </Typography>
                 </div>
               </div>
@@ -173,6 +179,6 @@ const Foot = React.memo(function FootComp(props) {
       </Container>
     </Box>
   );
-});
+};
 
 export default Foot;

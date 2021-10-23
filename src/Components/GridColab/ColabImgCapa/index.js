@@ -11,8 +11,9 @@ export default function ColabImgCapa(props) {
         img={props.img}
         title={props.title}
         fontSize={props.fontSize}
+        ocultaDesc={props.ocultaDesc}
       />
-      <Box height="60vh" />
+      {props.ocultaDesc ? false : <Box height="60vh" />}
       {/* </TextureImage> */}
     </>
   );

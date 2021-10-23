@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import styled from "styled-components";
-import { Box, Container, Hidden } from "@material-ui/core";
+import { Container, Hidden } from "@material-ui/core";
 import ImageAbout from "./ImageAbout";
 import ImageText from "./ImageText";
 import ImageTextSticky from "./ImageTextSticky";
 import TextCenter from "./TextCenter";
 import TextLast from "./TextLast";
-import TextureImage from "../TextureImg/index.js";
+// import TextureImage from "../TextureImg/index.js";
 import DoubleCard from "../DoubleTapCard";
 import data from "./data.js";
 
@@ -20,8 +20,9 @@ const ContentHeight = styled.div`
 `;
 
 const ContentBgColor = styled.div`
-   position: relative;
-   background-color: rgb(8, 127, 35);
+  position: relative;
+  background: rgba(0,69,0,1);
+  background: linear-gradient(339deg, rgba(0,0,0,1) 2%, rgba(0,69,0,1) 92%);
 `;
 
 const ContainerComp = styled(Container)`

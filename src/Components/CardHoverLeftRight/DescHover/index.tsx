@@ -17,7 +17,7 @@ const DescHoverUp = styled(motion.div) <IDescHoverUp>`
   letter-spacing: 0;
   opacity: ${(props) => (props.hover ? 1 : "0")};
   text-align: center;
-  color: #f0e1ce;
+  color: #fff;
   transform: translateY(
     ${(props) => (props.mobile ? "0px" : props.hover ? "130px" : "100px")}
   );

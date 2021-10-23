@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useHistory, useParams, Link } from "react-router-dom";
+import styled from "styled-components";
 
 import {
   Box,
@@ -16,6 +17,22 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import ArrowBack from "@material-ui/icons/ArrowBack";
+import ColabImgCapa from "../ColabImgCapa";
+
+const ContentBgColor = styled.div`
+  height: 100%;
+  /* background: rgba(0,69,0,1);
+  background: linear-gradient(339deg, rgba(0,0,0,1) 2%, rgba(0,69,0,1) 92%); */
+  
+`;
+
+const ContentRelative = styled.div`
+  position: relative;
+  height: 100%;
+  /* background: rgba(0,69,0,1);
+  background: linear-gradient(339deg, rgba(0,0,0,1) 2%, rgba(0,69,0,1) 92%); */
+  padding-bottom: 45px;
+`;
 
 // import data from "../data.js";
 
@@ -33,34 +50,35 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   cardMedia: {
+    height: "auto",
     // color: "#4caf50",
-    backgroundColor: "#4caf50",
+    backgroundColor: "#fff",
     borderRadius: 0,
     // marginLeft: "-4vw",
     // marginRight: "-4vw",
     overflow: "hidden",
-    width: "calc(100%)",
+    width: "inherit",
     [theme.breakpoints.down("sm")]: {
-      height: "inherit"
+      // height: "inherit"
     },
     [theme.breakpoints.up("md")]: {
-      height: "100%"
+      // height: "100%"
     }
   },
   cardPrinc: {
-    backgroundColor: "#4caf50",
+    height: "60vh",
+    // backgroundColor: "#4caf50",
     width: "100%",
     [theme.breakpoints.down("sm")]: {
-      height: "100vw"
+      // height: "100vw"
     },
     [theme.breakpoints.up("md")]: {
-      height: "60vh",
       display: "flex",
       alignItems: "center"
     }
   },
   boxImage: {
-    height: "inherit",
+
     width: "100%",
     [theme.breakpoints.down("sm")]: {},
     [theme.breakpoints.up("md")]: {
@@ -92,126 +110,131 @@ export default function ColabItem(props) {
     return dataReturn !== null ? dataReturn : null;
   }
 
+  const C_ABOUT_COLAB = "https://images.unsplash.com/photo-1600275669439-14e40452d20b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80";
+
   function retornarConteudo(ADataColab) {
     return (
-      <div style={{ backgroundColor: "rgb(8, 127, 35)", paddingBottom: "45px" }} >
-        <Container maxWidth="lg">
-          <Box
-            fontFamily={props.fontFamily}
-            paddingTop={"70px"}
-            paddingBottom={"0px"}
-            display="flex"
-            flexDirection="column"
-            color={"#fff"}
-          >
-            <Box className={styles.boxPrinc}>
-              <div data-aos="fade-left" style={{ width: "100%" }}>
-                <Box height="inherit">
-                  <Box display="flex" paddingLeft="10px" marginBottom="24px">
-                    <Link
-                      style={{ textDecoration: "none", color: "#fff" }}
-                      to={props.pathName}
+      <ContentBgColor>
+        {/* <ColabImgCapa ocultaDesc={true} img={C_ABOUT_COLAB} /> */}
+        <ContentRelative>
+          <Container maxWidth="lg">
+            <Box
+              fontFamily={props.fontFamily}
+              paddingTop={"70px"}
+              paddingBottom={"0px"}
+              display="flex"
+              flexDirection="column"
+              color={"#fff"}
+            >
+              <Box className={styles.boxPrinc}>
+                <div data-aos="fade-left" style={{ width: "100%" }}>
+                  <Box height="inherit">
+                    <Box display="flex" paddingLeft="10px" marginBottom="24px">
+                      <Link
+                        style={{ textDecoration: "none", color: "#fff" }}
+                        to={props.pathName}
+                      >
+                        <Button style={{ fontFamily: props.fontFamily, color: "#fff" }}>
+                          <ArrowBack />
+                          <Box margin="0px 9px 0px 9px">{props.descButton}</Box>
+                        </Button>
+                      </Link>
+                    </Box>
+                    <Box
+                      style={{ textTransform: "uppercase" }}
+                      marginBottom="20px"
+                      color="#fff"
+                      lineHeight=".8885em"
+                      fontSize="calc(1.625rem + 34 * ((100vw - 26.25rem) / 860))"
                     >
-                      <Button style={{ fontFamily: props.fontFamily, color: "#fff" }}>
-                        <ArrowBack />
-                        <Box margin="0px 9px 0px 9px">{props.descButton}</Box>
-                      </Button>
-                    </Link>
+                      {ADataColab.nome}
+                    </Box>
+                    <Box
+                      style={{ textTransform: "uppercase" }}
+                      marginBottom="20px"
+                      color="#fff"
+                      lineHeight=".8885em"
+                      fontSize="calc(1.625rem + 34 * ((100vw - 26.25rem) / 860))"
+                    >
+                      {ADataColab.sobreNome}
+                    </Box>
+                    <Box height="50px" marginBottom="20px">
+                      <CardActions style={{ padding: "6px" }}>
+                        <IconButton
+                          style={{ color: "#fff", border: "1px solid #fff" }}
+                        >
+                          <FacebookIcon />
+                        </IconButton>
+                        <IconButton
+                          style={{ color: "#fff", border: "1px solid #fff" }}
+                        >
+                          <LinkedInIcon />
+                        </IconButton>
+                        <IconButton
+                          style={{ color: "#fff", border: "1px solid #fff" }}
+                        >
+                          <InstagramIcon />
+                        </IconButton>
+                      </CardActions>
+                    </Box>
+                    <Box
+                      fontSize="calc(1.125rem + 4 * ((100vw - 26.25rem) / 860))"
+                      lineHeight="1.56em"
+                      marginBottom="20px"
+                    >
+                      {ADataColab.cargo}
+                    </Box>
+                    <Box
+                      fontSize="calc(.875rem + 3 * ((100vw - 26.25rem) / 860))"
+                      lineHeight="1.625em"
+                      opacity=".7"
+                      marginBottom="1.6em"
+                    >
+                      {ADataColab.descricao1}
+                    </Box>
+                    <Box
+                      fontSize="calc(.875rem + 3 * ((100vw - 26.25rem) / 860))"
+                      lineHeight="1.625em"
+                      opacity=".7"
+                      marginBottom="1.6em"
+                    >
+                      {ADataColab.descricao2}
+                    </Box>
                   </Box>
-                  <Box
-                    style={{ textTransform: "uppercase" }}
-                    marginBottom="20px"
-                    color="#fff"
-                    lineHeight=".8885em"
-                    fontSize="calc(1.625rem + 34 * ((100vw - 26.25rem) / 860))"
-                  >
-                    {ADataColab.nome}
-                  </Box>
-                  <Box
-                    style={{ textTransform: "uppercase" }}
-                    marginBottom="20px"
-                    color="#fff"
-                    lineHeight=".8885em"
-                    fontSize="calc(1.625rem + 34 * ((100vw - 26.25rem) / 860))"
-                  >
-                    {ADataColab.sobreNome}
-                  </Box>
-                  <Box height="50px" marginBottom="20px">
-                    <CardActions style={{ padding: "6px" }}>
-                      <IconButton
-                        style={{ color: "#fff", border: "1px solid #fff" }}
-                      >
-                        <FacebookIcon />
-                      </IconButton>
-                      <IconButton
-                        style={{ color: "#fff", border: "1px solid #fff" }}
-                      >
-                        <LinkedInIcon />
-                      </IconButton>
-                      <IconButton
-                        style={{ color: "#fff", border: "1px solid #fff" }}
-                      >
-                        <InstagramIcon />
-                      </IconButton>
-                    </CardActions>
-                  </Box>
-                  <Box
-                    fontSize="calc(1.125rem + 4 * ((100vw - 26.25rem) / 860))"
-                    lineHeight="1.56em"
-                    marginBottom="20px"
-                  >
-                    {ADataColab.cargo}
-                  </Box>
-                  <Box
-                    fontSize="calc(.875rem + 3 * ((100vw - 26.25rem) / 860))"
-                    lineHeight="1.625em"
-                    opacity=".7"
-                    marginBottom="1.6em"
-                  >
-                    {ADataColab.descricao1}
-                  </Box>
-                  <Box
-                    fontSize="calc(.875rem + 3 * ((100vw - 26.25rem) / 860))"
-                    lineHeight="1.625em"
-                    opacity=".7"
-                    marginBottom="1.6em"
-                  >
-                    {ADataColab.descricao2}
-                  </Box>
-                </Box>
-              </div>
+                </div>
 
-              <Box className={styles.boxImage}>
-                <div data-aos="fade-up" style={{ width: "100%" }}>
-                  <Card className={styles.cardPrinc}>
-                    <CardActionArea
-                      style={{
-                        height: "inherit",
-                        width: "calc(100%)",
-                        color: "#fff",
-                      }}
-                    >
-                      {/* <CardMedia
+                <Box className={styles.boxImage}>
+                  <div data-aos="fade-up" style={{ width: "100%" }}>
+                    <Card className={styles.cardPrinc}>
+                      <CardActionArea
+                        style={{
+                          height: "inherit",
+                          width: "inherit",
+                          color: "#fff",
+                        }}
+                      >
+                        {/* <CardMedia
                     className={styles.cardMedia}
                     image={ADataColab.img}
                   /> */}
-                      <img
-                        // onLoad={() => refSkeleton.current.remove()}
-                        className={styles.cardMedia}
-                        alt={"Imagem Colaborador"}
-                        key={props.key}
-                        src={
-                          ADataColab.imgItem ? ADataColab.imgItem : ADataColab.img
-                        }
-                      />
-                    </CardActionArea>
-                  </Card>
-                </div>
+                        <img
+                          // onLoad={() => refSkeleton.current.remove()}
+                          className={styles.cardMedia}
+                          alt={"Imagem Colaborador"}
+                          key={props.key}
+                          src={
+                            ADataColab.imgItem ? ADataColab.imgItem : ADataColab.img
+                          }
+                        />
+                      </CardActionArea>
+                    </Card>
+                  </div>
+                </Box>
               </Box>
             </Box>
-          </Box>
-        </Container>
-      </div>
+          </Container>
+        </ContentRelative>
+      </ContentBgColor>
     );
   }
 

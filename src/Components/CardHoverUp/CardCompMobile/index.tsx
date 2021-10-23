@@ -67,7 +67,7 @@ const ContentDesc = styled.div`
 
 const DescTitle = styled(Typography)`
   font-family: inherit;
-  color: #000;
+  color: #004500;
   text-align: left;
   font-size: 16px;
   font-weight: 700;

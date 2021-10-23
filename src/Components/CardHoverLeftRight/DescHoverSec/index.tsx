@@ -18,7 +18,7 @@ const DescHoverUp = styled(motion.div) <IDescHoverUp>`
   opacity: ${(props) => (props.hover ? 1 : "0")};
   transition: ${transition};
   text-align: center;
-  color: #f0e1ce;
+  color: #ffff;
   transform: translateY(${(props) => (props.mobile ? "0px" : "90px")});
   transition-delay: ${(props) => props.transitionDelay};
   transition-property: opacity;

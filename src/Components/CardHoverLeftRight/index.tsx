@@ -11,7 +11,8 @@ import ButtonHover from "./ButtonHover";
 import DescHover from "./DescHover";
 import DescHoverSec from "./DescHoverSec";
 import DescMidComp from "./DescMid";
-import logoNeg from "../../Image/logo/brdneg.png";
+// import logoNeg from "../../Image/logo/brdneg.png";
+import logo from "../../Image/logo.svg";
 
 import IState from "./interface";
 
@@ -44,7 +45,8 @@ const ContentFirst = styled.div<IContent>`
   height: 100%;
   user-select: none;
   width: 100%;
-  background-color: rgb(8, 127, 35);
+  background-color: transparent;
+  /* background-color: rgb(8, 127, 35); */
   /* background-image: linear-gradient(#37993a,#3a8d36); */
   padding-top: 30px;
   padding-bottom: 130px;
@@ -70,6 +72,7 @@ const CardMediaComp = styled(CardMedia)`
   height: inherit;
   width: 100%;
   z-index: 2;
+  /* filter: brightness(50%); */
   transition: ${transition};
 `;
 
@@ -142,7 +145,7 @@ export default function CardHoverLeftRight(props: IProps) {
 
     return (
         <ContentFirst>
-            <Container maxWidth="lg">
+            <Container maxWidth="xl">
                 <DescPrinc fontFamily={props.fontFamily} descFirst={props.firstDescScroll} descSec={C_DESC_SEC} />
                 <div data-aos="fade-up" data-aos-delay="300">
                     <Hidden smDown>
@@ -208,7 +211,7 @@ export default function CardHoverLeftRight(props: IProps) {
                         </ContentPrinc>
                         <DescMidComp
                             fontFamily={props.fontFamily}
-                            logo={logoNeg}
+                            logo={logo}
                             right={onHoverRight}
                             left={onHoverLeft}
                             hover={onHoverRight || onHoverLeft}
@@ -222,7 +225,7 @@ export default function CardHoverLeftRight(props: IProps) {
                                 <CardActionAreaComp>
                                     <CardMediaComp image={dataLeft.img}>
                                         <ContentDesc fontFamily={props.fontFamily}>
-                                            <LogoMid image={logoNeg} />
+                                            <LogoMid image={logo} />
                                             <DescHover
                                                 mobile={true}
                                                 hover={true}
@@ -250,7 +253,7 @@ export default function CardHoverLeftRight(props: IProps) {
                                 <CardActionAreaComp>
                                     <CardMediaComp image={dataRight.img}>
                                         <ContentDesc fontFamily={props.fontFamily}>
-                                            <LogoMid image={logoNeg} />
+                                            <LogoMid image={logo} />
                                             <DescHover
                                                 mobile={true}
                                                 hover={true}

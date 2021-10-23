@@ -57,7 +57,9 @@ const transition = "ease 0.3s";
 
 const ContentOverFlowHidden = styled.div`
   height: 100%;
-  background-color: rgb(8, 127, 35);
+  background: rgba(0,69,0,1);
+  background: linear-gradient(339deg, rgba(0,0,0,1) 2%, rgba(0,69,0,1) 92%);
+  padding-bottom: 48px;
   overflow: hidden;
 `;
 

@@ -51,6 +51,7 @@ const ContentSpaceDescPrinc = styled(motion.div)`
 `;
 
 const ContentPrincTimeLine = styled(motion.div)`
+  height: 100%;
   width: 100%;
 `;
 
@@ -59,7 +60,8 @@ const ContentSecTimeLine = styled(motion.div)`
   position: relative;
   overflow: hidden;
   z-index: 2;
-  background-color: #ffffff;
+  background: rgba(0,69,0,1);
+  background: linear-gradient(339deg, rgba(0,0,0,1) 2%, rgba(0,69,0,1) 92%);
 `;
 
 const ContentCardTerc = styled.div`

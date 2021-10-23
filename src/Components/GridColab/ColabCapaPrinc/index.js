@@ -17,6 +17,7 @@ const DivScreenshot = styled.div`
 `;
 
 const Screenshot = styled.img`
+  /* background-color: #4caf50; */
   z-index: 200;
   position: relative;
   margin: 0;
@@ -58,7 +59,7 @@ const Content = styled.div`
   z-index: 200;
   position: relative;
   padding: 20px 20px 30px;
-  color: rgb(6 91 25);
+  color: #004500;
 `;
 
 const Title = styled.span`
@@ -97,10 +98,11 @@ const Style = styled.button`
   width: ${cardWidth};
   text-align: left;
   /* background: #ffffff; */
-  background-color: #4caf50;
+  background-color: #fff;
   border-radius: ${borderRadius}px;
   cursor: pointer;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.12), 0 20px 20px -10px rgba(0, 0, 0, 0.125);
+
   transition: ${transition};
 
   &:hover {

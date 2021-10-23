@@ -13,12 +13,14 @@ import dataColab from "./data.js";
 import objPrinc from "../../Comum";
 
 const ContentPrinc = styled.div`
-  background-color: rgb(8, 127, 35);
+
 `;
 
 const ContentBgColor = styled.div`
   position: relative;
   background-color: inherit;
+  background: rgba(0,69,0,1);
+  background: linear-gradient(339deg, rgba(0,0,0,1) 2%, rgba(0,69,0,1) 92%);
 `;
 
 const ContentDescTop = styled.div`
@@ -89,8 +91,8 @@ export default memo(function GridColab(props) {
   return (
     <ContentPrinc>
       <ColabImgCapa {...propColabImg(props)} />
-      <ContentBgColor data-aos="fade-up">
-        <ContentDescTop /*data-aos="fade"*/ fontFamily={props.fontFamily}>
+      <ContentBgColor>
+        <ContentDescTop fontFamily={props.fontFamily}>
           <DescCenterTop children={"A sorte favorece a mente preparada"} />
           <BtnCenterTop children={"Louis Pasteur"} />
         </ContentDescTop>

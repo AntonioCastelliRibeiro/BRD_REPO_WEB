@@ -28,17 +28,19 @@ const ButtonCompLeft = styled.div<IContent>`
   border-radius: 18px;
   filter: brightness(90%);
   cursor: pointer;
-  border: ${(props) => (props.hoverBg ? "2px ridge #ffff" : "2px ridge transparent")};
+  /* border: ${(props) => (props.hoverBg ? "2px ridge #ffff" : "2px ridge transparent")}; */
   font-family: inherit;
   /* z-index: 2; */
-  color: ${(props) => (props.hoverBg ? "#ffff" : "black")};
+  color: black;
+  /* color: ${(props) => (props.hoverBg ? "#ffff" : "black")}; */
   padding: 17px 33px 17px 33px;
   user-select: none;
   opacity: ${(props) => (props.hover ? 0 : 1)};
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 3px;
-  background-color: ${(props) => (props.hoverBg ? "rgb(8, 127, 35)" : "#fff")};
+  background-color:  #fff;
+  /* background-color: ${(props) => (props.hoverBg ? "rgb(8, 127, 35)" : "#fff")}; */
   transition: ${transition};
   transition-delay: ${(props) => props.transitionDelay};
   transition-property: all;
@@ -92,7 +94,7 @@ export default function Butthover(props: IProps) {
                         <ButtonCompLeft
                             hoverLeft={props.hoverLeft}
                             hoverRight={props.hoverRight}
-                            hoverBg={hoverBg}
+                            // hoverBg={hoverBg}
                             hover={!hover}
                             children={props.desc}
                             transitionDelay={"0ms"}

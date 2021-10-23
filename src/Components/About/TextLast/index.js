@@ -11,7 +11,7 @@ const Content = styled.div`
   align-items: center;
   width: 100%;
   color: #fff;
-  background-color: rgb(8, 127, 35);
+  background-color: transparent;
 `;
 
 const DescSec = styled.div`

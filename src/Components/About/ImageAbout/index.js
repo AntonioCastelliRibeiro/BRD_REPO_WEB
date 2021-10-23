@@ -56,33 +56,14 @@ const DescScroll = styled.div`
 
 const BoxPrinc = styled.div`
   font-family: ${props => props.fontFamily};
-  height: 60vh;
+  height: 100%;
   width: 100%;
   position: fixed;
 `;
 
 export default memo(function ImageAbout(props) {
-  // const isMobile = useMediaQuery("(max-width:600px)");
-  // const [{ y }, setY] = useSpring(() => ({ y: "0%" }));
-  // const [scale, setScale] = useState(1);
-  // useScroll(
-  //   ({ offset: [x, y] }) => {
-  //     // if (isMobile) {
-  //     //   setScale(`1.0`);
-  //     // } else if (y <= 800) {
-  //     //   setScale(`1.0${y}`);
-  //     // }
-  //   },
-  //   {
-  //     domTarget: window
-  //   }
-  // );
-
   return (
-
-    <BoxPrinc
-      fontFamily={props.fontFamily}
-    >
+    <BoxPrinc fontFamily={props.fontFamily}>
       <Box position="absolute" width="100%">
         <Box display="flex" height="60vh" width="100%">
           <Box
@@ -103,11 +84,11 @@ export default memo(function ImageAbout(props) {
       </Box>
       <Box position="absolute" height="60vh" width="100%">
         <DescScroll data-aos="fade-down" data-aos-delay="1000">
-          <Box paddingBottom="35px">Rolar para Baixo</Box>
+          {props.ocultaDesc ? false : <Box paddingBottom="35px">Rolar para Baixo</Box>}
         </DescScroll>
       </Box>
-      <BgImage img={props.img} /*scale={scale}*/ />
-      <Box height="60vh" width="100%" />
+      <BgImage img={props.img} />
+      {props.ocultaDesc ? false : <Box height="60vh" width="100%" />}
     </BoxPrinc>
   );
 });

@@ -33,7 +33,7 @@ const ContentDescMid = styled(motion.div) <IContentDescMid>`
   justify-content: flex-start;
   align-items: center;
   text-align: center;
-  color: #f0e1ce;
+  color: #fff;
   font-family: ${props => props.fontFamily};
   transition: ${transition};
 `;
@@ -49,7 +49,7 @@ const DescMid = styled(motion.div) <IContent>`
   text-align: center;
   font-weight: 600;
   font-size: 4vw;
-  color: #f0e1ce;
+  color: #fff;
   transition: ${transition};
   transition-delay: ${(props) => props.transitionDelay};
   transition-property: all;

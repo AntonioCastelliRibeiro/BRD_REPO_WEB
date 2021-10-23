@@ -19,7 +19,8 @@ const ContentPrinc = styled.div`
   display: flex;
   height: 100%;
   width: 100%;
-  background-color: rgb(8, 127, 35);
+  background-color: transparent;
+  /* background-color: rgb(8, 127, 35); */
   /* background-color: ${(props) =>
     props.image === data.image[0] ? "#8b582f" : "#766517"}; */
   /* filter: brightness(80%); */
@@ -60,7 +61,7 @@ export default function CardHover(props) {
     } else {
       return (
         <ContentPrinc fontFamily={props.fontFamily} image={image}>
-          <ContainerPrinc maxWidth="lg">
+          <ContainerPrinc maxWidth="xl">
             <DescPrinc descFirst={data.descFirst} descSec={data.descSec} />
             <ContentFade data-aos="fade-up" data-aos-delay="300">
               <Hidden xsDown>
