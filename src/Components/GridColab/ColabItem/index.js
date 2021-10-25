@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   cardPrinc: {
-    height: "60vh",
+    // height: "60vh",
     // backgroundColor: "#4caf50",
     width: "100%",
     [theme.breakpoints.down("sm")]: {
@@ -208,6 +208,7 @@ export default function ColabItem(props) {
                     <Card className={styles.cardPrinc}>
                       <CardActionArea
                         style={{
+                          display: "flex",
                           height: "inherit",
                           width: "inherit",
                           color: "#fff",

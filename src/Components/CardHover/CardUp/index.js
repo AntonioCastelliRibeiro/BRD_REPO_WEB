@@ -1,6 +1,6 @@
 import { memo } from "react";
-import { Link } from "react-router-dom";
-import { Box, Button, CardActionArea, Typography } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
+import { Box, CardActionArea, Typography } from "@material-ui/core";
 import { motion, useAnimation } from "framer-motion";
 import styled from "styled-components";
 
@@ -107,6 +107,7 @@ const initialItem = {
 };
 
 export default memo(function CardUp(props) {
+  const history = useHistory();
   const menuControls = useAnimation();
   const itemControls = useAnimation();
   const buttonControls = useAnimation();
@@ -142,7 +143,7 @@ export default memo(function CardUp(props) {
       onHoverStart={props.mobile ? "" : sequenceUp}
       onHoverEnd={props.mobile ? "" : sequenceDown}
     >
-      <CardActionAreaComp isLeft={props.isLeft} isMid={props.isMid} >
+      <CardActionAreaComp onClick={() => history.push(props.pathName)} isLeft={props.isLeft} isMid={props.isMid} >
         <ContentHover>
           <ContentDesc>
             <Box display="flex" flexDirection="column">

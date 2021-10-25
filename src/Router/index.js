@@ -5,43 +5,47 @@ import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import NavTop from "../Components/NavTop";
 import Foot from "../Components/Foot";
 
-// import GridMater from "../Components/GridMater";
-// import GridColab from "../Components/GridColab";
-// import ColabItem from "../Components/GridColab/ColabItem";
+import Principal from "../Components/Principal";
 
-// import GridEquipe from "../Components/GridEquipe";
-// import EquipeItem from "../Components/GridColab/ColabItem";
+import GridMater from "../Components/GridMater";
+import MaterItem from "../Components/GridMater/Mater/MaterItem";
+
+import GridColab from "../Components/GridColab";
+import ColabItem from "../Components/GridColab/ColabItem";
+
+import GridEquipe from "../Components/GridEquipe";
+import EquipeItem from "../Components/GridColab/ColabItem";
 
 import dataColab from "../Components/GridColab/data.js";
 import dataEquip from "../Components/GridEquipe/data.js";
 
-// import About from "../Components/About";
+import About from "../Components/About";
+import { AnimatePresence } from "framer-motion";
 
-
-
-const GridMater = lazy(() => import("../Components/GridMater"));
-const GridColab = lazy(() => import("../Components/GridColab"));
-const ColabItem = lazy(() => import("../Components/GridColab/ColabItem"));
-
-const GridEquipe = lazy(() => import("../Components/GridEquipe"));
-const EquipeItem = lazy(() => import("../Components/GridColab/ColabItem"));
-
-const About = lazy(() => import("../Components/About"));
 // import GridPrincipal from "../GridPrincipal";
 // import Recipe from "../Recipe";
 
 // import Movie from "../MyMovie";
 // import Photo from "../Photo";
 
-import Principal from "../Components/Principal";
+// const Principal = lazy(() => import("../Components/Principal"));
+// const MaterItem = lazy(() => import("../Components/GridMater/Mater/MaterItem"));
 
-import MaterItem from "../Components/GridMater/Mater/MaterItem";
+// const GridMater = lazy(() => import("../Components/GridMater"));
+// const GridColab = lazy(() => import("../Components/GridColab"));
+// const ColabItem = lazy(() => import("../Components/GridColab/ColabItem"));
+
+// const GridEquipe = lazy(() => import("../Components/GridEquipe"));
+// const EquipeItem = lazy(() => import("../Components/GridColab/ColabItem"));
+
+// const About = lazy(() => import("../Components/About"));
 
 export default function ReactRouter(props) {
   return (
     <Router>
-      <Suspense fallback={<div>carregando...</div>}>
-        <NavTop fontFamily={props.fontFamily} />
+      <NavTop fontFamily={props.fontFamily} />
+      <AnimatePresence>
+        {/* <Suspense fallback={<div>carregando...</div>}> */}
         <Switch>
           <Route
             path="/"
@@ -92,7 +96,10 @@ export default function ReactRouter(props) {
           />
         </Switch>
         <Foot fontFamily={props.fontFamily} />
-      </Suspense>
+
+      </AnimatePresence>
+      {/* </Suspense> */}
     </Router>
+
   );
 }

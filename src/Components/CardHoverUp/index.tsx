@@ -1,20 +1,32 @@
-import React from "react";
+import React, { Suspense, useEffect, useState, lazy } from "react";
+import styled from "styled-components";
+import { AnimateSharedLayout } from "framer-motion";
 import {
     Grid,
     createTheme,
     ThemeProvider,
-    Container,
     Hidden
 } from "@material-ui/core";
-import CardComp from "./CardComp";
-import CardCompMobile from "./CardCompMobile";
-import CardHoverPrinc from "./CardHoverPrinc";
-import styled from "styled-components";
-import { useEffect, useState } from "react";
+
+// import CardComp from "./CardComp";
+// import CardCompMobile from "./CardCompMobile";
+// import CardHoverPrinc from "./CardHoverPrinc";
+
+const CardComp = lazy(() => import("./CardComp"));
+const CardCompMobile = lazy(() => import("./CardCompMobile"));
+const CardHoverPrinc = lazy(() => import("./CardHoverPrinc"));
+
+
 import iCard from "./interface";
 import objCard from "../GridMater/data.js";
-import { AnimateSharedLayout } from "framer-motion";
 import ButtonLoad from "./ButtonLoad";
+import SkeletonComp from "../SkeletonComp";
+
+
+const ContentBtnLoad = styled.div`
+    padding-top: 20px;
+    padding-bottom: 20px;
+`;
 
 const theme = createTheme({
     typography: {
@@ -72,19 +84,23 @@ export default function CardHoverUp(props: IProps) {
     //   return executarFuncion;
     // }, [scrollYState, onNumLoadPost]);
 
+
+
     function retornarPrinc(e: iCard, count: number) {
         return (
-            <CardHoverPrinc
-                fontFamily={props.fontFamily}
-                count={count}
-                title={e.title}
-                search={e.search}
-                onSetMaterItem={() => props.onSetMaterItem(e.search)}
-                desc={e.desc}
-                descSec={e.descSec}
-                buttonDesc={e.buttonDesc}
-                image={e.img}
-            />
+            <Suspense fallback={<SkeletonComp principal={true} />} >
+                <CardHoverPrinc
+                    fontFamily={props.fontFamily}
+                    count={count}
+                    title={e.title}
+                    search={e.search}
+                    onSetMaterItem={() => props.onSetMaterItem(e.search)}
+                    desc={e.desc}
+                    descSec={e.descSec}
+                    buttonDesc={e.buttonDesc}
+                    image={e.img}
+                />
+            </Suspense>
         );
     }
 
@@ -94,14 +110,16 @@ export default function CardHoverUp(props: IProps) {
             return false;
         } else {
             return (
-                <GridComp key={count} item xl={4} md={4} sm={6} xs={12}>
-                    <Hidden xsDown>
-                        <CardComp fontFamily={props.fontFamily} count={count} datacard={e} onSetMaterItem={(e) => props.onSetMaterItem(e)} />
-                    </Hidden>
-                    <Hidden smUp>
-                        <CardCompMobile fontFamily={props.fontFamily} count={count} datacard={e} onSetMaterItem={(e) => props.onSetMaterItem(e)} />
-                    </Hidden>
-                </GridComp>
+                <Suspense fallback={<SkeletonComp principal={false} />} >
+                    <GridComp key={count} item xl={4} md={4} sm={6} xs={12}>
+                        <Hidden xsDown>
+                            <CardComp fontFamily={props.fontFamily} count={count} datacard={e} onSetMaterItem={(e) => props.onSetMaterItem(e)} />
+                        </Hidden>
+                        <Hidden smUp>
+                            <CardCompMobile fontFamily={props.fontFamily} count={count} datacard={e} onSetMaterItem={(e) => props.onSetMaterItem(e)} />
+                        </Hidden>
+                    </GridComp>
+                </Suspense>
             );
         }
     }
@@ -117,16 +135,18 @@ export default function CardHoverUp(props: IProps) {
                     {dataCard.map((e, count) => count === 0 ? retornarPrinc(e, count) : retornarSec(e, count))}
                 </AnimateSharedLayout>
             </GridContainer>
-            <ButtonLoad
-                fontFamily={props.fontFamily}
-                numPost={onNumLoadPost}
-                sizeObj={C_SIZE_DATA}
-                onClick={() =>
-                    setTimeout(() => {
-                        setNumLoadPost(onNumLoadPost + 3);
-                    }, 300)
-                }
-            />
+            <ContentBtnLoad>
+                <ButtonLoad
+                    fontFamily={props.fontFamily}
+                    numPost={onNumLoadPost}
+                    sizeObj={C_SIZE_DATA}
+                    onClick={() =>
+                        setTimeout(() => {
+                            setNumLoadPost(onNumLoadPost + 3);
+                        }, 300)
+                    }
+                />
+            </ContentBtnLoad>
         </ThemeProvider>
     );
 }

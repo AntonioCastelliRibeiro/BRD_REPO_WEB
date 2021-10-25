@@ -21,8 +21,6 @@ const ButtonComp = styled(Button) <iButtonComp>`
 `;
 
 const ContentButtonLoad = styled(motion.div)`
-  padding-top: 20px;
-  padding-bottom: 20px;
   width: 100%;
   display: flex;
   justify-content: center;

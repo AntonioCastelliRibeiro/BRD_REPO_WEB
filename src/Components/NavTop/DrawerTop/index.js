@@ -1,8 +1,10 @@
-import styled from "styled-components";
-import React, { useState, useEffect } from "react";
-import { Drawer } from "@material-ui/core";
-import AHrefHover from "../../AHrefHover";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import styled from "styled-components";
+
+import { Drawer } from "@material-ui/core";
+
+import AHrefHover from "../../AHrefHover";
 import Slider from "../../Slider";
 import images from "./data.js";
 
@@ -63,7 +65,7 @@ export default function DrawerTop(props) {
           data-aos="fade-up"
           data-aos-delay="800"
         >
-          <AHrefHover desc={"Bom dia rural"} fontSize={"4.6976vw"} lineHeight={"0.7vw"}
+          <AHrefHover desc={"bom dia rural"} fontSize={"4.6976vw"} lineHeight={"0.7vw"}
             onClick={() => onCloseProps("/")}
             onHoverStart={() => setPage(1)}
           />

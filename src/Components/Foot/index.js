@@ -1,11 +1,5 @@
-import React, { useEffect } from "react";
-// import { useLocation } from "react-router-dom";
-
-import logo from "../../Image/logo.svg";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import YouTubeIcon from "@material-ui/icons/YouTube";
-
+import React from "react";
+import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Avatar,
@@ -16,6 +10,13 @@ import {
   Divider,
   Typography
 } from "@material-ui/core";
+
+
+import logo from "../../Image/logo.svg";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import YouTubeIcon from "@material-ui/icons/YouTube";
+
 
 const useStyles = makeStyles(({ props, typography, palette, breakpoints }) => ({
   legalLink: {
@@ -72,25 +73,16 @@ const useStyles = makeStyles(({ props, typography, palette, breakpoints }) => ({
 
 const Foot = function FootComp(props) {
   const classes = useStyles(props);
-  // const location = useLocation();
-  // // const history = useHistory();
-
-  // useEffect(() => {
-  //   console.log(location.pathname);
-  // }, [location.pathname]);
+  const history = useHistory();
 
   function setarRouter(AQueryParams) {
-    // history.push(AQueryParams);
-    // onClose({state: false, page: AQueryParams});
-    // props.onSetarPageFoto(AQueryParams);
+    history.push(AQueryParams);
   }
 
   return (
     <Box
-      // data-aos="fade"
       position="absolute"
       fontFamily={props.fontFamily}
-      // bgcolor={"rgb(8, 127, 35)"}
       bgcolor={"transparent"}
       width={"100%"}
     >
@@ -98,31 +90,37 @@ const Foot = function FootComp(props) {
         <Box pt={8} pb={1}>
           <div style={{ display: "flex", flexWrap: "wrap" }}>
             <div style={{ flexGrow: 2 }}>
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <div style={{ paddingRight: 2 }}>
-                  <Avatar style={{ height: "56px", width: "56px" }} src={logo} />
+              <Button style={{ color: "#fff", paddingRight: 20 }} onClick={() => setarRouter("/")} >
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={{ paddingRight: 0 }}>
+                    <Avatar style={{ height: "56px", width: "56px" }} src={logo} />
+                  </div>
+                  <div style={{ paddingLeft: 8 }}>
+                    <Typography
+                      style={{ fontFamily: props.fontFamily, color: "#fff", textTransform: "lowercase" }}
+                      variant={"h6"}
+                    >
+                      bom dia rural
+                    </Typography>
+                  </div>
                 </div>
-                <div style={{ paddingLeft: 8 }}>
-                  <Typography
-                    style={{ fontFamily: props.fontFamily, color: "#fff" }}
-                    variant={"h6"}
-                  >
-                    bom dia rural
-                  </Typography>
-                </div>
-              </div>
+              </Button>
               <div style={{ display: "flex", flexWrap: "wrap" }}>
-                <Button className={classes.itemSobre} size="small">
-                  Equipe
+                <Button className={classes.itemSobre} onClick={() => setarRouter("/materias")} size="small">
+                  Materias
                 </Button>
                 <Button
                   className={classes.itemSobre}
-                  onClick={() => setarRouter("/equipe")}
+                  onClick={() => setarRouter("/colaboradores")}
                   size="small"
                 >
                   Colaboradores
                 </Button>
-                <Button className={classes.itemSobre} size="small">
+                <Button className={classes.itemSobre} onClick={() => setarRouter("/equipe")} size="small">
+                  Equipe
+                </Button>
+
+                <Button className={classes.itemSobre} onClick={() => setarRouter("/sobre")} size="small">
                   Sobre
                 </Button>
               </div>
@@ -148,7 +146,7 @@ const Foot = function FootComp(props) {
           <div className={classes.boxNavTermos}>
             <div style={{ flexGrow: 1, flexShrink: 0, marginLeft: "-16px" }}>
               <div style={{ display: "flex" }}>
-                <Box className={classes.boxNavManu} component="div">
+                {/* <Box className={classes.boxNavManu} component="div">
                   <Button className={classes.itemSobre}>
                     Termos e Condições
                   </Button>
@@ -157,7 +155,7 @@ const Foot = function FootComp(props) {
                   </Button>
                   <Button className={classes.itemSobre}>Acessibilidade</Button>
                   <Button className={classes.itemSobre}>Legal</Button>
-                </Box>
+                </Box> */}
               </div>
             </div>
             <div>

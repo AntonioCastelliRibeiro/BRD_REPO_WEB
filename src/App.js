@@ -1,9 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter } from "react-router-dom";
 import ReactRouter from "./Router";
-
-import NavTop from "./Components/NavTop";
-import Foot from "./Components/Foot";
 
 import Aos from "aos";
 import "./styles.css";
@@ -17,10 +13,6 @@ export default function App(props) {
   }, []);
 
   return (
-    <BrowserRouter>
-      <NavTop fontFamily={font} />
-      <ReactRouter fontFamily={font} />
-      <Foot fontFamily={font} />
-    </BrowserRouter>
+    <ReactRouter fontFamily={font} />
   );
 }

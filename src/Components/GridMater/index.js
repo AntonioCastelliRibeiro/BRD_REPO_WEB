@@ -2,15 +2,16 @@ import { useEffect } from "react";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import styled from "styled-components";
 import { Container } from "@material-ui/core";
+
 import MaterCapaApresent from "./MaterCapaApresent";
 import CardHoverUp from "../CardHoverUp";
 import objPrinc from "../../Comum";
 
 const ContentPrinc = styled.div`
+  min-height: 1000px;
   position: relative;
   background: rgba(0,69,0,1);
   background: linear-gradient(339deg, rgba(0,0,0,1) 2%, rgba(0,69,0,1) 92%);
-  /* padding-bottom: 40px; */
 `;
 
 const ContentDescTop = styled.div`
@@ -59,9 +60,9 @@ export default function GridMater(props) {
   return (
     <ContentBgColor>
       <MaterCapaApresent {...propsMaterCapa} />
-      <ContentPrinc data-aos="fade-up">
+      <ContentPrinc>
         <Container maxWidth="lg">
-          <ContentDescTop data-aos="fade" fontFamily={props.fontFamily} children={<DescTop children={C_DESC_TOP} />} />
+          <ContentDescTop fontFamily={props.fontFamily} children={<DescTop children={C_DESC_TOP} />} />
           <CardHoverUp fontFamily={props.fontFamily} onSetMaterItem={(e) => onSetMaterItem(e)} />
         </Container>
       </ContentPrinc>

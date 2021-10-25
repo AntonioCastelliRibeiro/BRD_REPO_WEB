@@ -1,10 +1,8 @@
 import { useEffect, useState, useRef } from "react";
-import mopvieIntro from "../../Video/timelapse.mp4";
 const movieIntro = "https://bdrbucket.s3.sa-east-1.amazonaws.com/timelapse.mp4";
 import { useScroll } from "react-use-gesture";
 
 export default function CompMovie() {
-  // const [onPlay, setOnPlay] = useState(false);
   const [render, setRender] = useState(true);
   const scroll = useScroll(
     ({ offset: [x, y] }) => {
@@ -14,19 +12,23 @@ export default function CompMovie() {
       domTarget: window
     }
   );
-  // const [Scroll, onScroll] = useState(0);
   const ref = useRef(0);
 
   async function setPlayPause(AEixoY) {
     const C_SCROLL_TOP = Math.abs(AEixoY);
-    if (C_SCROLL_TOP >= ref.current.scrollHeight * 0.5) {
+    try {
+      const C_SCROLL_HEIGH = ref.current.scrollHeight;
+      if (C_SCROLL_HEIGH !== null) {
+        if (C_SCROLL_TOP >= ref.current.scrollHeight * 0.5) {
+          await playPauseMovie(false);
+        } else {
+          playPauseMovie(true);
+        }
+      }
+    } catch (error) {
       await playPauseMovie(false);
-    } else {
-      playPauseMovie(true);
     }
   }
-
-  // useEffect(scroll, [scroll]);
 
   useEffect(() => {
     if (render) {

@@ -16,7 +16,7 @@ const C_FOUR_DESC =
 const C_FOUR_NAME = "- Name Test, fundador e presidente executivo do Teste";
 
 export default {
-  aboutTitle: "Sobre Bom Dia Rural",
+  aboutTitle: "Sobre o bom dia rural",
   aboutImage: C_ABOUT_IMG,
   firstDesc: C_FIRST_DESC,
   secDescTitle: "Tv Sudoeste",

@@ -1,5 +1,5 @@
-import React, { memo } from "react";
-
+import React, { useEffect } from "react";
+import styled from "styled-components";
 import DrawerTop from "./DrawerTop";
 
 import { AppBar, Container, Toolbar, IconButton } from "@material-ui/core";
@@ -8,8 +8,23 @@ import { Menu, Close } from "@material-ui/icons";
 
 import dataModal from "./DrawerTop/data.js";
 
+const IconButtonComp = styled(IconButton)`
+  background-color: ${props => props.open ? "transparent" : "#fff"};
+  box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
+  transition: 0.8s ease-in-out;
+`;
+
 export default React.memo(function TemporaryDrawer(props) {
   const [open, setOpen] = React.useState(false);
+
+  useEffect(() => {
+    dataModal.map((image, count) => {
+      const newImage = new Image();
+      newImage.src = image;
+      window[image] = newImage;
+    });
+
+  }, []);
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -22,14 +37,21 @@ export default React.memo(function TemporaryDrawer(props) {
   };
 
   function setOpenModal() {
-    dataModal.map((image, count) => {
-      const newImage = new Image();
-      newImage.src = image;
-      window[image] = newImage;
-    });
     setTimeout(() => {
       setOpen(!open);
     }, 200)
+  }
+
+  const IconComp = (e) => {
+    if (e.open) {
+      return (
+        <Close style={{ color: "#fff", transition: "ease 0.3s" }} />
+      )
+    } else {
+      return (
+        <Menu />
+      )
+    }
   }
 
   return (
@@ -44,25 +66,13 @@ export default React.memo(function TemporaryDrawer(props) {
         >
           <Container size="xl">
             <Toolbar>
-              {/* <Paper elevation={6}> */}
-              <IconButton
-                style={{
-                  transition: "background-color 0.8s ease-in-out",
-                  backgroundColor: open ? "transparent" : "#fff",
-                  boxShadow:
-                    "0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%)"
-                }}
+              <IconButtonComp
+                open={open}
                 edge="start"
                 aria-label="open drawer"
-                onClick={() => setOpenModal()
-                  // setTimeout(() => {
-                  //   setOpen(!open);
-                  // }, 200)
-                }
-              >
-                {open ? <Close style={{ color: "white" }} /> : <Menu />}
-              </IconButton>
-              {/* </Paper> */}
+                onClick={() => setOpenModal()}
+                children={<IconComp open={open} />}
+              />
             </Toolbar>
           </Container>
         </AppBar>
