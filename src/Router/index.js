@@ -96,7 +96,6 @@ export default function ReactRouter(props) {
           />
         </Switch>
         <Foot fontFamily={props.fontFamily} />
-
       </AnimatePresence>
       {/* </Suspense> */}
     </Router>

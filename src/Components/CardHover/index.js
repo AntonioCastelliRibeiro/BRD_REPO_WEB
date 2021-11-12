@@ -10,7 +10,7 @@ import DescPrinc from "./DescPrinc";
 const Content = styled.div`
   display: flex;
   height: 450px;
-  border-radius: 15px;
+  /* border-radius: 15px; */
   background-color: #b3b3b3;
 `;
 
@@ -20,6 +20,7 @@ const ContentPrinc = styled.div`
   height: 100%;
   width: 100%;
   background-color: transparent;
+  padding-bottom: 130px;
   /* background-color: rgb(8, 127, 35); */
   /* background-color: ${(props) =>
     props.image === data.image[0] ? "#8b582f" : "#766517"}; */
@@ -29,9 +30,11 @@ const ContentPrinc = styled.div`
   transition: background-color 300ms linear;
 `;
 
+const ContentSec = styled.div``;
+
 const ContainerPrinc = styled(Container)`
-  padding-top: 30px;
-  padding-bottom: 130px;
+  /* padding-top: 30px; */
+  /* padding-bottom: 130px; */
 `;
 
 const ContentFade = styled.div``;
@@ -61,11 +64,13 @@ export default function CardHover(props) {
     } else {
       return (
         <ContentPrinc fontFamily={props.fontFamily} image={image}>
-          <ContainerPrinc maxWidth="xl">
-            <DescPrinc descFirst={data.descFirst} descSec={data.descSec} />
+          <ContentSec>
+            <ContainerPrinc maxWidth="xl">
+              <DescPrinc descFirst={data.descFirst} descSec={data.descSec} />
+            </ContainerPrinc>
             <ContentFade data-aos="fade-up" data-aos-delay="300">
               <Hidden xsDown>
-                <Content >
+                <Content>
                   <CardUp
                     key="0"
                     isLeft
@@ -151,7 +156,7 @@ export default function CardHover(props) {
                 <ImageComp image={data.image[2]} />
               </ContentFade>
             </Hidden>
-          </ContainerPrinc>
+          </ContentSec>
         </ContentPrinc>
       );
     }

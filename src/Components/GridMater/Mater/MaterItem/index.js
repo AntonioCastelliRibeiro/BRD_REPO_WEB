@@ -11,7 +11,8 @@ import {
   makeStyles,
   Modal,
   IconButton,
-  CircularProgress
+  CircularProgress,
+  Typography,
 } from "@material-ui/core";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 import objPrinc from "../../../../Comum";
@@ -20,6 +21,7 @@ import Slider from "../../../Slider";
 import objData from "../../data.js";
 import CardNextPrev from "./CardNextPrev";
 import CrSelMater from "./CrSelMater";
+import MaterCapaApresent from "../../MaterCapaApresent";
 
 // import logo from "../../Image/logo.svg";
 
@@ -56,10 +58,6 @@ const useStyles = makeStyles((theme) => ({
 const transition = "ease 0.3s";
 
 const ContentOverFlowHidden = styled.div`
-  height: 100%;
-  background: rgba(0,69,0,1);
-  background: linear-gradient(339deg, rgba(0,0,0,1) 2%, rgba(0,69,0,1) 92%);
-  padding-bottom: 48px;
   overflow: hidden;
 `;
 
@@ -69,7 +67,7 @@ const HeaderComp = styled.header`
 
 const PaperComp = styled(Paper)`
   font-family: ${(props) => props.fontFamily};
-  padding-top: 70px;
+  padding-top: 72px;
   border: none;
   display: flex;
   justify-content: space-evenly;
@@ -105,31 +103,26 @@ const ContentFlex = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 27px 27px 27px 9px;
+  /* padding: 27px 27px 27px 9px; */
+  padding: 16px 0 16px 0;
 `;
 
 const TitleComp = styled.div`
-  font-weight: 700;
+  font-weight: normal;
   line-height: 1;
-  letter-spacing: 0;
-  font-size: 46px;
-  padding-bottom: 9px;
+  letter-spacing: 0.25px;
+  font-size: 34px;
+  padding-bottom: 8px;
 `;
 
-const DescComp = styled.div`
-  display: flex;
-  justify-content: left;
-  width: 100%;
-  font-size: 20px;
-  line-height: 1.5;
-  font-weight: 400;
-  text-align: left;
-  padding-bottom: 9px;
+const TypographyTittleDescComp = styled(Typography)`
+  padding-bottom: 8px;
 `;
 
 const ContentImagePrinc = styled.div`
   height: 100%;
   width: 100%;
+  border-radius: 9px;
 `;
 
 const ContentImageSec = styled.div`
@@ -137,21 +130,17 @@ const ContentImageSec = styled.div`
   height: 60vh;
   justify-content: center;
   width: 100%;
+  border-radius: 9px;
 `;
 
 const ContentTextPrinc = styled.div`
   color: #fff;
   font-family: ${(props) => props.fontFamily};
+  padding-bottom: 8px;
 `;
 
-const TextPrinc = styled.div`
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 1.5;
-  letter-spacing: 0;
-  margin-bottom: 1.2em;
-  height: inherit;
-  width: 100%;
+const TypographyDescComp = styled.div`
+  padding-bottom: 8px;
 `;
 
 const ArticleComp = styled.article`
@@ -172,10 +161,11 @@ const CardActionComp = styled(CardActionArea)`
   height: 100%;
   width: 100%;
   color: #fff;
+  border-radius: 9px;
 `;
 
 const CardComp = styled(Card)`
-  border-radius: 0;
+  border-radius: 9px;
   height: inherit;
   width: 100%;
 `;
@@ -186,6 +176,7 @@ const CardMediaComp = styled(CardMedia)`
   height: 100%;
   width: 100%;
   filter: brightness(80%);
+  border-radius: 9px;
   transition: ${transition};
 `;
 
@@ -221,6 +212,7 @@ const IconPlay = styled(PlayCircleOutlineIcon)`
 const ContentHeightWidth = styled.div`
   height: inherit;
   width: 100%;
+  touch-action: pan-x;
 `;
 
 const IframeComp = styled.iframe`
@@ -240,6 +232,14 @@ const CircularProgressComp = styled(CircularProgress)`
   height: 100px;
   width: 100px;
   color: #4e9b31;
+`;
+
+const ContentColor = styled.div`
+  min-height: 1000px;
+  position: relative;
+  background: rgba(0,69,0,1);
+  background: linear-gradient(339deg, rgba(0,0,0,1) 2%, rgba(0,69,0,1) 92%);
+  padding-bottom: 24px;
 `;
 
 
@@ -270,7 +270,6 @@ export default function MaterItem(props) {
   }, [refresh]);
 
   function retornarState() {
-
     let dataReturn = null;
     for (let index = 0; index < data.length; index++) {
       if (data[index].search.toString() === id) {
@@ -298,6 +297,7 @@ export default function MaterItem(props) {
             border: "none",
             width: "100%",
             height: "inherit",
+            borderRadius: "9px",
             backgroundColor: "rgb(222, 222, 222)"
           }}
           // allowfullscreen
@@ -352,10 +352,19 @@ export default function MaterItem(props) {
   const C_INDEXPREV = (dataMater.index === 0 ? data.length - 1 : dataMater.index - 1);
   const C_INDEXNEXT = (dataMater.index === 0 ? dataMater.index + 1 : dataMater.index === data.length - 1 ? 0 : dataMater.index + 1);
 
+  const propsMaterCapa = {
+    fontFamily: props.fontFamily,
+    img: "https://images.unsplash.com/photo-1635183528637-14d9d852a20d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2098&q=80",
+    title: "",
+    fontSize: ""
+  }
+
+
   function retornarConteudo() {
     return (
       <ContentOverFlowHidden>
-        <Modal
+        <MaterCapaApresent ocultaDesc={true} noHeight={true} {...propsMaterCapa} />
+        {/* <Modal
           style={{ top: "0vh", zIndex: 1401 }}
           open={onShowModal.open}
           onClose={(e) =>
@@ -371,63 +380,65 @@ export default function MaterItem(props) {
               }
             />
           }
-        />
-        <Container data-aos="fade-up" maxWidth="lg">
-          <HeaderComp>
-            <PaperComp elevation={0} fontFamily={props.fontFamily}>
-              <ContentDescPrinc>
-                <ContentDescSec data-aos="fade-up">
-                  <ContentFlex className={styles.boxDesc}>
-                    <TitleComp children={dataMater.data.title} />
-                    <DescComp children={dataMater.data.desc} />
-                    <ButtonComp
-                      name={onPlayMovie ? "Assitindo" : "Assistir"}
-                      onClick={() => setPlayMovieTime()}
-                    />
-                  </ContentFlex>
-                </ContentDescSec>
-              </ContentDescPrinc>
-              <ContentImagePrinc children={<ContentImageSec children={retornarImgMovie()} />} />
-            </PaperComp>
-          </HeaderComp>
-          <ArticleComp>
-            <ContentTextPrinc fontFamily={props.fontFamily}>
-              <TextPrinc data-aos="fade-up" children={dataMater.data.textPrinc} />
-              <TextPrinc data-aos="fade-up" children={dataMater.data.textSec} />
-              <TextPrinc data-aos="fade-up" children={dataMater.data.textThird} />
-            </ContentTextPrinc>
-          </ArticleComp>
-          <ArticleComp>
-            <ContentHeightWidth data-aos="fade-up">
-              {/* <Slider */}
-              <CrSelMater
-                fontFamily={props.fontFamily}
-                // setScrollTop={() => window.scrollTo(0, 0)}
-                // color="#4e9b31"
-                // Mater
-                // onModal={false}
-                dataImage={dataMater.data.slideImage}
-              // onShowModal={(e) =>
-              //   setShowModal({ open: true, numberCarousel: e })
-              // }
-              />
-            </ContentHeightWidth>
-          </ArticleComp>
-          <ArticleComp>
-            <div style={{ width: "100%" }} data-aos="fade-up">
-              <CardNextPrev
-                fontFamily={props.fontFamily}
-                setHisory={(e) => setHisory(e)}
-                index={dataMater.index}
-                indexPrev={C_INDEXPREV}
-                indexNext={C_INDEXNEXT}
-                data={data}
-                type="Matéria"
-              />
-            </div>
-          </ArticleComp>
-        </Container>
-      </ContentOverFlowHidden>
+        /> */}
+        <ContentColor>
+          <Container data-aos="fade-up" maxWidth="lg">
+            <HeaderComp>
+              <PaperComp elevation={0} fontFamily={props.fontFamily}>
+                <ContentDescPrinc>
+                  <ContentDescSec data-aos="fade-up">
+                    <ContentFlex className={styles.boxDesc}>
+                      <Typography variant="h4" children={dataMater.data.title} />
+                      <TypographyTittleDescComp variant="subtitle1" children={dataMater.data.desc} />
+                      <ButtonComp
+                        name={onPlayMovie ? "Assitindo" : "Assistir"}
+                        onClick={() => setPlayMovieTime()}
+                      />
+                    </ContentFlex>
+                  </ContentDescSec>
+                </ContentDescPrinc>
+                <ContentImagePrinc children={<ContentImageSec children={retornarImgMovie()} />} />
+              </PaperComp>
+            </HeaderComp>
+            <ArticleComp>
+              <ContentTextPrinc fontFamily={props.fontFamily}>
+                <TypographyDescComp variant="body1" data-aos="fade-up" children={dataMater.data.textPrinc} />
+                <TypographyDescComp variant="body1" data-aos="fade-up" children={dataMater.data.textSec} />
+                <TypographyDescComp variant="body1" data-aos="fade-up" children={dataMater.data.textThird} />
+              </ContentTextPrinc>
+            </ArticleComp>
+            <ArticleComp>
+              <ContentHeightWidth data-aos="fade-up">
+                {/* <Slider */}
+                <CrSelMater
+                  fontFamily={props.fontFamily}
+                  // setScrollTop={() => window.scrollTo(0, 0)}
+                  // color="#4e9b31"
+                  // Mater
+                  // onModal={false}
+                  dataImage={dataMater.data.slideImage}
+                // onShowModal={(e) =>
+                //   setShowModal({ open: true, numberCarousel: e })
+                // }
+                />
+              </ContentHeightWidth>
+            </ArticleComp>
+            <ArticleComp>
+              <div style={{ width: "100%" }} data-aos="fade-up">
+                <CardNextPrev
+                  fontFamily={props.fontFamily}
+                  setHisory={(e) => setHisory(e)}
+                  index={dataMater.index}
+                  indexPrev={C_INDEXPREV}
+                  indexNext={C_INDEXNEXT}
+                  data={data}
+                  type="Matéria"
+                />
+              </div>
+            </ArticleComp>
+          </Container>
+        </ContentColor>
+      </ContentOverFlowHidden >
     );
   }
 

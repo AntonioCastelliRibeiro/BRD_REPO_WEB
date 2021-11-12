@@ -12,9 +12,9 @@ interface IDescHoverUp {
 }
 
 const DescHoverUp = styled(motion.div) <IDescHoverUp>`
-  font-size: 3vw;
+  font-size: 55px;
   font-weight: 600;
-  letter-spacing: 0;
+  letter-spacing: 1px;
   opacity: ${(props) => (props.hover ? 1 : "0")};
   text-align: center;
   color: #fff;
@@ -24,6 +24,9 @@ const DescHoverUp = styled(motion.div) <IDescHoverUp>`
   transition: ${transition};
   transition-delay: ${(props) => props.transitionDelay};
   transition-property: all;
+  @media (max-width: 900px){
+    font-size: 35px;
+  }
 `;
 
 export default function DescHover(props: IProps) {

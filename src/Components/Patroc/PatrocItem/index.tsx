@@ -35,15 +35,20 @@ const ImgAspas = styled.img`
 
 const ContentDesc = styled.div`
   font-style: italic;
-  font-size: 1.0625rem;
-  line-height: 1.55em;
+  font-size: 1.1025rem;
   padding: 0.9375rem 1.875rem;
+  line-height: 1.75;
+  letter-spacing: 1px;
+  font-weight: 800;
 `;
 
 const ContentName = styled.div`
   /* color: #3c4858; */
   font-weight: 700;
-  font-size: 1.125rem;
+  font-size: 1.145rem;
+  line-height: 1.75;
+  letter-spacing: 1px;
+  font-weight: 800;
 `;
 
 const ContentSocial = styled.div`
@@ -51,6 +56,9 @@ const ContentSocial = styled.div`
   font-size: 0.75rem;
   text-transform: uppercase;
   font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 1px;
+  /* font-weight: 800; */
 `;
 
 const ContentLogo = styled.div`

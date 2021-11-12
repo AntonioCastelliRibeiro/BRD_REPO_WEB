@@ -35,7 +35,7 @@ const ContentPrinc = styled.div<IContent>`
   height: ${C_SIZE_HEIGHT};
   user-select: none;
   width: 100%;
-  border-radius: ${(props) => (props.mobile ? "0px" : "18px")};
+  /* border-radius: ${(props) => (props.mobile ? "0px" : "18px")}; */
   overflow: hidden;
   display: flex;
   z-index: 1;
@@ -48,7 +48,7 @@ const ContentFirst = styled.div<IContent>`
   background-color: transparent;
   /* background-color: rgb(8, 127, 35); */
   /* background-image: linear-gradient(#37993a,#3a8d36); */
-  padding-top: 30px;
+  padding-top: 36px;
   padding-bottom: 130px;
   overflow: hidden;
   display: flex;
@@ -62,7 +62,7 @@ const ContentPrincMobile = styled.div<IContent>`
   height: 100%;
   user-select: none;
   width: 100%;
-  border-radius: ${(props) => (props.mobile ? "0px" : "18px")};
+  /* border-radius: ${(props) => (props.mobile ? "0px" : "18px")}; */
   overflow: hidden;
   display: flex;
   z-index: 1;
@@ -78,7 +78,7 @@ const CardMediaComp = styled(CardMedia)`
 
 const ContentLeft = styled.div<IContent>`
   height: ${(props) => (props.mobile ? "400px" : "100%")};
-  border-radius: ${(props) => (props.mobile ? "18px" : "0px")};
+  /* border-radius: ${(props) => (props.mobile ? "18px" : "0px")}; */
   width: ${(props) => (props.mobile ? "100%" : props.hover ? "0%" : "100%")};
   transition: ${transition};
   overflow: hidden;
@@ -86,7 +86,7 @@ const ContentLeft = styled.div<IContent>`
 
 const ContentRight = styled.div<IContent>`
   height: ${(props) => (props.mobile ? "400px" : "100%")};
-  border-radius: ${(props) => (props.mobile ? "18px" : "0px")};
+  /* border-radius: ${(props) => (props.mobile ? "18px" : "0px")}; */
   width: ${(props) => (props.mobile ? "100%" : props.hover ? "0%" : "100%")};
   overflow: hidden;
   transition: ${transition};
@@ -145,8 +145,10 @@ export default function CardHoverLeftRight(props: IProps) {
 
     return (
         <ContentFirst>
-            <Container maxWidth="xl">
-                <DescPrinc fontFamily={props.fontFamily} descFirst={props.firstDescScroll} descSec={C_DESC_SEC} />
+            <div>
+                <Container maxWidth="xl">
+                    <DescPrinc fontFamily={props.fontFamily} descFirst={props.firstDescScroll} descSec={C_DESC_SEC} />
+                </Container>
                 <div data-aos="fade-up" data-aos-delay="300">
                     <Hidden smDown>
                         <ContentPrinc mobile={false}>
@@ -279,7 +281,7 @@ export default function CardHoverLeftRight(props: IProps) {
                         </ContentPrincMobile>
                     </Hidden>
                 </div>
-            </Container>
+            </div>
         </ContentFirst>
     );
 }

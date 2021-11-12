@@ -33,6 +33,7 @@ const DescImage = styled.div`
   color: #fff;
   font-size: ${(props) => (props.fontSize ? props.fontSize : "9vw")};
   z-index: 1;
+  letter-spacing: 1px;
   &:hover {
     transform: scale(1.04);
   }
@@ -52,6 +53,7 @@ const DescScroll = styled.div`
   font-size: "3vw";
   z-index: 1;
   padding-left: 40px;
+  letter-spacing: 1px;
 `;
 
 const BoxPrinc = styled.div`

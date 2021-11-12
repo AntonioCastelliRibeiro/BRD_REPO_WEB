@@ -18,7 +18,7 @@ interface IContent {
 const CardActionAreaComp = styled(CardActionArea)`
   height: inherit;
   width: 190px;
-  color: #f0e1ce;
+  color: rgb(8, 127, 35);
   font-family: inherit;
   overflow: hidden;
   border-radius: 18px;
@@ -36,14 +36,17 @@ const ButtonCompLeft = styled.div<IContent>`
   padding: 17px 33px 17px 33px;
   user-select: none;
   opacity: ${(props) => (props.hover ? 0 : 1)};
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 3px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
   background-color:  #fff;
   /* background-color: ${(props) => (props.hoverBg ? "rgb(8, 127, 35)" : "#fff")}; */
   transition: ${transition};
   transition-delay: ${(props) => props.transitionDelay};
   transition-property: all;
+  @media (max-width: 900px){
+    font-size: 15px;
+  }
 `;
 
 const ContentButtonLeft = styled(motion.div) <IContent>`

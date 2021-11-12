@@ -96,6 +96,7 @@ const CompSlider = styled(motion.div)`
 
 const CompSliderNav = styled(motion.div)`
   cursor: grab;
+  filter: brightness(50%);
   height: 100vh;
   width: 100%;
   position: absolute;

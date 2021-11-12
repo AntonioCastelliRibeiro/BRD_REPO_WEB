@@ -12,7 +12,7 @@ const Content = styled(motion.div)`
   max-height: 200px;
   min-height: 200px;
   overflow: hidden;
-  border-radius: 50px;
+  border-radius: 9px;
 `;
 
 const ContentBase = styled(motion.div)`
@@ -20,14 +20,14 @@ const ContentBase = styled(motion.div)`
   justify-content: center;
   width: 100%;
   height: 100%;
-  padding-top: 20px;
   overflow: hidden;
   align-items: center;
+  border-radius: 9px;
 `;
 
 export default function CardNextPrev(props) {
   return (
-    <ContentBase  >
+    <ContentBase>
       <Content>
         <Hidden xsDown>
           <CardLeftComp

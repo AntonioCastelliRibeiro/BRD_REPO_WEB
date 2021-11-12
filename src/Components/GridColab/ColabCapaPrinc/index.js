@@ -65,15 +65,17 @@ const Content = styled.div`
 const Title = styled.span`
   display: block;
   margin-bottom: 4px;
-  font-size: 1.25em;
+  font-size: 20px;
+  letter-spacing: 1px;
   font-weight: 800;
   transition: ${transition};
 `;
 
 const Description = styled.span`
   display: block;
-  font-weight: 600;
-  font-size: 0.875em;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 1px;
   transition: ${transition};
   transition-delay: 0.04s;
 `;
@@ -180,7 +182,7 @@ function retornarProfile(props, location) {
 function retornarPatroc(props, location) {
   return (
     <motion.div
-      style={{ width: "100%", paddingTop: 10 }}
+      style={{ width: "100%" }}
     // drag
     // dragElastic={0.03}
     // dragConstraints={{

@@ -12,14 +12,14 @@ const CardMediaComp = styled(CardMedia)`
   height: 300px;
   width: 100%;
   margin-bottom: 60px;
-  filter: brightness(80%);
+  filter: brightness(65%);
   transition: ${transition};
 `;
 
 const CardComponent = styled(motion.div)`
   height: inherit;
   width: inherit;
-  border-radius: 18px;
+  border-radius: 9px;
   transition: ${transition};
 `;
 
@@ -28,14 +28,15 @@ const CardActionComp = styled.div`
 `;
 
 const ButtonComp = styled(Typography)`
-  font-family: inherit;
+  /* font-family: inherit; */
   padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 9px;
   background-color: transparent;
   color: black;
   border: 1px solid #66bb6a;
   filter: brightness(89%);
   transition: ${transition};
+  /* letter-spacing: 1px; */
 `;
 
 const ContentSec = styled(motion.div)`
@@ -43,7 +44,7 @@ const ContentSec = styled(motion.div)`
   width: inherit;
   overflow: hidden;
   width: 100%;
-  border-radius: 18px;
+  border-radius: 9px;
   transition: ${transition};
   &:hover {
     ${ButtonComp} {
@@ -87,8 +88,8 @@ const DescTitle = styled(Typography)`
   /* color: #000; */
   text-align: left;
   font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0;
+  font-weight: 900;
+  letter-spacing: 1px;
   line-height: 26px;
   margin-top: 0;
   margin-bottom: 0;
@@ -102,7 +103,7 @@ const DescSec = styled(Typography)`
   /* margin-top: 15px; */
   /* color: rgba(0, 0, 0, 0.7); */
   font-size: 14px;
-  letter-spacing: 0;
+  letter-spacing: 1px;
   line-height: 24px;
   opacity: 0;
   transition: ${transition};
@@ -120,7 +121,7 @@ const ContentItemDesc = styled(motion.div)`
 `;
 
 const ContentItemDescSec = styled(motion.div)`
-  color: #004500;
+  color: #fff;
   font-family: inherit;
   height: 100%;
   padding: 16px 16px 16px 16px;
@@ -140,22 +141,21 @@ const DescTop = styled(motion.div)`
   left: 16px;
   color: #fff;
   font-family: inherit;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.63px;
+  /* font-size: 12px; */
+  /* font-weight: 700;
+  letter-spacing: 1px; */
   line-height: 13px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   transition: ease 1s;
 `;
 
 const ContentPrincUp = styled.div`
   font-family: inherit;
   position: absolute;
-  border-radius: 18px;
+  border-radius: 9px;
   z-index: 1;
   background-color: rgb(0,69,0);
-  background-image: linear-gradient(180deg, rgba(0,69,0,1) 0%, rgba(76,175,80,1) 0%);
-  color: black;
+  background-image: linear-gradient(357deg,#099209be 8%,rgba(76,175,80,1) 100%);
   transform: translateY(-80px);
   user-select: none;
   width: 100%;
@@ -184,7 +184,7 @@ const ContentPrinc = styled(motion.div) <iContentPrinc>`
   display: flex;
   justify-content: center;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 9px;
   transition: ${transition};
   @media (max-width: 600px) {
     min-width: 280px;
@@ -199,7 +199,7 @@ const ContentPrinc = styled(motion.div) <iContentPrinc>`
       opacity: 1;
     }
     ${DescTop} {
-      color: #004500;
+      /* color: black; */
     }
     ${ContentItemDescSec} {
       padding: 32px 16px 16px 16px;
@@ -208,7 +208,7 @@ const ContentPrinc = styled(motion.div) <iContentPrinc>`
       opacity: 1;
     }
     ${CardMediaComp} {
-      transform: scale(1.1);
+      transform: scale(1.03);
     }
   }
 `;
@@ -226,7 +226,8 @@ export default function CardComp(props: iProps) {
       <ContentSec>
         <CardActionComp>
           <CardComponent>
-            <DescTop children={props.datacard.title} />
+            {/* <Typography variant="h6" children={props.datacard.title} /> */}
+            <DescTop children={<Typography variant="subtitle1" children={props.datacard.title} />} />
             <CardMediaComp image={props.datacard.img} />
           </CardComponent>
           <ContentDescCard>
@@ -235,11 +236,20 @@ export default function CardComp(props: iProps) {
                 <ContentDesc>
                   <ContentItemDesc>
                     <ContentItemDescSec>
-                      <DescTitle variant="h1" children={props.datacard.desc} />
+                      <Typography variant="h6" children={props.datacard.desc} />
+                      <Typography variant="subtitle1" children={props.datacard.descSec} />
+                      {/* <DescTop children={props.title} /> */}
+                      {/* <DescTitle variant="h1" children={props.desc} /> */}
+                      {/* <DescSec variant="h2" children={props.descSec} /> */}
+                      <ButtonComp>
+                        <Typography variant="button" children={props.datacard.buttonDesc} />
+                      </ButtonComp>
+
+                      {/* <DescTitle variant="h1" children={props.datacard.desc} />
                       <DescSec variant="h2" children={props.datacard.descSec} />
                       <ContentButton>
                         <ButtonComp children={props.datacard.buttonDesc} />
-                      </ContentButton>
+                      </ContentButton> */}
                     </ContentItemDescSec>
                   </ContentItemDesc>
                 </ContentDesc>

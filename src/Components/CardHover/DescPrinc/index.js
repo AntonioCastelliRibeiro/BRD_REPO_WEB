@@ -13,22 +13,26 @@ const Content = styled.div`
 const ContentDescFirst = styled.div`
   margin-bottom: 10px;
   font-size: 1.6rem;
-  line-height: 1.4;
-  font-weight: 800;
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
+  line-height: 1.75;
+  font-weight: 800;
+  letter-spacing: 1px;
 `;
+
 
 const ContentDescSec = styled.div`
   margin-bottom: 10px;
   text-align: center;
   font-size: 16px;
-  line-height: 1.75;
-  font-weight: 500;
+  font-weight: 600;
   -webkit-font-smoothing: antialiased;
   letter-spacing: 0px;
   color: rgba(255,255,255,0.76);
+  line-height: 1.75;
+  /* font-weight: 800; */
+  letter-spacing: 1px;
 `;
 
 export default function DescPrinc(props) {

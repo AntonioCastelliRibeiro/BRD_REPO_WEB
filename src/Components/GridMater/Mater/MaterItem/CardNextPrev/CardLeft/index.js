@@ -1,7 +1,8 @@
-import Styled from "styled-components";
+import { Typography } from "@material-ui/core";
+import styled from "styled-components";
 import { motion, useAnimation } from "framer-motion";
 
-const Content = Styled(motion.div)`
+const Content = styled(motion.div)`
   font-family: ${(props) => props.fontFamily};
   display: flex;
   width: 100%;
@@ -11,9 +12,11 @@ const Content = Styled(motion.div)`
   background-image: linear-gradient(180deg, rgba(0,69,0,1) 0%, rgba(76,175,80,1) 0%);
   overflow: hideen;
   z-index: 1;
+  border-top-left-radius: 9px;
+  border-bottom-left-radius: 9px;
 `;
 
-const ContentImage = Styled(motion.figure)`
+const ContentImage = styled(motion.figure)`
   opacity: ${(props) => (props.isMobile ? 0 : 1)};
   margin: 0;
   background-color: rgba(0,69,0,1);
@@ -30,29 +33,29 @@ const ContentImage = Styled(motion.figure)`
   left: 34%;
 `;
 
-const DescCenter = Styled(motion.div)`
-  font-family: ${(props) => props.fontFamily};
+const DescCenter = styled(motion.div)`
+  /* font-family: ${(props) => props.fontFamily}; */
   display: flex;
   width: inherit;
-  color: rgb(222, 222, 222);
+  color: #fff;
   text-align: center;
   align-items: center;
   justify-content: center;
-  font-size: 39px;
+  /* font-size: 39px;
   font-style: normal;
-  font-weight: 400;
-  letter-spacing: 0px;
-  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 3px;
+  line-height: 1.2; */
 `;
 
-const ContentLeft = Styled(motion.div)`
+const ContentLeft = styled(motion.div)`
   display: flex;
   width: inherit;
   color: #fff;
   position: fixed;
 `;
 
-const ContentRightFlex = Styled(motion.div)`
+const ContentRightFlex = styled(motion.div)`
   display: flex;  
   flex-direction: column;
   align-items: flex-end;
@@ -60,39 +63,40 @@ const ContentRightFlex = Styled(motion.div)`
   width: inherit;
   padding-right: 10px;
   padding-top: 10px;
+  text-align: end;
 `;
 
-const DescTitleLeft = Styled(motion.div)`
+const DescTitleLeft = styled(motion.div)`
   color: hsl(44deg 99% 50%); //hsl(22, 100%, 68%);
   font-size: ${(props) => (props.isMobile ? "6vw" : "16px")};
   font-style: normal;
   font-weight: 400;
-  letter-spacing: 0px;
+  letter-spacing: 1px;
   line-height: 1.2;
   text-align: right;
 `;
 
-const DescLeft = Styled(motion.div)`
-  font-size: ${(props) => (props.isMobile ? "7vw" : "3vw")};
+const DescLeft = styled(motion.div)`
+  font-size: ${(props) => (props.isMobile ? "7vw" : "2.9vw")};
   font-style: normal;
   font-weight: 400;
-  letter-spacing: 0px;
+  letter-spacing: 1px;
   line-height: 1.2;
   text-align: right;
   color: #DEDEDE;
 `;
 
-const DescSubLeft = Styled(motion.div)`
-  font-size: ${(props) => (props.isMobile ? "8vw" : "3vw")};
+const DescSubLeft = styled(motion.div)`
+  font-size: ${(props) => (props.isMobile ? "8vw" : "2.8vw")};
   font-style: normal;
   font-weight: 400;
-  letter-spacing: 0px;
+  letter-spacing: 1px;
   line-height: 1.2;
   text-align: right;
   color: #DEDEDE;
 `;
 
-const AHrefHistory = Styled(motion.a)`
+const AHrefHistory = styled(motion.a)`
   text-decoration: none;
   display: flex;
   width: 100%;
@@ -175,7 +179,7 @@ export default function CardLeftComp(props) {
           transition={transition}
         >
           <DescCenter fontFamily={props.fontFamily} animate={descCenterControls} transition={transition}>
-            Anterior
+            <Typography variant="h4" >Anterior</Typography>
           </DescCenter>
           <ContentLeft>
             <ContentRightFlex
@@ -183,9 +187,12 @@ export default function CardLeftComp(props) {
               animate={contentLeftControls}
               transition={transitionChil}
             >
-              <DescTitleLeft isMobile={props.isMobile} children={"Anterior"} />
-              <DescLeft isMobile={props.isMobile} children={props.type} />
-              <DescSubLeft isMobile={props.isMobile} children={props.titleBtnNextPrev} />
+              <Typography variant="subtitle1" >Anterior</Typography>
+              <Typography variant="h4" >{props.type}</Typography>
+              <Typography variant="h5" >{props.titleBtnNextPrev}</Typography>
+              {/* <DescTitleLeft isMobile={props.isMobile} children={"Anterior"} /> */}
+              {/* <DescLeft isMobile={props.isMobile} children={props.type} />
+              <DescSubLeft isMobile={props.isMobile} children={props.titleBtnNextPrev} /> */}
             </ContentRightFlex>
           </ContentLeft>
         </Content>

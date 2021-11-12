@@ -89,39 +89,38 @@ export default function CardHoverUp(props: IProps) {
     function retornarPrinc(e: iCard, count: number) {
         return (
             <Suspense fallback={<SkeletonComp principal={true} />} >
-                <CardHoverPrinc
-                    fontFamily={props.fontFamily}
-                    count={count}
-                    title={e.title}
-                    search={e.search}
-                    onSetMaterItem={() => props.onSetMaterItem(e.search)}
-                    desc={e.desc}
-                    descSec={e.descSec}
-                    buttonDesc={e.buttonDesc}
-                    image={e.img}
-                />
+                <GridComp key={count} item xl={12} md={12} sm={12} xs={12}>
+                    <CardHoverPrinc
+                        fontFamily={props.fontFamily}
+                        count={count}
+                        title={e.title}
+                        search={e.search}
+                        onSetMaterItem={() => props.onSetMaterItem(e.search)}
+                        desc={e.desc}
+                        descSec={e.descSec}
+                        buttonDesc={e.buttonDesc}
+                        image={e.img}
+                    />
+                </GridComp>
             </Suspense>
         );
     }
 
 
     function retornarSec(e: iCard, count: number) {
-        if (count >= onNumLoadPost) {
-            return false;
-        } else {
-            return (
-                <Suspense fallback={<SkeletonComp principal={false} />} >
-                    <GridComp key={count} item xl={4} md={4} sm={6} xs={12}>
-                        <Hidden xsDown>
-                            <CardComp fontFamily={props.fontFamily} count={count} datacard={e} onSetMaterItem={(e) => props.onSetMaterItem(e)} />
-                        </Hidden>
-                        <Hidden smUp>
-                            <CardCompMobile fontFamily={props.fontFamily} count={count} datacard={e} onSetMaterItem={(e) => props.onSetMaterItem(e)} />
-                        </Hidden>
-                    </GridComp>
-                </Suspense>
-            );
-        }
+        return (
+            <Suspense fallback={<SkeletonComp principal={false} />} >
+                <GridComp key={count} item xl={4} md={4} sm={6} xs={12}>
+                    <Hidden xsDown>
+                        <CardComp fontFamily={props.fontFamily} count={count} datacard={e} onSetMaterItem={(e) => props.onSetMaterItem(e)} />
+                    </Hidden>
+                    <Hidden smUp>
+                        <CardCompMobile fontFamily={props.fontFamily} count={count} datacard={e} onSetMaterItem={(e) => props.onSetMaterItem(e)} />
+                    </Hidden>
+                </GridComp>
+            </Suspense>
+        );
+
     }
 
     return (
@@ -129,10 +128,10 @@ export default function CardHoverUp(props: IProps) {
             <GridContainer
                 style={{ width: "100%", margin: 0 }}
                 container
-                spacing={1}
+                spacing={2}
             >
                 <AnimateSharedLayout>
-                    {dataCard.map((e, count) => count === 0 ? retornarPrinc(e, count) : retornarSec(e, count))}
+                    {dataCard.map((e, count) => count === 0 ? retornarPrinc(e, count) : (count >= onNumLoadPost) ? false : retornarSec(e, count))}
                 </AnimateSharedLayout>
             </GridContainer>
             <ContentBtnLoad>

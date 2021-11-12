@@ -67,7 +67,33 @@ const useStyles = makeStyles(({ props, typography, palette, breakpoints }) => ({
     alignItems: "center",
     flexShrink: "0",
     borderRadius: "4px",
-    textDecoration: "none"
+    textDecoration: "none",
+    letterSpacing: "1px",
+    fontWeight: 500,
+    "&:hover": {
+      backgroundColor: "rgb(255 255 255 / 12%)",
+    }
+  },
+  fontBtn: {
+    fontFamily: (props) => props.fontFamily,
+    color: "#fff",
+    textTransform: "lowercase",
+    fontWeight: 300,
+    fontSize: 20,
+    letterSpacing: "1px",
+  },
+  btnFooter: {
+    color: "#fff",
+    padding: 0,
+    "&:hover": {
+      backgroundColor: "rgb(255 255 255 / 12%)",
+    }
+  },
+  btnSocial: {
+    color: "#fff",
+    "&:hover": {
+      backgroundColor: "rgb(255 255 255 / 12%)",
+    }
   }
 }));
 
@@ -90,22 +116,22 @@ const Foot = function FootComp(props) {
         <Box pt={8} pb={1}>
           <div style={{ display: "flex", flexWrap: "wrap" }}>
             <div style={{ flexGrow: 2 }}>
-              <Button style={{ color: "#fff", paddingRight: 20 }} onClick={() => setarRouter("/")} >
+              <Button className={classes.btnFooter} onClick={() => setarRouter("/")} >
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <div style={{ paddingRight: 0 }}>
                     <Avatar style={{ height: "56px", width: "56px" }} src={logo} />
                   </div>
-                  <div style={{ paddingLeft: 8 }}>
-                    <Typography
-                      style={{ fontFamily: props.fontFamily, color: "#fff", textTransform: "lowercase" }}
-                      variant={"h6"}
+                  <div style={{ paddingRight: 10 }}>
+                    <div
+                      fontFamily={props.fontFamily}
+                      className={classes.fontBtn}
                     >
                       bom dia rural
-                    </Typography>
+                    </div>
                   </div>
                 </div>
               </Button>
-              <div style={{ display: "flex", flexWrap: "wrap" }}>
+              <div style={{ paddingTop: 5, display: "flex", flexWrap: "wrap" }}>
                 <Button className={classes.itemSobre} onClick={() => setarRouter("/materias")} size="small">
                   Materias
                 </Button>
@@ -134,9 +160,9 @@ const Foot = function FootComp(props) {
               }}
             >
               <Box textAlign={"center"} mt={{ xs: 2, md: 0 }} my={2}>
-                <IconButton style={{ color: "#fff" }} size="medium" children={<FacebookIcon />} />
-                <IconButton style={{ color: "#fff" }} size="medium" children={<InstagramIcon />} />
-                <IconButton style={{ color: "#fff" }} size="medium" children={<YouTubeIcon />} />
+                <IconButton className={classes.btnSocial} size="medium" children={<FacebookIcon />} />
+                <IconButton className={classes.btnSocial} size="medium" children={<InstagramIcon />} />
+                <IconButton className={classes.btnSocial} size="medium" children={<YouTubeIcon />} />
               </Box>
             </div>
           </div>
@@ -164,7 +190,7 @@ const Foot = function FootComp(props) {
                   component={"p"}
                   variant={"caption"}
                   color={"textSecondary"}
-                  style={{ fontFamily: props.fontFamily, color: "#fff" }}
+                  style={{ fontFamily: props.fontFamily, color: "#fff", letterSpacing: "1px" }}
 
                 >
                   Designer Antonio Castelli © Tony Studios 2019-2021 Todos os
@@ -180,3 +206,4 @@ const Foot = function FootComp(props) {
 };
 
 export default Foot;
+

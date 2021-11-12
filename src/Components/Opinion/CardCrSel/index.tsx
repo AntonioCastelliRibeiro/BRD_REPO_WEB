@@ -3,6 +3,7 @@ import { Star } from "@material-ui/icons";
 import { Paper, Avatar } from "@material-ui/core";
 import styled from "styled-components";
 import IProps from "./interface";
+import { Rating } from "@material-ui/lab";
 
 interface IContentPrinc {
   fontFamily: string;
@@ -10,17 +11,21 @@ interface IContentPrinc {
 
 const ContentPrinc = styled.div<IContentPrinc>`
   font-family: ${(props) => props.fontFamily};
-  height: 400px;
+  height: 450px;
   user-select: none;
   overflow: hidden;
   width: 100%;
   background: inherit;
+  @media(max-width: 900px){
+    height: 600px;
+  }
 `;
 
 const ContentSec = styled.div`
+  height: 100%;
   font-family: inherit;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
 `;
@@ -38,12 +43,13 @@ const ContentDesc = styled.div`
   font-family: inherit;
   width: 70%;
   padding: 30px 0px 30px 0px;
-  font-size: 1.0625rem;
-  line-height: 1.55em;
+  font-size: 1.0925rem;
   font-style: italic;
-  font-weight: 300;
   color: #fff;
   text-align: center;
+  letter-spacing: 1px;
+  line-height: 1.75;
+  font-weight: 800;
 `;
 
 const DescName = styled.div`
@@ -51,18 +57,20 @@ const DescName = styled.div`
   width: auto;
   font-size: 1.125rem;
   text-align: center;
-  line-height: 1.5em;
-  font-weight: 700;
   color: #fff;
+  letter-spacing: 1px;
+  line-height: 1.75;
+  font-weight: 700;
 `;
 
 const DescCargo = styled.div`
   font-family: inherit;
   font-size: .75rem;
   text-transform: uppercase;
-  font-weight: 500;
   color: #fff;
-  line-height: 1.5em;
+  letter-spacing: 1px;
+  line-height: 1.75;
+  font-weight: 600;
 `;
 
 const ContentStar = styled.div`
@@ -70,7 +78,20 @@ const ContentStar = styled.div`
 `;
 
 const StarComp = styled(Star)`
-  color: #ff9800;
+  height: 25px;
+  width: 25px;
+  color: #ffb400;
+  transition: 0.3s ease;
+  &:hover {
+    transform: scale(1.2);
+  }
+`;
+
+const ContentSocialInfo = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export default function CardCrSel(props: IProps) {
@@ -84,17 +105,21 @@ export default function CardCrSel(props: IProps) {
           />
         </PaperAvatar>
         <ContentDesc children={props.desc} />
-        <DescName children={props.name} />
-        <DescCargo children={props.cargo} />
-        <ContentStar children={
-          <>
-            <StarComp />
-            <StarComp />
-            <StarComp />
-            <StarComp />
-            <StarComp />
-          </>
-        } />
+        <ContentSocialInfo>
+          <DescName children={props.name} />
+          <DescCargo children={props.cargo} />
+          <ContentStar children={
+            <>
+              {/* <Rating name="size-large" value={6} defaultValue={6} size="large" /> */}
+
+              <StarComp />
+              <StarComp />
+              <StarComp />
+              <StarComp />
+              <StarComp />
+            </>
+          } />
+        </ContentSocialInfo>
       </ContentSec>
     </ContentPrinc>
   );

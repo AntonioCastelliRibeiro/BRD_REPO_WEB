@@ -48,7 +48,8 @@ const DescMid = styled(motion.div) <IContent>`
   align-items: center;
   text-align: center;
   font-weight: 600;
-  font-size: 4vw;
+  letter-spacing: 1px;
+  font-size: 65px;
   color: #fff;
   transition: ${transition};
   transition-delay: ${(props) => props.transitionDelay};
@@ -95,7 +96,7 @@ export default function CardHoverLeftRight(props: IProps) {
             <LogoMid image={props.logo} />
             <DescMid
                 transitionDelay={props.hover ? "100ms" : "200ms"}
-                translatey={props.hover ? "-38px" : "0px"}
+                translatey={props.hover ? "-38px" : "-10px"}
                 opacity={props.hover ? "0" : "1"}
                 children={"Nosso Programa"}
             />

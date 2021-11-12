@@ -115,7 +115,7 @@ export default function ColabItem(props) {
   function retornarConteudo(ADataColab) {
     return (
       <ContentBgColor>
-        {/* <ColabImgCapa ocultaDesc={true} img={C_ABOUT_COLAB} /> */}
+        <ColabImgCapa ocultaDesc={true} img={C_ABOUT_COLAB} />
         <ContentRelative>
           <Container maxWidth="lg">
             <Box
@@ -129,12 +129,12 @@ export default function ColabItem(props) {
               <Box className={styles.boxPrinc}>
                 <div data-aos="fade-left" style={{ width: "100%" }}>
                   <Box height="inherit">
-                    <Box display="flex" paddingLeft="10px" marginBottom="24px">
+                    <Box display="flex" paddingLeft="0px" marginBottom="24px">
                       <Link
                         style={{ textDecoration: "none", color: "#fff" }}
                         to={props.pathName}
                       >
-                        <Button style={{ fontFamily: props.fontFamily, color: "#fff" }}>
+                        <Button style={{ letterSpacing: "1px", fontFamily: props.fontFamily, color: "#fff" }}>
                           <ArrowBack />
                           <Box margin="0px 9px 0px 9px">{props.descButton}</Box>
                         </Button>
@@ -144,6 +144,7 @@ export default function ColabItem(props) {
                       style={{ textTransform: "uppercase" }}
                       marginBottom="20px"
                       color="#fff"
+                      letterSpacing="1px"
                       lineHeight=".8885em"
                       fontSize="calc(1.625rem + 34 * ((100vw - 26.25rem) / 860))"
                     >
@@ -153,6 +154,7 @@ export default function ColabItem(props) {
                       style={{ textTransform: "uppercase" }}
                       marginBottom="20px"
                       color="#fff"
+                      letterSpacing="1px"
                       lineHeight=".8885em"
                       fontSize="calc(1.625rem + 34 * ((100vw - 26.25rem) / 860))"
                     >
@@ -181,6 +183,7 @@ export default function ColabItem(props) {
                       fontSize="calc(1.125rem + 4 * ((100vw - 26.25rem) / 860))"
                       lineHeight="1.56em"
                       marginBottom="20px"
+                      letterSpacing="1px"
                     >
                       {ADataColab.cargo}
                     </Box>
@@ -189,6 +192,7 @@ export default function ColabItem(props) {
                       lineHeight="1.625em"
                       opacity=".7"
                       marginBottom="1.6em"
+                      letterSpacing="1px"
                     >
                       {ADataColab.descricao1}
                     </Box>
@@ -197,6 +201,7 @@ export default function ColabItem(props) {
                       lineHeight="1.625em"
                       opacity=".7"
                       marginBottom="1.6em"
+                      letterSpacing="1px"
                     >
                       {ADataColab.descricao2}
                     </Box>
@@ -208,6 +213,7 @@ export default function ColabItem(props) {
                     <Card className={styles.cardPrinc}>
                       <CardActionArea
                         style={{
+                          borderRadius: "9px",
                           display: "flex",
                           height: "inherit",
                           width: "inherit",

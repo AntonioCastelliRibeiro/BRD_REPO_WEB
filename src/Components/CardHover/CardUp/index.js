@@ -10,7 +10,6 @@ const transition = {
 };
 
 const ButtonComp = styled(Typography)`
-        // whileTap={{ scale: props.mobile ? 1.03 : 1 }}
   font-family: inherit;
   cursor: pointer;
   user-select: none;
@@ -21,7 +20,10 @@ const ButtonComp = styled(Typography)`
   border: 1px solid #fff;
   transition: ${transition};
   font-family: inherit;
+  letter-spacing: 1px;
+  font-weight: 600;
 `;
+
 
 const ContentImgLeft = styled(motion.div)`
   cursor: ${(props) => (props.mobile ? "pointer" : "")};
@@ -73,11 +75,16 @@ const DescBase = styled(motion.div)`
 
 const DescTitle = styled(DescBase)`
   font-weight: 800;
+  letter-spacing: 3px;
+  line-height: 1.75;
+  font-weight: 800;
   user-select: ${(props) => (props.mobile ? "none" : "")};
 `;
 
 const DescContent = styled(DescBase)`
+  /* transform: translateY(-50px); */
   font-weight: 500;
+  letter-spacing: 1px;
   user-select: ${(props) => (props.mobile ? "none" : "")};
 `;
 
@@ -86,12 +93,12 @@ const CardActionAreaComp = styled(CardActionArea)`
   width: 100%;
   color: #fff;
   font-family: inherit;
-  border-top-left-radius: ${props => props.isLeft ? "15px" : props.isMid ? "0px" : "0px"};
+  /* border-top-left-radius: ${props => props.isLeft ? "15px" : props.isMid ? "0px" : "0px"};
   border-top-right-radius: ${props => props.isLeft ? "0px" : props.isMid ? "0px" : "15px"};
   border-bottom-left-radius: ${props => props.isLeft ? "15px" : props.isMid ? "0px" : "0px"};
-  border-bottom-right-radius: ${props => props.isLeft ? "0px" : props.isMid ? "0px" : "15px"};
+  border-bottom-right-radius: ${props => props.isLeft ? "0px" : props.isMid ? "0px" : "15px"}; */
   @media (max-width: 600px) {
-  border-radius: 15px;
+  /* border-radius: 15px; */
   };
 `;
 
@@ -102,7 +109,7 @@ const initialMenu = {
 };
 
 const initialItem = {
-  y: 90,
+  y: 50,
   opacity: 0
 };
 
@@ -115,10 +122,10 @@ export default memo(function CardUp(props) {
   const sequenceUp = () => {
     props.setImage(props.isLeft ? 1 : props.isMid ? 2 : 3);
     menuControls.start({ y: -25, transition: { transition } });
-    itemControls.start({ opacity: 1, y: -20, transition: { transition } });
+    itemControls.start({ y: 0, opacity: 1, transition: { transition } });
     return buttonControls.start({
       opacity: 1,
-      y: 60,
+      y: 40,
       transition: { transition }
     });
   };
@@ -127,7 +134,7 @@ export default memo(function CardUp(props) {
     if (!props.isLeft) {
       props.setImage(1);
     }
-    itemControls.start({ y: 0, opacity: 0, transition: { transition } });
+    itemControls.start({ y: 50, opacity: 0, transition: { transition } });
     buttonControls.start({ opacity: 0, y: 90, transition: { transition } });
     return menuControls.start({
       y: 25,

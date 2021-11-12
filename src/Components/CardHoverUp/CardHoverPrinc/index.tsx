@@ -17,7 +17,7 @@ const CardMediaComp = styled(CardMedia)`
   background-color: #f0ffff;
   height: 100%;
   width: 100%;
-  border-radius: 18px;
+  border-radius: 9px;
   filter: brightness(80%);
   transition: ${transition};
   @media (max-width: 600px) {
@@ -30,12 +30,11 @@ const CardComponent = styled(motion.div)`
   display: flex;
   height: inherit;
   width: inherit;
-  border-radius: 18px;
+  border-radius: 9px;
   transition: ${transition};
 `;
 
-const ButtonComp = styled(Typography)`
-  font-family: inherit;
+const ButtonComp = styled.div`
   padding: 8px 18px;
   border-radius: 4px;
   background-color: transparent;
@@ -61,13 +60,12 @@ const ContentDesc = styled.div`
 
 const DescTitle = styled(Typography)`
   font-family: inherit;
-  font-weight: 700;
+  font-weight: 900;
   margin: 0;
   text-align: left;
   font-size: 26px;
   line-height: 38px;
-  font-weight: 700;
-  letter-spacing: 0;
+  letter-spacing: 1px;
   opacity: 1;
   padding-top: 0px;
   transition: ${transition};
@@ -75,14 +73,14 @@ const DescTitle = styled(Typography)`
 
 const DescSec = styled(Typography)`
   font-family: inherit;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 26px;
-  opacity: 0.7;
+  opacity: 1;
   overflow: hidden;
+  font-weight: 600;
   transition: color 500ms;
   display: -webkit-box;
-  /* margin-top: 12px;
-  margin-bottom: 15px; */
+  letter-spacing: 1px;
   transition: ${transition};
 `;
 
@@ -97,7 +95,7 @@ const ContentItemDesc = styled(motion.div)`
 `;
 
 const ContentItemDescSec = styled(motion.div)`
-  color: #004500;
+  color: #fff;
   font-family: inherit;
   height: 100%;
   padding: 16px;
@@ -115,22 +113,16 @@ const ContentItemDescSec = styled(motion.div)`
   } */
 `;
 
-
-
 const DescTop = styled(motion.div)`
   font-family: inherit;
   user-select: none;
   z-index: 3;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.63px;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 1px;
   line-height: 13px;
   text-transform: uppercase;
   transition: ease 1s;
-`;
-
-const ContentButton = styled.div`
-  transition: ${transition};
 `;
 
 const ContentButtonIcon = styled.div`
@@ -150,7 +142,7 @@ const CardActionAreaComp = styled(CardActionArea)`
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 9px;
   transition: ${transition};
 `;
 
@@ -158,7 +150,7 @@ const CardMediaBase = styled(motion.div)`
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 9px;
   transition: ${transition};
 `;
 
@@ -177,7 +169,7 @@ const ContentPrinc = styled.div`
   font-family: inherit;
   overflow: hidden;
   transition: ${transition};
-  border-radius: 18px;
+  border-radius: 9px;
   @media (max-width: 600px) {
     padding-bottom: 0px;
     ${IconPlay} {
@@ -189,13 +181,13 @@ const ContentPrinc = styled.div`
         border-bottom-right-radius: 0px;
       }
       ${IconButtonComp} {
-        transform: scale(1.1);
+        transform: scale(1.03);
       }
     }
   }
   &:hover {
     ${CardMediaComp} {
-      transform: scale(1.1);
+      transform: scale(1.03);
     }
     ${CardMediaBase} {
       border-top-right-radius: 0px;
@@ -206,21 +198,25 @@ const ContentPrinc = styled.div`
       color: #66bb6a;
     }
     ${ContentDesc} {
-      transform: scale(0.95);
+      transform: scale(1);
     }
   }
 `;
 
 const GridContainer = styled(Grid)`
   font-family: inherit;
-  border-radius: 18px;
+  border-radius: 9px;
   background-color: rgb(0,69,0);
-  background-image: linear-gradient(180deg, rgba(0,69,0,1) 0%, rgba(76,175,80,1) 0%);
+  background-image: linear-gradient(357deg,#099209be 8%,rgba(76,175,80,1) 100%);
 `;
 
 const GridComp = styled(Grid)`
   font-family: inherit;
-  border-radius: 18px;
+  border-radius: 9px;
+`;
+
+const TypographyDesc = styled(Typography)`
+
 `;
 
 interface iContentPadding {
@@ -230,10 +226,11 @@ interface iContentPadding {
 const ContentPadding = styled(motion.div) <iContentPadding>`
   font-family: ${(props) => props.fontFamily};
   width: 100%;
-  padding-top: 40px;
-  padding-bottom: 8px;
+  padding-top: 18px;
   @media (max-width: 600px) {
-    padding-bottom: 4px;
+    ${TypographyDesc} {
+      padding-bottom: 8px;
+    }
   }
 `;
 
@@ -270,12 +267,15 @@ export default function CardHoverPrinc(props: iProps) {
                 <ContentDesc>
                   <ContentItemDesc>
                     <ContentItemDescSec>
-                      <DescTop children={props.title} />
-                      <DescTitle variant="h1" children={props.desc} />
-                      <DescSec variant="h2" children={props.descSec} />
-                      <ContentButton>
-                        <ButtonComp children={props.buttonDesc} />
-                      </ContentButton>
+                      <TypographyDesc variant="h6" children={props.title} />
+                      <TypographyDesc variant="h4" children={props.desc} />
+                      <TypographyDesc variant="h6" children={props.descSec} />
+                      {/* <DescTop children={props.title} /> */}
+                      {/* <DescTitle variant="h1" children={props.desc} /> */}
+                      {/* <DescSec variant="h2" children={props.descSec} /> */}
+                      <ButtonComp>
+                        <Typography variant="button" children={props.buttonDesc} />
+                      </ButtonComp>
                     </ContentItemDescSec>
                   </ContentItemDesc>
                 </ContentDesc>

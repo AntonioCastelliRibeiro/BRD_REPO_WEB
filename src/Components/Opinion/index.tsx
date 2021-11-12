@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Container } from "@material-ui/core";
 import DescPrinc from "../CardHover/DescPrinc";
 import Slider from "../Slider";
 import CrSelMaterial from "./CrSelMaterial";
@@ -24,13 +25,15 @@ const ContentDesc = styled.div`
 export default function Opinion(props: IProps) {
   return (
     <ContentPrinc fontFamily={props.fontFamily}>
-      <ContentDesc>
-        <DescPrinc
-          paddingTop={"72px"}
-          descFirst="Saiba o que nossos clientes dizem sobre o nosso Programa"
-          descSec="A opinião é fundamental para a constução de um conteúdo cada vez mais refinado."
-        />
-      </ContentDesc>
+      <Container maxWidth="xl">
+        <ContentDesc>
+          <DescPrinc
+            // paddingTop={"72px"}
+            descFirst="Saiba o que nossos clientes dizem sobre o nosso Programa"
+            descSec="A opinião é fundamental para a constução de um conteúdo cada vez mais refinado."
+          />
+        </ContentDesc>
+      </Container>
       <CrSelMaterial fontFamily={props.fontFamily} />
       {/* <Slider height={"500px"} fontFamily={props.fontFamily} images={images} /> */}
     </ContentPrinc>

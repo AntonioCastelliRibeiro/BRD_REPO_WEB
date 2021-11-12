@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
@@ -19,6 +19,7 @@ const ContentPrinc = styled.div<IContentPrinc>`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding-bottom: 130px;
   /* background-image: url(${(props) => props.bgImage});
   background-size: cover;
   background-position: 50%; */
@@ -33,22 +34,25 @@ export default function Patroc(props: IProps) {
 
   return (
     <ContentPrinc bgImage={bgImage} fontFamily={props.fontFamily}>
-      <PatrocCapa />
-      <Grid
-        style={{
-          paddingBottom: "50px",
-          display: "flex",
-          textAlign: "center",
-          width: "100%",
-          paddingLeft: "20px"
-        }}
-        container
-        spacing={3}
-      >
-        {objData.map((e, count) => (
-          <PatrocItem {...e} count={count} />
-        ))}
-      </Grid>
+      <Container maxWidth="xl">
+        <PatrocCapa fontFamily={props.fontFamily} />
+        <Grid
+          style={{
+            // paddingBottom: "30px",
+            display: "flex",
+            textAlign: "center",
+            width: "100%",
+            margin: 0
+            // paddingLeft: "20px"
+          }}
+          container
+          spacing={2}
+        >
+          {objData.map((e, count) => (
+            <PatrocItem {...e} count={count} />
+          ))}
+        </Grid>
+      </Container>
     </ContentPrinc>
   );
 }

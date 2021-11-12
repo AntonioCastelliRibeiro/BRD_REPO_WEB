@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import styled from "styled-components";
-import { Container } from "@material-ui/core";
+import { Container, createTheme, ThemeProvider, Typography } from "@material-ui/core";
 
 import MaterCapaApresent from "./MaterCapaApresent";
 import CardHoverUp from "../CardHoverUp";
@@ -33,7 +33,7 @@ const ContentBgColor = styled.div`
   background-color: rgb(8, 127, 35);
 `;
 
-const C_DESC_TOP = "Fique por dentro sobre as n ovidades do agronegócio na região do Sudoeste do Paraná";
+const C_DESC_TOP = "Fique por dentro sobre as novidades do agronegócio na região do Sudoeste do Paraná";
 
 export default function GridMater(props) {
   const C_TIME_FADE = objPrinc.timeFade;
@@ -57,15 +57,23 @@ export default function GridMater(props) {
     fontSize: "7vw"
   }
 
+  const theme = createTheme({
+    typography: {
+      fontFamily: props.fontFamily
+    },
+  });
+
   return (
-    <ContentBgColor>
-      <MaterCapaApresent {...propsMaterCapa} />
-      <ContentPrinc>
-        <Container maxWidth="lg">
-          <ContentDescTop fontFamily={props.fontFamily} children={<DescTop children={C_DESC_TOP} />} />
-          <CardHoverUp fontFamily={props.fontFamily} onSetMaterItem={(e) => onSetMaterItem(e)} />
-        </Container>
-      </ContentPrinc>
-    </ContentBgColor>
+    <ThemeProvider theme={theme}>
+      <ContentBgColor>
+        <MaterCapaApresent {...propsMaterCapa} />
+        <ContentPrinc>
+          <Container maxWidth="lg">
+            <ContentDescTop fontFamily={props.fontFamily} children={<Typography variant="h5" children={C_DESC_TOP} />} />
+            <CardHoverUp fontFamily={props.fontFamily} onSetMaterItem={(e) => onSetMaterItem(e)} />
+          </Container>
+        </ContentPrinc>
+      </ContentBgColor>
+    </ThemeProvider>
   );
 }

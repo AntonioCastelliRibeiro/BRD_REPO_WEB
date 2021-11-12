@@ -10,8 +10,9 @@ export default function MaterCapaApresent(props) {
         img={props.img}
         title={props.title}
         fontSize={props.fontSize}
+        ocultaDesc={props.ocultaDesc}
       />
-      <Box height="60vh" />
+      {props.noHeight ? false : <Box height="60vh" />}
     </>
   );
 }

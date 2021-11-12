@@ -28,6 +28,8 @@ const CompHoverLeft = styled(motion.div)`
 const ContentDesc = styled(motion.div)`
   text-align: center;
   font-size: ${props => props.fontSize};
+  font-weight: 900;
+  letter-spacing: 5px;
 `;
 
 const transition = {

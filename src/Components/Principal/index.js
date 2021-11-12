@@ -41,6 +41,7 @@ const DescMovDesktop = styled(motion.div)`
   font-weight: 800;
   font-family: ${(props) => props.fontFamily};
   color: white;
+  letter-spacing: 1px;
   &:hover {
     background-color: "blue";
   }

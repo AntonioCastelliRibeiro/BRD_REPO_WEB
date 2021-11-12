@@ -26,6 +26,7 @@ const ContentFirstDesc = styled.div`
   font-weight: 200;
   line-height: 1.1667;
   color: #fff;
+  padding-bottom: 30px;
 `;
 
 const C_ABOUT_EQUIPE =
@@ -61,10 +62,10 @@ export default function GridEquipe(props) {
               sucesso
             </ContentFirstDesc>
           </ContentFade>
-          <Grid style={styleGrid} spacing={1} container >
+          <Grid style={styleGrid} spacing={2} container >
             {dataEquipe.map((e, count) => {
               return (
-                < Grid key={count} item xs={12} sm={6} md={4} xl={3} >
+                < Grid key={count} item xs={12} sm={6} md={3} xl={3} >
                   <EquipeCapa fontFamily={props.fontFamily} {...e} />
                 </Grid>
               );

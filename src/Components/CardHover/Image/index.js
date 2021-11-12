@@ -13,10 +13,10 @@ const ImageLeft = Styled(motion.figure)`
   height: 450px;
   width: 100%;
   /* border: 0; */
-  border-top-left-radius: 15px;
+  /* border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-bottom-right-radius: 15px; */
 
   background-image: url(${(props) => props.image});
   background-size: cover;

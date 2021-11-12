@@ -18,7 +18,7 @@ const CardMediaComp = styled(CardMedia)`
   height: 300px;
   width: 100%;
   margin-bottom: 60px;
-  filter: brightness(80%);
+  filter: brightness(65%);
   transition: ${transition};
 `;
 
@@ -26,7 +26,7 @@ const CardComponent = styled(motion.div)`
   font-family: inherit;
   height: inherit;
   width: inherit;
-  border-radius: 18px;
+  border-radius: 9px;
   transition: ${transition};
 `;
 
@@ -42,7 +42,7 @@ const ContentSec = styled(motion.div)`
   width: inherit;
   overflow: hidden;
   width: 100%;
-  border-radius: 18px;
+  border-radius: 9px;
   transition: ${transition};
 `;
 
@@ -67,11 +67,11 @@ const ContentDesc = styled.div`
 
 const DescTitle = styled(Typography)`
   font-family: inherit;
-  color: #004500;
+  color: black;
   text-align: left;
   font-size: 16px;
   font-weight: 700;
-  letter-spacing: 0;
+  letter-spacing: 1px;
   line-height: 26px;
   margin-top: 0;
   margin-bottom: 0;
@@ -99,9 +99,9 @@ const DescTop = styled(motion.div)`
   top: 12px;
   transform: translateX(16px);
   color: #fff;
-  font-size: 10px;
+  font-size: 2.5vw;
   font-weight: 700;
-  letter-spacing: 0.63px;
+  letter-spacing: 1px;
   line-height: 13px;
   text-transform: uppercase;
   transition: ${transition};
@@ -110,7 +110,7 @@ const DescTop = styled(motion.div)`
 const ContentPrincUp = styled.div`
   font-family: inherit;
   position: absolute;
-  border-radius: 18px;
+  border-radius: 9px;
   z-index: 0;
   background-color: rgb(0,69,0);
   background-image: linear-gradient(180deg, rgba(0,69,0,1) 0%, rgba(76,175,80,1) 0%);
@@ -133,12 +133,9 @@ const ContentButton = styled.div`
   transition: ${transition};
 `;
 
-const IconButtonComp = styled(IconButton)`
+const IconPlay = styled(PlayCircleOutlineIcon)`
   color: #fff;
   transition: ${transition};
-`;
-
-const IconPlay = styled(PlayCircleOutlineIcon)`
   height: 70px;
   width: 70px;
 `;
@@ -160,21 +157,21 @@ const ContentPrinc = styled(motion.div) <iContentPadding>`
     min-width: 180px;
   }
   &:hover {
-    ${IconButtonComp} {
+    ${IconPlay} {
       transform: scale(1.1);
     }
     ${CardMediaComp} {
-      transform: scale(1.1);
+      transform: scale(1.03);
     }
     ${ContentPrincUp} {
       border-top-left-radius: 0px;
       border-top-right-radius: 0px;
     }
     ${ContentDesc} {
-      transform: scale(0.98);
+      /* transform: scale(0.97); */
     }
     ${DescTop} {
-      transform: translateX(20px);
+      transform: translateX(17px);
     }
   }
 `;
@@ -194,12 +191,13 @@ export default function CardCompMobile(props: iProps) {
           <CardComponent>
             <DescTop children={props.datacard.title} />
             <ContentButton>
-              <IconButtonComp
+              <IconPlay />
+              {/* <IconButtonComp
                 disableFocusRipple
                 disableRipple
                 size={"small"}
                 children={<IconPlay />}
-              />
+              /> */}
             </ContentButton>
             <CardMediaComp image={props.datacard.img} />
           </CardComponent>
@@ -207,7 +205,8 @@ export default function CardCompMobile(props: iProps) {
             <ContentPrincUp>
               <ContentDesc>
                 <ContentItemDesc>
-                  <DescTitle variant="h1" children={props.datacard.desc} />
+                  <Typography variant="h6" children={props.datacard.desc} />
+                  {/* <DescTitle variant="h1" children={props.datacard.desc} /> */}
                 </ContentItemDesc>
               </ContentDesc>
             </ContentPrincUp>

@@ -2,8 +2,12 @@ import { useEffect, useState, useRef } from "react";
 const movieIntro = "https://bdrbucket.s3.sa-east-1.amazonaws.com/timelapse.mp4";
 import { useScroll } from "react-use-gesture";
 
+const C_BRIGTHNESS_PADRAO = "80%";
+const C_BRIGTHNESS_FOOT = "70%"
+
 export default function CompMovie() {
   const [render, setRender] = useState(true);
+  const [onBrightness, setBrightness] = useState(C_BRIGTHNESS_PADRAO);
   const scroll = useScroll(
     ({ offset: [x, y] }) => {
       setPlayPause(y);
@@ -19,14 +23,16 @@ export default function CompMovie() {
     try {
       const C_SCROLL_HEIGH = ref.current.scrollHeight;
       if (C_SCROLL_HEIGH !== null) {
-        if (C_SCROLL_TOP >= ref.current.scrollHeight * 0.5) {
+        if (C_SCROLL_TOP >= ref.current.scrollHeight * 0.48) {
           await playPauseMovie(false);
         } else {
-          playPauseMovie(true);
+
+          await playPauseMovie(true);
         }
       }
     } catch (error) {
-      await playPauseMovie(false);
+      playPauseMovie(false);
+      await setBrightness(C_BRIGTHNESS_FOOT);
     }
   }
 
@@ -41,8 +47,11 @@ export default function CompMovie() {
     try {
       if (APlay) {
         await ref.current.play();
+        setBrightness(C_BRIGTHNESS_PADRAO);
       } else {
         await ref.current.pause();
+        setBrightness(C_BRIGTHNESS_FOOT);
+
       }
     } catch (error) {
       return false; // Caso os navegadores não suportarem o play autom.
@@ -75,7 +84,7 @@ export default function CompMovie() {
     <video
       // onPlay={() => setOnPlay(true)}
       // onPause={() => setOnPlay(false)}
-      style={{ filter: 'brightness(94%)' }}
+      style={{ filter: `brightness(${onBrightness})`, transition: "ease 0.3s" }}
       id="video"
       ref={ref}
       autoPlay

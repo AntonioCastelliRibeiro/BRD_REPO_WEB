@@ -68,7 +68,7 @@ const Content = styled.div`
   justify-content: center;
   z-index: 5;
   align-items: center;
-  padding-top: 20px;
+  /* padding-top: 20px; */
   height: 100%;
   width: 100%;
 `;
@@ -107,7 +107,7 @@ const CardComp = styled.div`
   overflow: hidden;
   border-radius: 5px;
   height: 300px;
-  width: 300px;
+  width: 100%;
   display: flex;
   z-index: 5;
   flex-direction: column;
@@ -134,7 +134,7 @@ export default function EquipeCapa(props: IProps) {
 
     <Content data-aos="fade-up">
       <Link
-        style={{ textDecoration: "none", color: "black" }}
+        style={{ textDecoration: "none", color: "black", width: "100%" }}
         to={location.pathname + "/" + props.search}
       >
         <CardComp>

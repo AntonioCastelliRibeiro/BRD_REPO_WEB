@@ -21,6 +21,8 @@ const ContentBgColor = styled.div`
   background-color: inherit;
   background: rgba(0,69,0,1);
   background: linear-gradient(339deg, rgba(0,0,0,1) 2%, rgba(0,69,0,1) 92%);
+  min-height: 1000px;
+  /* padding-bottom: 20px; */
 `;
 
 const ContentDescTop = styled.div`
@@ -35,6 +37,7 @@ const ContentDescTop = styled.div`
 const DescCenterTop = styled.div`
   text-align: center;
   font-size: 30px;
+  letter-spacing: 1px;
 `;
 
 const BtnCenterTop = styled(Button)`
@@ -43,6 +46,7 @@ const BtnCenterTop = styled(Button)`
   font-weight: 700;
   border: 1px solid #fff;
   color: #fff;
+  letter-spacing: 1px;
   background-color: transparent;
   transition: ease 0.3s;
   &:hover{
