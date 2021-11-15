@@ -13,6 +13,7 @@ export default function ImageText(props) {
   return (
     <>
       <TextCenter
+        isSticky={true}
         fontFamily={props.fontFamily}
         title={props.title}
         desc={props.desc}

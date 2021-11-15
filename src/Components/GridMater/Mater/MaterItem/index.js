@@ -216,8 +216,8 @@ const ContentHeightWidth = styled.div`
 `;
 
 const IframeComp = styled.iframe`
-  background-color: rgb(0,69,0);
-  background-image: linear-gradient(180deg, rgba(0,69,0,1) 0%, rgba(76,175,80,1) 0%);
+  background-color: #004500;
+  /* background-image: linear-gradient(180deg, rgba(0,69,0,1) 0%, rgba(76,175,80,1) 0%); */
 `;
 
 const ContentCircular = styled.div`
@@ -231,7 +231,7 @@ const ContentCircular = styled.div`
 const CircularProgressComp = styled(CircularProgress)`
   height: 100px;
   width: 100px;
-  color: #4e9b31;
+  color: #004500;
 `;
 
 const ContentColor = styled.div`
@@ -298,7 +298,7 @@ export default function MaterItem(props) {
             width: "100%",
             height: "inherit",
             borderRadius: "9px",
-            backgroundColor: "rgb(222, 222, 222)"
+            backgroundColor: "#004500"
           }}
           // allowfullscreen
           allow="fullscreen"

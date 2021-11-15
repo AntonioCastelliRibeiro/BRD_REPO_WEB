@@ -15,7 +15,7 @@ const ButtonPrinc = styled(Button)`
   transition: ease 300ms;
   &:hover{
     background-color: #fff;
-    color: rgb(8, 127, 35);
+    color: #004500;
   }
 `;
 

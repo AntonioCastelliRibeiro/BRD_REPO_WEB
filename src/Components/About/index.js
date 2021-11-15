@@ -48,7 +48,7 @@ export default function AboutComp(props) {
         <TextCenter
           fontFamily={props.fontFamily}
           desc={data.firstDesc}
-          padding="40px 0px 20px 0px"
+          padding="24px 0px 16px 0px"
           fontSize="30px"
           fontWeight={200}
         />

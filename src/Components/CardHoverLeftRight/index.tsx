@@ -47,9 +47,8 @@ const ContentFirst = styled.div<IContent>`
   width: 100%;
   background-color: transparent;
   /* background-color: rgb(8, 127, 35); */
-  /* background-image: linear-gradient(#37993a,#3a8d36); */
-  padding-top: 36px;
-  padding-bottom: 130px;
+  /* background-image: linear-gradient(#37993a,#3a8d36); */  
+  /* padding-bottom: 130px; */
   overflow: hidden;
   display: flex;
   z-index: 1;
@@ -145,7 +144,7 @@ export default function CardHoverLeftRight(props: IProps) {
 
     return (
         <ContentFirst>
-            <div>
+            <div style={{ width: "100%" }}>
                 <Container maxWidth="xl">
                     <DescPrinc fontFamily={props.fontFamily} descFirst={props.firstDescScroll} descSec={C_DESC_SEC} />
                 </Container>

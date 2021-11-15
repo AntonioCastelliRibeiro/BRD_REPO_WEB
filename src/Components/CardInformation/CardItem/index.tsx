@@ -1,5 +1,5 @@
 import React from "react";
-import { CardActionArea } from "@material-ui/core";
+import { CardActionArea, Typography } from "@material-ui/core";
 import styled from "styled-components";
 import ICardItem from "./interface";
 
@@ -13,7 +13,7 @@ const ContentPrinc = styled.div`
 
 const CardActionAreaComp = styled(CardActionArea)`
   color: #fff;
-  height: 100%;
+  min-height: 290px;
   width: 100%;
   border-radius: 5px;
   background-color: #012401be;
@@ -60,14 +60,21 @@ const Desc = styled.div`
   color: #fff;
 `;
 
+const TypographyComp = styled(Typography)`
+  text-transform: uppercase;
+`;
+
 export default function CardItem(props: ICardItem) {
   return (
     <ContentPrinc>
       <CardActionAreaComp>
         <ContentFlex fontFamily={props.fontFamily}>
-          <TitleFirst children={props.titleFirst} />
-          <TitleSec children={props.titleSec} />
-          <Desc children={props.desc} />
+          <TypographyComp variant="h5" children={props.titleFirst} />
+          <TypographyComp variant="h2" children={props.titleSec} />
+          <Typography variant="h6" children={props.desc} />
+          {/* <TitleFirst children={props.titleFirst} /> */}
+          {/* <TitleSec children={props.titleSec} /> */}
+          {/* <Desc children={props.desc} /> */}
         </ContentFlex>
       </CardActionAreaComp>
     </ContentPrinc>

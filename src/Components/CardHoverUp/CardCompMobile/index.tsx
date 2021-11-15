@@ -112,9 +112,9 @@ const ContentPrincUp = styled.div`
   position: absolute;
   border-radius: 9px;
   z-index: 0;
-  background-color: rgb(0,69,0);
-  background-image: linear-gradient(180deg, rgba(0,69,0,1) 0%, rgba(76,175,80,1) 0%);
-  color: black;
+  background-color: #004500;
+  /* background-image: linear-gradient(180deg, rgba(0,69,0,1) 0%, rgba(76,175,80,1) 0%); */
+  color: #fff;
   margin-top: -80px;
   user-select: none;
   width: 100%;

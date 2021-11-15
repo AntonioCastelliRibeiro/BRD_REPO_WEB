@@ -1,6 +1,6 @@
 import React from "react";
 import { Star } from "@material-ui/icons";
-import { Paper, Avatar } from "@material-ui/core";
+import { Paper, Avatar, Typography } from "@material-ui/core";
 import styled from "styled-components";
 import IProps from "./interface";
 import { Rating } from "@material-ui/lab";
@@ -40,37 +40,28 @@ const AvatarComp = styled(Avatar)`
 `;
 
 const ContentDesc = styled.div`
-  font-family: inherit;
+  /* font-family: inherit; */
   width: 70%;
   padding: 30px 0px 30px 0px;
   font-size: 1.0925rem;
-  font-style: italic;
+  /* font-style: italic; */
   color: #fff;
   text-align: center;
   letter-spacing: 1px;
-  line-height: 1.75;
-  font-weight: 800;
+  /* line-height: 1.75;
+  font-weight: 800; */
 `;
 
 const DescName = styled.div`
-  font-family: inherit;
-  width: auto;
-  font-size: 1.125rem;
+  padding-bottom: 8px;
   text-align: center;
   color: #fff;
-  letter-spacing: 1px;
-  line-height: 1.75;
-  font-weight: 700;
 `;
 
 const DescCargo = styled.div`
-  font-family: inherit;
-  font-size: .75rem;
+  padding-bottom: 8px;
   text-transform: uppercase;
   color: #fff;
-  letter-spacing: 1px;
-  line-height: 1.75;
-  font-weight: 600;
 `;
 
 const ContentStar = styled.div`
@@ -104,10 +95,10 @@ export default function CardCrSel(props: IProps) {
             src={props.img}
           />
         </PaperAvatar>
-        <ContentDesc children={props.desc} />
+        <ContentDesc children={<Typography variant="h6" children={props.desc} />} />
         <ContentSocialInfo>
-          <DescName children={props.name} />
-          <DescCargo children={props.cargo} />
+          <DescName children={<Typography variant="h5" children={props.name} />} />
+          <DescCargo children={<Typography variant="subtitle2" children={props.cargo} />} />
           <ContentStar children={
             <>
               {/* <Rating name="size-large" value={6} defaultValue={6} size="large" /> */}

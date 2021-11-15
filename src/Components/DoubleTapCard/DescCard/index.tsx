@@ -21,7 +21,7 @@ const ContentDesc = styled.div`
 `;
 
 const DescTitle = styled(Typography)`
-    text-align: center;
+  text-align: center;
 `;
 
 const ContentItemDesc = styled.div`
@@ -38,7 +38,7 @@ export default function DescCard(props: iProps) {
       <ContentDesc>
         <ContentItemDesc>
           <DescTitle variant="h1" children={props.datacard.desc} />
-          <props.ButtonComp variant="h2" children={props.datacard.buttonDesc} />
+          <props.ButtonComp variant="button" children={props.datacard.buttonDesc} />
         </ContentItemDesc>
       </ContentDesc>
     </ContentPrinc>

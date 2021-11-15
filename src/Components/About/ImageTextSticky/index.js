@@ -1,4 +1,4 @@
-import { Box, CardActionArea, CardMedia } from "@material-ui/core";
+import { Box, CardActionArea, CardMedia, Typography } from "@material-ui/core";
 import { StickyContainer, Sticky } from "react-sticky";
 import styled from "styled-components";
 
@@ -36,8 +36,6 @@ const ContentDescLeft = styled.div`
 const DescLeft = styled.div`
   text-align: center;
   padding-bottom: 12px;
-  font-size: 23px;
-  font-weight: 500;
   color: #fff;
 `;
 
@@ -58,8 +56,8 @@ export default function ImageTextSticky(props) {
           <header style={style}>
             <ContentDescLeftFlex>
               <ContentDescLeft fontFamily={props.fontFamily}>
-                {props.title ? <DescLeft data-aos="fade-up" data-aos-delay="200" children={props.title} /> : false}
-                <Box data-aos="fade-up" data-aos-delay="200" children={props.desc} />
+                {props.title ? <Typography variant="h5" data-aos="fade-up" data-aos-delay="200" children={props.title} /> : false}
+                <Typography variant="h6" data-aos="fade-up" data-aos-delay="200" children={props.desc} />
               </ContentDescLeft>
               <Box width="50%" />
             </ContentDescLeftFlex>

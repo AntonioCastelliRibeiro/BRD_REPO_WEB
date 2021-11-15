@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 // import { Frame } from "framer";
 
 import ProfileImage from "./ProfileImage";
+import { Typography } from "@material-ui/core";
 
 const cardWidth = "100%";
 const borderRadius = 8;
@@ -64,18 +65,12 @@ const Content = styled.div`
 
 const Title = styled.span`
   display: block;
-  margin-bottom: 4px;
-  font-size: 20px;
-  letter-spacing: 1px;
-  font-weight: 800;
+  margin-bottom: 4px;  
   transition: ${transition};
 `;
 
 const Description = styled.span`
   display: block;
-  font-weight: 500;
-  font-size: 12px;
-  letter-spacing: 1px;
   transition: ${transition};
   transition-delay: 0.04s;
 `;
@@ -152,20 +147,16 @@ function retornarStyle(props, location) {
         style={{ textDecoration: "none", color: "black" }}
         to={location.pathname + "/" + props.search}
       >
-        {props.isProfile ? (
-          <ProfileImage image={props.image} />
-        ) : (
-          <DivScreenshot
-            children={
-              <Screenshot
-                borderRadius={props.nome === "Cresol" ? "50%" : "0%"}
-                draggable={false}
-                alt="patrocImage"
-                src={props.image}
-              />
-            }
-          />
-        )}
+        <DivScreenshot
+          children={
+            <Screenshot
+              borderRadius={props.nome === "Cresol" ? "50%" : "0%"}
+              draggable={false}
+              alt="patrocImage"
+              src={props.image}
+            />
+          }
+        />
         <Content>
           <Title>{props.title}</Title>
           <Description>{props.description}</Description>
@@ -176,31 +167,32 @@ function retornarStyle(props, location) {
   );
 }
 
-function retornarProfile(props, location) {
-  return retornarStyle(props, location);
-}
-function retornarPatroc(props, location) {
-  return (
-    <motion.div
-      style={{ width: "100%" }}
-    // drag
-    // dragElastic={0.03}
-    // dragConstraints={{
-    //   top: 0,
-    //   left: 0,
-    //   right: 0,
-    //   bottom: 0
-    // }}
-    // transition={{ type: "spring", duration: 1 }}
-    >
-      {retornarStyle(props, location)}
-    </motion.div>
-  );
-}
 
 export default function Card(props) {
   const location = useLocation();
-  return props.isProfile
-    ? retornarProfile(props, location)
-    : retornarPatroc(props, location);
+  return (
+    <motion.div style={{ width: "100%" }} >
+      <Style data-aos="fade-up">
+        <Link
+          style={{ textDecoration: "none", color: "black" }}
+          to={location.pathname + "/" + props.search}
+        >
+          <DivScreenshot
+            children={
+              <Screenshot
+                borderRadius={props.nome === "Cresol" ? "50%" : "0%"}
+                draggable={false}
+                alt="patrocImage"
+                src={props.image}
+              />
+            }
+          />
+          <Content>
+            <Title><Typography variant="h5" children={props.title} /></Title>
+            <Description><Typography variant="subtitle2" children={props.description} /></Description>
+            <BottomBar background={props.hexa} />
+          </Content>
+        </Link>
+      </Style >
+    </motion.div>)
 }

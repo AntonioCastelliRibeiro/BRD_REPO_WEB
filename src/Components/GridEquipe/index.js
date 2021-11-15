@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Container, Grid } from "@material-ui/core";
+import { Container, Grid, Typography } from "@material-ui/core";
 import styled from "styled-components";
 import EquipeCapaApresent from "./EquipeCapaApresent";
 import dataEquipe from "./data.js";
@@ -13,24 +13,19 @@ const ContentRelative = styled.div`
 `;
 
 const ContentFade = styled.div`
-  font-family: ${props => props.fontFamily};
-  padding-top:40px;
+  color: #fff;
+  text-align: center;
+  padding-top: 24px;
+  padding-bottom: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-const ContentFirstDesc = styled.div`
-  text-align: center;
-  font-size:30px;
-  font-weight: 200;
-  line-height: 1.1667;
-  color: #fff;
-  padding-bottom: 30px;
-`;
-
 const C_ABOUT_EQUIPE =
   "https://images.unsplash.com/photo-1476554123255-b0ff6b30dcd8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80";
+
+const C_DESC_FIRST = "Nosso pessoal tem experiência, compromisso e conexões para ajudar empreendedores e fundadores a aumentar suas chances de sucesso."
 
 export default function GridEquipe(props) {
 
@@ -56,11 +51,7 @@ export default function GridEquipe(props) {
       <ContentRelative>
         <Container maxWidth="lg">
           <ContentFade fontFamily={props.fontFamily} >
-            <ContentFirstDesc>
-              Nosso pessoal tem experiência, compromisso e conexões para
-              ajudar empreendedores e fundadores a aumentar suas chances de
-              sucesso
-            </ContentFirstDesc>
+            <Typography variant="h5" children={C_DESC_FIRST} />
           </ContentFade>
           <Grid style={styleGrid} spacing={2} container >
             {dataEquipe.map((e, count) => {

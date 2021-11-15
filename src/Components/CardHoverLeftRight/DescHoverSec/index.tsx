@@ -2,13 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import IProps from "./interface";
+import { Typography } from "@material-ui/core";
 
 const transition = "ease 0.3s";
 
 interface IDescHoverUp {
-    hover: boolean;
-    mobile: boolean;
-    transitionDelay: string;
+  hover: boolean;
+  mobile: boolean;
+  transitionDelay: string;
 }
 
 const DescHoverUp = styled(motion.div) <IDescHoverUp>`
@@ -28,12 +29,12 @@ const DescHoverUp = styled(motion.div) <IDescHoverUp>`
 `;
 
 export default function DescHoverSec(props: IProps) {
-    return (
-        <DescHoverUp
-            mobile={props.mobile}
-            hover={props.hover}
-            children={props.desc}
-            transitionDelay={props.hover ? "300ms" : "0ms"}
-        />
-    );
+  return (
+    <DescHoverUp
+      mobile={props.mobile}
+      hover={props.hover}
+      children={<Typography variant="h4" children={props.desc} />}
+      transitionDelay={props.hover ? "300ms" : "0ms"}
+    />
+  );
 }

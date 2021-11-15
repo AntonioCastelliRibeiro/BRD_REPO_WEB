@@ -1,5 +1,5 @@
 import React from "react";
-import { CardActionArea } from "@material-ui/core";
+import { CardActionArea, Typography } from "@material-ui/core";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import IProps from "./interface";
@@ -75,6 +75,10 @@ const BgBtnColor = styled.div<IContent>`
   /* padding: 8px 10px 8px 10px; */
 `;
 
+const TypographyComp = styled(Typography)`
+    font-weight: 800;
+`;
+
 export default function Butthover(props: IProps) {
     const hover = props.left
         ? !props.hoverRight || props.hoverLeft
@@ -99,7 +103,7 @@ export default function Butthover(props: IProps) {
                             hoverRight={props.hoverRight}
                             // hoverBg={hoverBg}
                             hover={!hover}
-                            children={props.desc}
+                            children={<TypographyComp variant="button" children={props.desc} />}
                             transitionDelay={"0ms"}
                         />
                     ) : (
@@ -110,7 +114,7 @@ export default function Butthover(props: IProps) {
                                 hoverBg={hoverBg}
                                 hover={!hover
                                 }
-                                children={props.desc}
+                                children={<TypographyComp variant="button" children={props.desc} />}
                                 transitionDelay={hoverBg ? "350ms" : "0ms"}
                             />
                         </CardActionAreaComp>

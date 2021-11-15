@@ -195,7 +195,7 @@ const ContentPrinc = styled.div`
     }
     ${ButtonComp} {
       background-color: #fff;
-      color: #66bb6a;
+      color: #004500;
     }
     ${ContentDesc} {
       transform: scale(1);
@@ -206,8 +206,8 @@ const ContentPrinc = styled.div`
 const GridContainer = styled(Grid)`
   font-family: inherit;
   border-radius: 9px;
-  background-color: rgb(0,69,0);
-  background-image: linear-gradient(357deg,#099209be 8%,rgba(76,175,80,1) 100%);
+  background-color: #004500;
+  /* background-image: linear-gradient(357deg,#099209be 8%,rgba(76,175,80,1) 100%); */
 `;
 
 const GridComp = styled(Grid)`
@@ -226,7 +226,6 @@ interface iContentPadding {
 const ContentPadding = styled(motion.div) <iContentPadding>`
   font-family: ${(props) => props.fontFamily};
   width: 100%;
-  padding-top: 18px;
   @media (max-width: 600px) {
     ${TypographyDesc} {
       padding-bottom: 8px;

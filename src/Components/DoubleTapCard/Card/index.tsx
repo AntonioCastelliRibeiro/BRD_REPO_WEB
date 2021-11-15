@@ -47,7 +47,7 @@ const ContentSec = styled(motion.div)`
     }
     ${ButtonComp} {
       color: #fff;
-      background-color: rgb(8, 127, 35);
+      background-color: #004500;
     }
   }
 `;

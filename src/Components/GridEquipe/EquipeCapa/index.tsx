@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Avatar, IconButton } from "@material-ui/core";
+import { Avatar, IconButton, Typography } from "@material-ui/core";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
@@ -59,7 +59,7 @@ const ContentCircle = styled.div`
   background-color: #004500;
   opacity: 1;
   z-index: -1;
-  transform: translateY(-40px) scale(1.4);
+  transform: translateY(-55px) scale(1.4);
   transition: ${transition};
 `;
 
@@ -99,6 +99,11 @@ const LinkedInIconComp = styled(LinkedInIcon)`
 
 const InstagramIconComp = styled(InstagramIcon)`
   color: #004500;
+`;
+
+const ContentDesc = styled.div`
+  color: #004500;
+  text-align: center;
 `;
 
 const CardComp = styled.div`
@@ -148,8 +153,10 @@ export default function EquipeCapa(props: IProps) {
                 />
               </ContentAvatar>
             </ContentAvatarPrinc>
-            <DescName children={props.nome + " " + props.sobreNome} />
-            <DescCargo children={props.cargo} />
+            <ContentDesc>
+              <Typography variant="h5" children={props.nome + " " + props.sobreNome} />
+              <Typography variant="subtitle2" children={props.cargo} />
+            </ContentDesc>
             <ContentSocial
               children={
                 <>

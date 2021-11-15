@@ -16,8 +16,8 @@ const ButtonComp = styled(Button) <iButtonComp>`
   font-weight: 500;
   transition: 0.7s ease;
   &:hover {
-    border: 1px solid #66bb6a;
-    background-color: #66bb6a;
+    border: 1px solid #004500;
+    background-color: #004500;
     color: #fff;
   }
 `;

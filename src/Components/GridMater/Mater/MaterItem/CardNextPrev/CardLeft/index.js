@@ -8,8 +8,8 @@ const Content = styled(motion.div)`
   width: 100%;
   max-height: inherit;
   min-height: inherit;
-  background-color: #4caf50;
-  background-image: linear-gradient(180deg, rgba(0,69,0,1) 0%, rgba(76,175,80,1) 0%);
+  background-color: #004500;
+  /* background-image: linear-gradient(180deg, rgba(0,69,0,1) 0%, rgba(76,175,80,1) 0%); */
   overflow: hideen;
   z-index: 1;
   border-top-left-radius: 9px;

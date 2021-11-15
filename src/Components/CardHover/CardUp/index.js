@@ -64,27 +64,27 @@ const ContentHover = styled(motion.div)`
 `;
 
 const DescBase = styled(motion.div)`
-  font-size: ${(props) => props.fontSize};
-  line-height: ${(props) => props.lineHeight};
+  /* font-size: ${(props) => props.fontSize};
+  line-height: ${(props) => props.lineHeight}; */
   text-align: center;
   margin-right: ${(props) => props.marginRight};
   margin-bottom: ${(props) => props.marginBottom};
   margin-left: ${(props) => props.marginLeft};
-  font-weight: 800;
+  /* font-weight: 800; */
 `;
 
 const DescTitle = styled(DescBase)`
-  font-weight: 800;
+  /* font-weight: 800;
   letter-spacing: 3px;
   line-height: 1.75;
-  font-weight: 800;
+  font-weight: 800; */
   user-select: ${(props) => (props.mobile ? "none" : "")};
 `;
 
 const DescContent = styled(DescBase)`
   /* transform: translateY(-50px); */
-  font-weight: 500;
-  letter-spacing: 1px;
+  /* font-weight: 500;
+  letter-spacing: 1px; */
   user-select: ${(props) => (props.mobile ? "none" : "")};
 `;
 
@@ -156,28 +156,25 @@ export default memo(function CardUp(props) {
             <Box display="flex" flexDirection="column">
               <DescTitle
                 mobile={props.mobile}
-                fontSize="33px"
                 initial={initialMenu}
                 animate={menuControls}
               >
-                {props.title}
+                <Typography variant="h4" children={props.title} />
               </DescTitle>
               <DescContent
                 mobile={props.mobile}
-                fontSize="18px"
-                lineHeight="1.75"
                 marginRight="35px"
                 marginLeft="35px"
                 initial={initialItem}
                 animate={itemControls}
-                children={props.desc}
+                children={<Typography variant="h6" children={props.desc} />}
               />
               <ContentButton
                 style={{ zIndex: 5 }}
                 initial={initialItem}
                 animate={buttonControls}
               >
-                <ButtonComp children={props.btnDesc} />
+                <ButtonComp children={<Typography variant="button" children={props.btnDesc} />} />
               </ContentButton>
             </Box>
           </ContentDesc>

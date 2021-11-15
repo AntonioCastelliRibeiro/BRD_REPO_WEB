@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import IProps from "./interface";
+import { Typography } from "@material-ui/core";
 
 const transition = "ease-in-out 0.3s";
 
@@ -34,8 +35,9 @@ export default function DescHover(props: IProps) {
     <DescHoverUp
       mobile={props.mobile}
       hover={props.hover}
-      children={props.desc}
       transitionDelay={props.hover ? "300ms" : "0ms"}
-    />
+    >
+      <Typography variant="h2" children={props.desc} />
+    </DescHoverUp>
   );
 }

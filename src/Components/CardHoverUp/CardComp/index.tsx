@@ -33,7 +33,7 @@ const ButtonComp = styled(Typography)`
   border-radius: 9px;
   background-color: transparent;
   color: black;
-  border: 1px solid #66bb6a;
+  border: 1px solid #004500;
   filter: brightness(89%);
   transition: ${transition};
   /* letter-spacing: 1px; */
@@ -49,7 +49,7 @@ const ContentSec = styled(motion.div)`
   &:hover {
     ${ButtonComp} {
       background-color: #fff;
-      color: #66bb6a;
+      color: #004500;
     }
   }
 `;
@@ -124,7 +124,7 @@ const ContentItemDescSec = styled(motion.div)`
   color: #fff;
   font-family: inherit;
   height: 100%;
-  padding: 16px 16px 16px 16px;
+  padding: 10px 16px 16px 16px;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -154,8 +154,8 @@ const ContentPrincUp = styled.div`
   position: absolute;
   border-radius: 9px;
   z-index: 1;
-  background-color: rgb(0,69,0);
-  background-image: linear-gradient(357deg,#099209be 8%,rgba(76,175,80,1) 100%);
+  background-color: #004500;
+  /* background-image: linear-gradient(357deg,#099209be 8%,rgba(76,175,80,1) 100%); */
   transform: translateY(-80px);
   user-select: none;
   width: 100%;

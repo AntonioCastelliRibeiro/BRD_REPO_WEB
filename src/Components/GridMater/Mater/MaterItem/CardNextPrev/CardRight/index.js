@@ -8,7 +8,7 @@ const Content = styled(motion.div)`
   width: 100%;
   max-height: inherit;
   min-height: inherit;
-  background-color: rgb(222, 222, 222);
+  background-color: #fff;
   overflow: hideen;
   z-index: 1;
   border-top-right-radius: 9px;
@@ -36,7 +36,7 @@ const DescCenter = styled(motion.div)`
   /* -webkit-text-fill-color: #4caf50;//#3767B9; */
   display: flex;
   width: inherit;
-  color: #4caf50;
+  color: #004500;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -58,7 +58,7 @@ const ContentLeftFlex = styled(motion.div)`
   width: inherit;
   padding-left: 10px;
   padding-top: 10px;
-  color: #4caf50;
+  color: #004500;
   text-align: start;
 `;
 

@@ -10,7 +10,8 @@ import {
   CardActions,
   IconButton,
   Button,
-  makeStyles
+  makeStyles,
+  Typography
 } from "@material-ui/core";
 
 import FacebookIcon from "@material-ui/icons/Facebook";
@@ -21,17 +22,22 @@ import ColabImgCapa from "../ColabImgCapa";
 
 const ContentBgColor = styled.div`
   height: 100%;
-  /* background: rgba(0,69,0,1);
-  background: linear-gradient(339deg, rgba(0,0,0,1) 2%, rgba(0,69,0,1) 92%); */
+
   
 `;
 
 const ContentRelative = styled.div`
   position: relative;
-  height: 100%;
-  /* background: rgba(0,69,0,1);
-  background: linear-gradient(339deg, rgba(0,0,0,1) 2%, rgba(0,69,0,1) 92%); */
+  display: flex;
+  justify-content: center;
+  min-height: 80vh;
+  background: rgba(0,69,0,1);
+  background: linear-gradient(339deg, rgba(0,0,0,1) 2%, rgba(0,69,0,1) 92%);
   padding-bottom: 45px;
+`;
+
+const ContainerComp = styled(Container)`
+  display: inherit;
 `;
 
 // import data from "../data.js";
@@ -117,7 +123,7 @@ export default function ColabItem(props) {
       <ContentBgColor>
         <ColabImgCapa ocultaDesc={true} img={C_ABOUT_COLAB} />
         <ContentRelative>
-          <Container maxWidth="lg">
+          <ContainerComp maxWidth="lg">
             <Box
               fontFamily={props.fontFamily}
               paddingTop={"70px"}
@@ -136,29 +142,24 @@ export default function ColabItem(props) {
                       >
                         <Button style={{ letterSpacing: "1px", fontFamily: props.fontFamily, color: "#fff" }}>
                           <ArrowBack />
-                          <Box margin="0px 9px 0px 9px">{props.descButton}</Box>
+                          <Box margin="0px 9px 0px 9px"><Typography variant="button" children={props.descButton} /></Box>
                         </Button>
                       </Link>
                     </Box>
                     <Box
                       style={{ textTransform: "uppercase" }}
-                      marginBottom="20px"
                       color="#fff"
-                      letterSpacing="1px"
-                      lineHeight=".8885em"
-                      fontSize="calc(1.625rem + 34 * ((100vw - 26.25rem) / 860))"
                     >
-                      {ADataColab.nome}
+                      <Typography variant="h2" children={ADataColab.nome} />
                     </Box>
                     <Box
                       style={{ textTransform: "uppercase" }}
-                      marginBottom="20px"
                       color="#fff"
-                      letterSpacing="1px"
-                      lineHeight=".8885em"
-                      fontSize="calc(1.625rem + 34 * ((100vw - 26.25rem) / 860))"
                     >
-                      {ADataColab.sobreNome}
+                      <Typography variant="h2" children={ADataColab.sobreNome} />
+                    </Box>
+                    <Box marginBottom="8px">
+                      <Typography variant="subtitle1" children={ADataColab.cargo} />
                     </Box>
                     <Box height="50px" marginBottom="20px">
                       <CardActions style={{ padding: "6px" }}>
@@ -179,31 +180,12 @@ export default function ColabItem(props) {
                         </IconButton>
                       </CardActions>
                     </Box>
-                    <Box
-                      fontSize="calc(1.125rem + 4 * ((100vw - 26.25rem) / 860))"
-                      lineHeight="1.56em"
-                      marginBottom="20px"
-                      letterSpacing="1px"
-                    >
-                      {ADataColab.cargo}
+
+                    <Box marginBottom="8px" >
+                      <Typography variant="body1" children={ADataColab.descricao1} />
                     </Box>
-                    <Box
-                      fontSize="calc(.875rem + 3 * ((100vw - 26.25rem) / 860))"
-                      lineHeight="1.625em"
-                      opacity=".7"
-                      marginBottom="1.6em"
-                      letterSpacing="1px"
-                    >
-                      {ADataColab.descricao1}
-                    </Box>
-                    <Box
-                      fontSize="calc(.875rem + 3 * ((100vw - 26.25rem) / 860))"
-                      lineHeight="1.625em"
-                      opacity=".7"
-                      marginBottom="1.6em"
-                      letterSpacing="1px"
-                    >
-                      {ADataColab.descricao2}
+                    <Box marginBottom="8px" >
+                      <Typography variant="body1" children={ADataColab.descricao2} />
                     </Box>
                   </Box>
                 </div>
@@ -239,7 +221,7 @@ export default function ColabItem(props) {
                 </Box>
               </Box>
             </Box>
-          </Container>
+          </ContainerComp>
         </ContentRelative>
       </ContentBgColor>
     );

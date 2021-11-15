@@ -17,10 +17,12 @@ const ContentPrinc = styled.div`
 const ContentDescTop = styled.div`
   color: #fff;
   font-family: ${props => props.fontFamily};
-  padding-top: 40px;
+  padding-top: 24px;
+  padding-bottom: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 `;
 
 const DescTop = styled.div`

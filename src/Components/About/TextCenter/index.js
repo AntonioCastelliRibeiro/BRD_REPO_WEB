@@ -1,9 +1,11 @@
-import { Box, Container } from "@material-ui/core";
+import { Container, Typography } from "@material-ui/core";
 import styled from "styled-components";
 
 const ContentPrinc = styled.div`
   display: flex;
   flex-direction: column;
+  text-align: center;
+  color: #fff;
   justify-content:center;
   font-family: ${props => props.fontFamily};
   padding: ${props => props.padding}; 
@@ -29,14 +31,9 @@ export default function TextCenter(props) {
   return (
     <Container maxWidth="xl">
       <ContentPrinc fontFamily={props.fontFamily} padding={props.padding}>
-        <DescTitle children={props.title} />
-        <CompDesc
-          fontSize={props.fontSize}
-          fontWeight={props.fontWeight}
-          lineHeight={props.lineHeight || "1.1667"}
-          color={props.color || "#fff"}
-          children={props.desc}
-        />
+        {props.isSticky ? <Typography variant="h5" children={props.title} /> : false}
+        {/* <DescTitle children={props.title} /> */}
+        <Typography variant={props.isSticky ? "h6" : "h5"} children={props.desc} />
       </ContentPrinc>
     </Container>
   );

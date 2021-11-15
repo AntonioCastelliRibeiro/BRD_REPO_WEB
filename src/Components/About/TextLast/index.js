@@ -1,8 +1,7 @@
-import { Box, makeStyles } from "@material-ui/core";
+import { Box, makeStyles, Typography } from "@material-ui/core";
 import styled from "styled-components";
 
 const Content = styled.div`
-  font-family: ${props => props.fontFamily};
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -42,8 +41,10 @@ export default function TextLast(props) {
   const styles = useStyles();
   return (
     <Content fontFamily={props.fontFamily}>
-      <Box data-aos="fade-up" data-aos-delay="200" className={styles.firstText} children={props.desc} />
-      <DescSec data-aos="fade-up" data-aos-delay="200" children={props.name} />
+      <Typography variant="h2" className={styles.firstText} data-aos="fade-up" data-aos-delay="200" children={props.desc} />
+      <Typography variant="subtitle1" data-aos="fade-up" data-aos-delay="200" children={props.name} />
+      {/* <Box data-aos="fade-up" data-aos-delay="200" className={styles.firstText} children={props.desc} />
+      <DescSec data-aos="fade-up" data-aos-delay="200" children={props.name} /> */}
     </Content>
   );
 }

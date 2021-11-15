@@ -1,5 +1,5 @@
 import React from "react";
-import { CardMedia } from "@material-ui/core";
+import { CardMedia, Typography } from "@material-ui/core";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import IProps from "./interface";
@@ -98,7 +98,7 @@ export default function CardHoverLeftRight(props: IProps) {
                 transitionDelay={props.hover ? "100ms" : "200ms"}
                 translatey={props.hover ? "-38px" : "-10px"}
                 opacity={props.hover ? "0" : "1"}
-                children={"Nosso Programa"}
+                children={<Typography variant="h2" children="Nosso Programa" />}
             />
         </ContentDescMid>
     );

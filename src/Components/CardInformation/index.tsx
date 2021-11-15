@@ -9,7 +9,7 @@ import DescPrinc from "../CardHover/DescPrinc";
 const ContentPrinc = styled.div`
     /* display: flex; */
     /* justify-content: center; */
-    padding-bottom: 130px;
+    /* padding-bottom: 130px; */
     /* background-color: rgb(8, 127, 35); */
     background-color: transparent;
 

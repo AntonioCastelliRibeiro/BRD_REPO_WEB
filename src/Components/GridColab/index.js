@@ -2,7 +2,7 @@ import { useEffect, memo } from "react";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import styled from "styled-components";
 
-import { Box, Button, Grid, Container } from "@material-ui/core";
+import { Box, Button, Grid, Container, Typography } from "@material-ui/core";
 
 import ColabImgCapa from "./ColabImgCapa";
 
@@ -27,7 +27,7 @@ const ContentBgColor = styled.div`
 
 const ContentDescTop = styled.div`
   font-family: ${props => props.fontFamily};
-  padding-top: 40px;
+  padding-top: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,12 +41,11 @@ const DescCenterTop = styled.div`
 `;
 
 const BtnCenterTop = styled(Button)`
-  width: 180px;
-  margin: 30px 0 30px;
-  font-weight: 700;
+  width: 150px;
+  margin-top: 8px;
+  margin-bottom: 16px;
   border: 1px solid #fff;
   color: #fff;
-  letter-spacing: 1px;
   background-color: transparent;
   transition: ease 0.3s;
   &:hover{
@@ -97,8 +96,8 @@ export default memo(function GridColab(props) {
       <ColabImgCapa {...propColabImg(props)} />
       <ContentBgColor>
         <ContentDescTop fontFamily={props.fontFamily}>
-          <DescCenterTop children={"A sorte favorece a mente preparada"} />
-          <BtnCenterTop children={"Louis Pasteur"} />
+          <Typography variant="h5" children={"A sorte favorece a mente preparada"} />
+          <BtnCenterTop children={<Typography variant="button" children={"Louis Pasteur"} />} />
         </ContentDescTop>
         <Container maxWidth="lg">
           <Grid {...propStyleGrid} >
