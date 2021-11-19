@@ -70,18 +70,24 @@ const ContentCardTerc = styled.div`
 `;
 
 const ContentCardInformation = styled.div`
+  padding-bottom: 160px;
 `;
 
-const ContentCardHover = styled.div``;
+const ContentCardHover = styled.div`
+  padding-bottom: 160px;
+`;
 
 const ContentCardHoverLeftRight = styled.div`
+  padding-bottom: 160px;
   /* padding-top: 150px;
   padding-bottom:150px; */
 `;
 
 const ContentCardHoverImg = styled.div``;
 
-const ContentPatroc = styled.div``;
+const ContentPatroc = styled.div`
+  padding-bottom: 130px;
+`;
 
 const ContentOpinion = styled.div``;
 

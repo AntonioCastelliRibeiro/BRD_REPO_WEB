@@ -38,7 +38,7 @@ const ContentBgImage = styled.div`
 `;
 
 const ContentbgImageItem = styled.div`
-    border-radius: 10px;
+    /* border-radius: 10px; */
     height: 100%;
     width: 100%;
     display: flex;

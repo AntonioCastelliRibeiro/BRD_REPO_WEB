@@ -1,6 +1,7 @@
 import { memo } from "react";
 import styled from "styled-components";
 import { motion, useAnimation } from "framer-motion";
+import { Typography } from "@material-ui/core";
 
 const Content = styled(motion.div)`
   z-index: 1300;
@@ -62,7 +63,7 @@ export default memo(function AHrefHover(props) {
             onHoverStart={sequenceUp}
             onHoverEnd={sequenceDown}
         >
-            <ContentDesc fontSize={props.fontSize} children={props.desc || "Descrição"} />
+            <ContentDesc children={<Typography variant={props.variant} children={props.desc} /*props.desc || "Descrição"*/ />} />
             <ContentHoverLeft height={props.lineHeight}>
                 <CompHoverLeft initial={sequenceDown} animate={compControlsLeft} transition={transition} />
             </ContentHoverLeft>

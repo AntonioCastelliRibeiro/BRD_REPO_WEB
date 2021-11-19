@@ -37,7 +37,7 @@ export default function DescCard(props: iProps) {
     <ContentPrinc>
       <ContentDesc>
         <ContentItemDesc>
-          <DescTitle variant="h1" children={props.datacard.desc} />
+          <DescTitle variant="h3" children={props.datacard.desc} />
           <props.ButtonComp variant="button" children={props.datacard.buttonDesc} />
         </ContentItemDesc>
       </ContentDesc>

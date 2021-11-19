@@ -21,6 +21,8 @@ import dataEquip from "../Components/GridEquipe/data.js";
 
 import About from "../Components/About";
 import { AnimatePresence } from "framer-motion";
+import { createTheme } from "@material-ui/core";
+import { ThemeProvider } from "styled-components";
 
 // import GridPrincipal from "../GridPrincipal";
 // import Recipe from "../Recipe";
@@ -40,65 +42,75 @@ import { AnimatePresence } from "framer-motion";
 
 // const About = lazy(() => import("../Components/About"));
 
-export default function ReactRouter(props) {
-  return (
-    <Router>
-      <NavTop fontFamily={props.fontFamily} />
-      <AnimatePresence>
-        {/* <Suspense fallback={<div>carregando...</div>}> */}
-        <Switch>
-          <Route
-            path="/"
-            exact
-            component={() => <Principal fontFamily={props.fontFamily} />}
-          />
-          <Route
-            path="/materias/:id"
-            component={(e) => <MaterItem fontFamily={props.fontFamily} />}
-          />
-          <Route
-            path="/materias"
-            component={() => <GridMater fontFamily={props.fontFamily} />}
-          />
-          <Route
-            path="/colaboradores/:id"
-            component={(e) => (
-              <ColabItem
-                data={dataColab}
-                descButton="De Volta aos Colaboradores"
-                pathName="/colaboradores"
-                fontFamily={props.fontFamily}
-              />
-            )}
-          />
-          <Route
-            path="/colaboradores"
-            component={() => <GridColab fontFamily={props.fontFamily} />}
-          />
-          <Route
-            path="/equipe/:id"
-            component={() => (
-              <EquipeItem
-                data={dataEquip}
-                descButton="De Volta a Equipe"
-                pathName="/equipe"
-                fontFamily={props.fontFamily}
-              />
-            )}
-          />
-          <Route
-            path="/equipe"
-            component={() => <GridEquipe fontFamily={props.fontFamily} />}
-          />
-          <Route
-            path="/sobre"
-            component={() => <About fontFamily={props.fontFamily} />}
-          />
-        </Switch>
-        <Foot fontFamily={props.fontFamily} />
-      </AnimatePresence>
-      {/* </Suspense> */}
-    </Router>
 
+
+export default function ReactRouter(props) {
+
+  const theme = createTheme({
+    typography: {
+      fontFamily: props.fontFamily
+    },
+  });
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Router>
+        <NavTop fontFamily={props.fontFamily} />
+        <AnimatePresence>
+          {/* <Suspense fallback={<div>carregando...</div>}> */}
+          <Switch>
+            <Route
+              path="/"
+              exact
+              component={() => <Principal fontFamily={props.fontFamily} />}
+            />
+            <Route
+              path="/materias/:id"
+              component={(e) => <MaterItem fontFamily={props.fontFamily} />}
+            />
+            <Route
+              path="/materias"
+              component={() => <GridMater fontFamily={props.fontFamily} />}
+            />
+            <Route
+              path="/colaboradores/:id"
+              component={(e) => (
+                <ColabItem
+                  data={dataColab}
+                  descButton="De Volta aos Colaboradores"
+                  pathName="/colaboradores"
+                  fontFamily={props.fontFamily}
+                />
+              )}
+            />
+            <Route
+              path="/colaboradores"
+              component={() => <GridColab fontFamily={props.fontFamily} />}
+            />
+            <Route
+              path="/equipe/:id"
+              component={() => (
+                <EquipeItem
+                  data={dataEquip}
+                  descButton="De Volta a Equipe"
+                  pathName="/equipe"
+                  fontFamily={props.fontFamily}
+                />
+              )}
+            />
+            <Route
+              path="/equipe"
+              component={() => <GridEquipe fontFamily={props.fontFamily} />}
+            />
+            <Route
+              path="/sobre"
+              component={() => <About fontFamily={props.fontFamily} />}
+            />
+          </Switch>
+          <Foot fontFamily={props.fontFamily} />
+        </AnimatePresence>
+        {/* </Suspense> */}
+      </Router>
+    </ThemeProvider>
   );
 }

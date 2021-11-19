@@ -32,7 +32,6 @@ export default function TextCenter(props) {
     <Container maxWidth="xl">
       <ContentPrinc fontFamily={props.fontFamily} padding={props.padding}>
         {props.isSticky ? <Typography variant="h5" children={props.title} /> : false}
-        {/* <DescTitle children={props.title} /> */}
         <Typography variant={props.isSticky ? "h6" : "h5"} children={props.desc} />
       </ContentPrinc>
     </Container>

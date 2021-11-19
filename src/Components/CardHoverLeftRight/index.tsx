@@ -76,7 +76,7 @@ const CardMediaComp = styled(CardMedia)`
 `;
 
 const ContentLeft = styled.div<IContent>`
-  height: ${(props) => (props.mobile ? "400px" : "100%")};
+  height: ${C_SIZE_HEIGHT};// ${(props) => (props.mobile ? "400px" : "100%")};
   /* border-radius: ${(props) => (props.mobile ? "18px" : "0px")}; */
   width: ${(props) => (props.mobile ? "100%" : props.hover ? "0%" : "100%")};
   transition: ${transition};
@@ -84,7 +84,7 @@ const ContentLeft = styled.div<IContent>`
 `;
 
 const ContentRight = styled.div<IContent>`
-  height: ${(props) => (props.mobile ? "400px" : "100%")};
+  height: ${C_SIZE_HEIGHT};//${(props) => (props.mobile ? "400px" : "100%")};
   /* border-radius: ${(props) => (props.mobile ? "18px" : "0px")}; */
   width: ${(props) => (props.mobile ? "100%" : props.hover ? "0%" : "100%")};
   overflow: hidden;

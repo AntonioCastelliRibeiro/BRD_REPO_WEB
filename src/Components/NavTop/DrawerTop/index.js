@@ -65,36 +65,36 @@ export default function DrawerTop(props) {
           data-aos="fade-up"
           data-aos-delay="800"
         >
-          <AHrefHover desc={"bom dia rural"} fontSize={"4.6976vw"} lineHeight={"0.7vw"}
+          <AHrefHover desc={"bom dia rural"} variant={"h2"} lineHeight={"0.7vw"}
             onClick={() => onCloseProps("/")}
             onHoverStart={() => setPage(1)}
           />
-          <AHrefHover desc={"Matérias"} fontSize={"3.74976vw"} lineHeight={"0.6vw"}
+          <AHrefHover desc={"Matérias"} variant={"h3"} lineHeight={"0.6vw"}
             onClick={() => onCloseProps("/materias")}
             onHoverStart={() => setPage(2)}
           />
-          <AHrefHover desc={"Colaboradores"} fontSize={"3.74976vw"} lineHeight={"0.6vw"}
+          <AHrefHover desc={"Colaboradores"} variant={"h3"} lineHeight={"0.6vw"}
             onClick={() => onCloseProps("/colaboradores")}
             onHoverStart={() => setPage(3)}
           />
-          <AHrefHover desc={"Equipe"} fontSize={"3.74976vw"} lineHeight={"0.6vw"}
+          <AHrefHover desc={"Equipe"} variant={"h3"} lineHeight={"0.6vw"}
             onClick={() => onCloseProps("/equipe")}
             onHoverStart={() => setPage(4)}
           />
-          <AHrefHover desc={"Sobre"} fontSize={"3.74976vw"} lineHeight={"0.6vw"}
+          <AHrefHover desc={"Sobre"} variant={"h3"} lineHeight={"0.6vw"}
             onClick={() => onCloseProps("/sobre")}
             onHoverStart={() => setPage(5)}
           />
           <ContentMedia>
-            <AHrefHover desc={"Facebook"} fontSize={"2.50272vw"} lineHeight={"0.3vw"}
+            <AHrefHover desc={"Facebook"} variant={"h4"} lineHeight={"0.3vw"}
               onHoverStart={() => false}
             //  onClick={() => onCloseProps("/sobre")}
             />
-            <AHrefHover desc={"Instagram"} fontSize={"2.50272vw"} lineHeight={"0.3vw"}
+            <AHrefHover desc={"Instagram"} variant={"h4"} lineHeight={"0.3vw"}
               onHoverStart={() => false}
             //  onClick={() => onCloseProps("/sobre")}
             />
-            <AHrefHover desc={"Youtube"} fontSize={"2.50272vw"} lineHeight={"0.3vw"}
+            <AHrefHover desc={"Youtube"} variant={"h4"} lineHeight={"0.3vw"}
               onHoverStart={() => false}
             //  onClick={() => onCloseProps("/sobre")}
             />

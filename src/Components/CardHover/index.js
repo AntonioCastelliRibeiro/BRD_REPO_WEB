@@ -20,7 +20,6 @@ const ContentPrinc = styled.div`
   height: 100%;
   width: 100%;
   background-color: transparent;
-  padding-bottom: 130px;
   /* background-color: rgb(8, 127, 35); */
   /* background-color: ${(props) =>
     props.image === data.image[0] ? "#8b582f" : "#766517"}; */

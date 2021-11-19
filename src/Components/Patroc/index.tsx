@@ -18,8 +18,7 @@ const ContentPrinc = styled.div<IContentPrinc>`
   font-family: ${(props) => props.fontFamily};
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  padding-bottom: 130px;
+  flex-direction: column;  
   /* background-image: url(${(props) => props.bgImage});
   background-size: cover;
   background-position: 50%; */

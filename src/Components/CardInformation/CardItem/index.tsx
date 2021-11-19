@@ -6,7 +6,7 @@ import ICardItem from "./interface";
 const ContentPrinc = styled.div`
   height: 100%;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 9px;
   border: 1px solid #fff;
   /* background-color: #4caf50; */
 `;
@@ -14,8 +14,8 @@ const ContentPrinc = styled.div`
 const CardActionAreaComp = styled(CardActionArea)`
   color: #fff;
   min-height: 290px;
+  border-radius: inherit;
   width: 100%;
-  border-radius: 5px;
   background-color: #012401be;
   padding: 15px;
 `;

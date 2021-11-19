@@ -12,12 +12,13 @@ import Aspas from '@material-ui/icons/FormatQuote';
 const transition = "ease 0.3s";
 
 const ContentPrinc = styled.div`
-  color: #004500;
+  height: 100%;
+  min-height: 350px;
   width: 100%;
   user-select: none;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  color: #004500;
   justify-content: space-around;
   align-items: center;
   transition: ${transition};
@@ -99,12 +100,13 @@ const ContentGrid = styled(motion.div)`
   }
 `;
 
-const PaperComp = styled(Paper)`
+const PaperComp = styled.div`
   border: none;
   box-shadow: 0;
-  height: 350px;
-  background-color: #fff;
-  min-height: 300px;
+  height: 100%;
+  min-height: 350px;
+  border-radius: 9px;
+  background-color: #fff;  
   width: 100%;
   min-width: 290px;
   box-shadow: none;

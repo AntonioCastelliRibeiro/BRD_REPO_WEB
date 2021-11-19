@@ -28,19 +28,6 @@ const ContentBtnLoad = styled.div`
     padding-bottom: 20px;
 `;
 
-const theme = createTheme({
-    typography: {
-        h1: {
-            fontSize: 48,
-            fontWeight: 800
-        },
-        h2: {
-            // fontSize: 18,
-            fontWeight: 700
-        }
-    }
-});
-
 const GridContainer = styled(Grid)``;
 
 const GridComp = styled(Grid)``;
@@ -124,7 +111,7 @@ export default function CardHoverUp(props: IProps) {
     }
 
     return (
-        <ThemeProvider theme={theme}>
+        <>
             <GridContainer
                 style={{ width: "100%", margin: 0 }}
                 container
@@ -146,6 +133,6 @@ export default function CardHoverUp(props: IProps) {
                     }
                 />
             </ContentBtnLoad>
-        </ThemeProvider>
+        </>
     );
 }

@@ -25,7 +25,8 @@ const CardActionAreaComp = styled(CardActionArea)`
 `;
 
 const ButtonCompLeft = styled.div<IContent>`
-  border-radius: 18px;
+  border-radius: 9px;
+  width: 100px;
   filter: brightness(90%);
   cursor: pointer;
   /* border: ${(props) => (props.hoverBg ? "2px ridge #ffff" : "2px ridge transparent")}; */
@@ -103,21 +104,19 @@ export default function Butthover(props: IProps) {
                             hoverRight={props.hoverRight}
                             // hoverBg={hoverBg}
                             hover={!hover}
-                            children={<TypographyComp variant="button" children={props.desc} />}
+                            children={<TypographyComp variant="h6" children={props.desc} />}
                             transitionDelay={"0ms"}
                         />
                     ) : (
-                        <CardActionAreaComp>
-                            <ButtonCompLeft
-                                hoverLeft={props.hoverLeft}
-                                hoverRight={props.hoverRight}
-                                hoverBg={hoverBg}
-                                hover={!hover
-                                }
-                                children={<TypographyComp variant="button" children={props.desc} />}
-                                transitionDelay={hoverBg ? "350ms" : "0ms"}
-                            />
-                        </CardActionAreaComp>
+                        <ButtonCompLeft
+                            hoverLeft={props.hoverLeft}
+                            hoverRight={props.hoverRight}
+                            hoverBg={hoverBg}
+                            hover={!hover
+                            }
+                            children={<TypographyComp variant="h6" children={props.desc} />}
+                            transitionDelay={hoverBg ? "350ms" : "0ms"}
+                        />
                     )}
                 {/* <BgBtnColor hover={!hover} /> */}
             </ContentButtonLeft>
