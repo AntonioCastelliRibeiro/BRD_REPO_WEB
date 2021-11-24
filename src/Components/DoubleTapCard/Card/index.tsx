@@ -4,8 +4,9 @@ import { CardActionArea, CardMedia, Typography } from "@material-ui/core";
 import styled from "styled-components";
 import DescCard from "../DescCard";
 import iProps from "./interface";
+import { useHistory } from "react-router";
 
-const transition = "ease 0.3s";
+const transition = "ease-in-out .45s";
 
 const CardMediaComp = styled(CardMedia)`
   height: 350px;
@@ -29,8 +30,8 @@ const ContentPrinc = styled.div`
 const ButtonComp = styled(Typography)`
   padding: 8px 18px;
   border-radius: 5px;
-  background-color: #fff;
-  color: black;
+  background-color: #004500;
+  color: #fff;
   border: 1px solid #fff;
   transition: ${transition};
 `;
@@ -46,8 +47,8 @@ const ContentSec = styled(motion.div)`
       transform: scale(1.1);
     }
     ${ButtonComp} {
-      color: #fff;
-      background-color: #004500;
+      color: black;
+      background-color: #fff;
     }
   }
 `;
@@ -61,10 +62,18 @@ const CardActionAreaComp = styled(CardActionArea)`
 `;
 
 export default function CardComp(props: iProps) {
+  const history = useHistory();
+
+  function onClick() {
+    setTimeout(() => {
+      history.push(props.datacard.pathName);
+    }, 300);
+  }
+
   return (
     <ContentPrinc key={props.count}>
       <ContentSec>
-        <CardActionAreaComp>
+        <CardActionAreaComp onClick={() => onClick()} >
           <CardComponent children={<CardMediaComp image={props.datacard.img} />} />
           <ContentDescCard children={<DescCard ButtonComp={ButtonComp} {...props} />} />
         </CardActionAreaComp>

@@ -42,7 +42,8 @@ import { ThemeProvider } from "styled-components";
 
 // const About = lazy(() => import("../Components/About"));
 
-
+const C_IMG_BG_EQUIPE_ITEM = "https://images.unsplash.com/photo-1476554123255-b0ff6b30dcd8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80";
+const C_IMG_BG_COLAB_ITEM = "https://images.unsplash.com/photo-1600275669439-14e40452d20b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80";
 
 export default function ReactRouter(props) {
 
@@ -80,6 +81,7 @@ export default function ReactRouter(props) {
                   descButton="De Volta aos Colaboradores"
                   pathName="/colaboradores"
                   fontFamily={props.fontFamily}
+                  imgBg={C_IMG_BG_COLAB_ITEM}
                 />
               )}
             />
@@ -95,6 +97,7 @@ export default function ReactRouter(props) {
                   descButton="De Volta a Equipe"
                   pathName="/equipe"
                   fontFamily={props.fontFamily}
+                  imgBg={C_IMG_BG_EQUIPE_ITEM}
                 />
               )}
             />

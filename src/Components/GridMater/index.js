@@ -64,7 +64,7 @@ export default function GridMater(props) {
       <MaterCapaApresent {...propsMaterCapa} />
       <ContentPrinc>
         <Container maxWidth="lg">
-          <ContentDescTop fontFamily={props.fontFamily} children={<Typography variant="h5" children={C_DESC_TOP} />} />
+          <ContentDescTop fontFamily={props.fontFamily} children={<Typography variant="h4" children={C_DESC_TOP} />} />
           <CardHoverUp fontFamily={props.fontFamily} onSetMaterItem={(e) => onSetMaterItem(e)} />
         </Container>
       </ContentPrinc>

@@ -117,6 +117,21 @@ const CardComp = styled.div`
   z-index: 5;
   flex-direction: column;
   align-items: center;
+  @media(max-width: 599px) {
+    border: 1px solid #fff;
+    ${ContentAvatar} {
+      border: 4px solid #4caf50;
+      transform: scale(0.96);
+    }
+    ${ContentSocial} {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+    ${ContentCircle} {
+      opacity: 1;
+      transform: translateY(30px) scale(3.5);
+    }
+  };
   &:hover {
     ${ContentAvatar} {
       border: 4px solid #4caf50;

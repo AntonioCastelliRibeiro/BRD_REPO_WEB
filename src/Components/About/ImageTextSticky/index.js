@@ -3,7 +3,7 @@ import { StickyContainer, Sticky } from "react-sticky";
 import styled from "styled-components";
 
 const CardActionAreaComp = styled(CardActionArea)`
-  height: 40vw;
+  height: 800px;
   width: 44vw;
   border-radius: 4px;
   color: #fff;
@@ -33,17 +33,15 @@ const ContentDescLeft = styled.div`
   color: #fff;
 `;
 
-const DescLeft = styled.div`
-  text-align: center;
-  padding-bottom: 12px;
-  color: #fff;
-`;
-
 const ContentImage = styled.div`
   display: flex;
   width: 100%;
   justify-content: flex-end;
-  margin-top:-177px;
+  margin-top:-377px;
+`;
+
+const TypographyTitle = styled(Typography)`
+  padding-bottom: 16px;
 `;
 
 export default function ImageTextSticky(props) {
@@ -56,8 +54,8 @@ export default function ImageTextSticky(props) {
           <header style={style}>
             <ContentDescLeftFlex>
               <ContentDescLeft fontFamily={props.fontFamily}>
-                {props.title ? <Typography variant="h5" data-aos="fade-up" data-aos-delay="200" children={props.title} /> : false}
-                <Typography variant="h6" data-aos="fade-up" data-aos-delay="200" children={props.desc} />
+                {props.title ? <TypographyTitle variant="h4" data-aos="fade-up" data-aos-delay="200" children={props.title} /> : false}
+                <Typography variant="h5" data-aos="fade-up" data-aos-delay="200" children={props.desc} />
               </ContentDescLeft>
               <Box width="50%" />
             </ContentDescLeftFlex>

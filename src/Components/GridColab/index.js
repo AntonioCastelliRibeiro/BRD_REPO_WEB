@@ -30,6 +30,7 @@ const ContentDescTop = styled.div`
   padding-top: 24px;
   display: flex;
   flex-direction: column;
+  text-align: center;
   align-items: center;
   color: #fff;
 `;
@@ -96,7 +97,7 @@ export default memo(function GridColab(props) {
       <ColabImgCapa {...propColabImg(props)} />
       <ContentBgColor>
         <ContentDescTop fontFamily={props.fontFamily}>
-          <Typography variant="h5" children={"A sorte favorece a mente preparada"} />
+          <Typography variant="h4" children={"A sorte favorece a mente preparada"} />
           <BtnCenterTop children={<Typography variant="button" children={"Louis Pasteur"} />} />
         </ContentDescTop>
         <Container maxWidth="lg">

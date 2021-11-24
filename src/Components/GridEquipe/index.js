@@ -51,7 +51,7 @@ export default function GridEquipe(props) {
       <ContentRelative>
         <Container maxWidth="lg">
           <ContentFade fontFamily={props.fontFamily} >
-            <Typography variant="h5" children={C_DESC_FIRST} />
+            <Typography variant="h4" children={C_DESC_FIRST} />
           </ContentFade>
           <Grid style={styleGrid} spacing={2} container >
             {dataEquipe.map((e, count) => {

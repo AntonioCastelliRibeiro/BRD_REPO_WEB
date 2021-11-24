@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Box } from "@material-ui/core";
+import { Box, Typography } from "@material-ui/core";
 
 import styled from "styled-components";
 
@@ -27,6 +27,7 @@ const BgImage = styled.div`
 `;
 
 const DescImage = styled.div`
+  text-align: center;
   opacity: 1;
   transition: ${transition};
   position: fixed;
@@ -79,14 +80,14 @@ export default memo(function ImageAbout(props) {
               data-aos="fade-down"
               data-aos-delay="1000"
             >
-              <Box>{props.title}</Box>
+              <Box><Typography variant="h1" children={props.title} /></Box>
             </DescImage>
           </Box>
         </Box>
       </Box>
       <Box position="absolute" height="60vh" width="100%">
         <DescScroll data-aos="fade-down" data-aos-delay="1000">
-          {props.ocultaDesc ? false : <Box paddingBottom="35px">Rolar para Baixo</Box>}
+          {props.ocultaDesc ? false : <Box paddingBottom="35px"><Typography variant="h5" children={"Rolar para Baixo"} /> </Box>}
         </DescScroll>
       </Box>
       <BgImage img={props.img} />
