@@ -4,7 +4,7 @@ import styled from "styled-components";
 import IProps from "./interface";
 import { Typography } from "@material-ui/core";
 
-const transition = "ease-in-out 0.3s";
+const transition = "ease-in-out 0.33s";
 
 interface IDescHoverUp {
   hover: boolean;

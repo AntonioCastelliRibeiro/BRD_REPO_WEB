@@ -107,6 +107,7 @@ const ContentDesc = styled.div`
 `;
 
 const CardComp = styled.div`
+  border: 1px solid #4caf50;
   background-color: #fff;
   user-select: none;
   overflow: hidden;
@@ -118,7 +119,7 @@ const CardComp = styled.div`
   flex-direction: column;
   align-items: center;
   @media(max-width: 599px) {
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
     ${ContentAvatar} {
       border: 4px solid #4caf50;
       transform: scale(0.96);

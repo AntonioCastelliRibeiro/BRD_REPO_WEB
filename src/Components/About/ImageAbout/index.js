@@ -51,10 +51,8 @@ const DescScroll = styled.div`
   transition: ${transition};
   position: fixed;
   color: #fff;
-  font-size: "3vw";
   z-index: 1;
   padding-left: 40px;
-  letter-spacing: 1px;
 `;
 
 const BoxPrinc = styled.div`
@@ -63,6 +61,11 @@ const BoxPrinc = styled.div`
   width: 100%;
   position: fixed;
 `;
+
+const TypographyComp = styled(Typography)`
+  font-family: inherit;
+`;
+
 
 export default memo(function ImageAbout(props) {
   return (
@@ -80,14 +83,14 @@ export default memo(function ImageAbout(props) {
               data-aos="fade-down"
               data-aos-delay="1000"
             >
-              <Box><Typography variant="h1" children={props.title} /></Box>
+              <TypographyComp variant="h1" children={props.title} />
             </DescImage>
           </Box>
         </Box>
       </Box>
       <Box position="absolute" height="60vh" width="100%">
         <DescScroll data-aos="fade-down" data-aos-delay="1000">
-          {props.ocultaDesc ? false : <Box paddingBottom="35px"><Typography variant="h5" children={"Rolar para Baixo"} /> </Box>}
+          {props.ocultaDesc ? false : <Box paddingBottom="35px"><TypographyComp variant="h5" children={"Rolar para Baixo"} /> </Box>}
         </DescScroll>
       </Box>
       <BgImage img={props.img} />

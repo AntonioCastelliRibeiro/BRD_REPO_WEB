@@ -58,7 +58,7 @@ const BtnCenterTop = styled(Button)`
 const propColabImg = (props) => ({
   fontFamily: props.fontFamily,
   img: C_ABOUT_COLAB,
-  title: "NOSSOS COLABORADORES",
+  title: "Nossos Colaboradores",
   fontSize: "7vw"
 });
 

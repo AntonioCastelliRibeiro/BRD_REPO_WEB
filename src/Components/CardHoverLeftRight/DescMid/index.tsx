@@ -9,7 +9,7 @@ import IProps from "./interface";
 const logoNeg =
     "https://www.travelstore.com/wp-content/uploads/2020/04/logo.png";
 
-const transition = "ease-in-out 300ms";
+const transition = "ease-in-out 0.33s";
 
 interface IContent {
     opacity?: string;

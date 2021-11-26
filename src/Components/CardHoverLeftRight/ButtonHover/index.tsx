@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import IProps from "./interface";
 
-const transition = "ease-in-out 0.3s";
+const transition = "ease-in-out 0.33s";
 
 interface IContent {
     hover?: boolean;

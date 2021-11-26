@@ -21,7 +21,7 @@ import DescPrinc from "../CardHover/DescPrinc";
 
 // import IState from "./interface";
 
-const transition = "ease-in-out 0.4s";
+const transition = "ease-in-out 0.45s";
 const C_SIZE_HEIGHT = "500px";
 
 interface IContent {
@@ -150,75 +150,77 @@ export default function CardHoverLeftRight(props: IProps) {
                 </Container>
                 <div data-aos="fade-up" data-aos-delay="300">
                     <Hidden smDown>
-                        <ContentPrinc mobile={false}>
-                            <ContentLeft
-                                mobile={false}
-                                hover={onHoverRight}
-                                onMouseEnter={() => setHoverLeft(true)}
-                                onMouseLeave={() => setHoverLeft(false)}
-                            >
-                                <CardMediaComp image={dataLeft.img}>
-                                    <ContentDesc fontFamily={props.fontFamily}>
-                                        <DescHover
-                                            mobile={false}
-                                            hover={onHoverLeft}
-                                            desc={dataLeft.title}
-                                        />
-                                        <DescHoverSec
-                                            mobile={false}
-                                            hover={onHoverLeft}
-                                            desc={dataLeft.desc}
-                                        />
-                                        <ButtonHover
-                                            mobile={false}
-                                            key={"esquerdo"}
-                                            desc={dataLeft.buttonDesc}
-                                            left={true}
-                                            hoverLeft={onHoverLeft}
-                                            hoverRight={onHoverRight}
-                                        />
-                                    </ContentDesc>
-                                </CardMediaComp>
-                            </ContentLeft>
-                            <ContentRight
-                                mobile={false}
-                                hover={onHoverLeft}
-                                onMouseEnter={() => setHoverRight(true)}
-                                onMouseLeave={() => setHoverRight(false)}
-                            >
-                                <CardMediaComp image={dataRight.img}>
-                                    <ContentDesc fontFamily={props.fontFamily}>
-                                        <DescHover
-                                            mobile={false}
-                                            hover={onHoverRight}
-                                            desc={dataRight.title}
-                                        />
-                                        <DescHoverSec
-                                            mobile={false}
-                                            hover={onHoverRight}
-                                            desc={dataRight.desc}
-                                        />
-                                        <ButtonHover
-                                            mobile={false}
-                                            key={"direito"}
-                                            desc={dataRight.buttonDesc}
-                                            left={false}
-                                            hoverLeft={onHoverLeft}
-                                            hoverRight={onHoverRight}
-                                        />
-                                    </ContentDesc>
-                                </CardMediaComp>
-                            </ContentRight>
-                        </ContentPrinc>
-                        <DescMidComp
-                            fontFamily={props.fontFamily}
-                            logo={logo}
-                            right={onHoverRight}
-                            left={onHoverLeft}
-                            hover={onHoverRight || onHoverLeft}
-                            setHoverLeft={() => setHoverLeft(true)}
-                            setHoverRight={() => setHoverRight(true)}
-                        />
+                        <CardActionAreaComp>
+                            <ContentPrinc mobile={false}>
+                                <ContentLeft
+                                    mobile={false}
+                                    hover={onHoverRight}
+                                    onMouseEnter={() => setHoverLeft(true)}
+                                    onMouseLeave={() => setHoverLeft(false)}
+                                >
+                                    <CardMediaComp image={dataLeft.img}>
+                                        <ContentDesc fontFamily={props.fontFamily}>
+                                            <DescHover
+                                                mobile={false}
+                                                hover={onHoverLeft}
+                                                desc={dataLeft.title}
+                                            />
+                                            <DescHoverSec
+                                                mobile={false}
+                                                hover={onHoverLeft}
+                                                desc={dataLeft.desc}
+                                            />
+                                            <ButtonHover
+                                                mobile={false}
+                                                key={"esquerdo"}
+                                                desc={dataLeft.buttonDesc}
+                                                left={true}
+                                                hoverLeft={onHoverLeft}
+                                                hoverRight={onHoverRight}
+                                            />
+                                        </ContentDesc>
+                                    </CardMediaComp>
+                                </ContentLeft>
+                                <ContentRight
+                                    mobile={false}
+                                    hover={onHoverLeft}
+                                    onMouseEnter={() => setHoverRight(true)}
+                                    onMouseLeave={() => setHoverRight(false)}
+                                >
+                                    <CardMediaComp image={dataRight.img}>
+                                        <ContentDesc fontFamily={props.fontFamily}>
+                                            <DescHover
+                                                mobile={false}
+                                                hover={onHoverRight}
+                                                desc={dataRight.title}
+                                            />
+                                            <DescHoverSec
+                                                mobile={false}
+                                                hover={onHoverRight}
+                                                desc={dataRight.desc}
+                                            />
+                                            <ButtonHover
+                                                mobile={false}
+                                                key={"direito"}
+                                                desc={dataRight.buttonDesc}
+                                                left={false}
+                                                hoverLeft={onHoverLeft}
+                                                hoverRight={onHoverRight}
+                                            />
+                                        </ContentDesc>
+                                    </CardMediaComp>
+                                </ContentRight>
+                            </ContentPrinc>
+                            <DescMidComp
+                                fontFamily={props.fontFamily}
+                                logo={logo}
+                                right={onHoverRight}
+                                left={onHoverLeft}
+                                hover={onHoverRight || onHoverLeft}
+                                setHoverLeft={() => setHoverLeft(true)}
+                                setHoverRight={() => setHoverRight(true)}
+                            />
+                        </CardActionAreaComp>
                     </Hidden>
                     <Hidden mdUp>
                         <ContentPrincMobile>
