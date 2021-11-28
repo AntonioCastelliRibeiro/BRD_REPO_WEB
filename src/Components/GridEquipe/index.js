@@ -45,7 +45,6 @@ export default function GridEquipe(props) {
       <EquipeCapaApresent
         fontFamily={props.fontFamily}
         img={C_ABOUT_EQUIPE}
-        title={"Nossa Equipe"}
         fontSize={"7vw"}
       />
       <ContentRelative>

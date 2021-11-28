@@ -11,6 +11,7 @@ export default function EquipeCapaApresent(props) {
         img={props.img}
         title={props.title}
         fontSize={props.fontSize}
+        descPrinc={"Equipe"}
       />
       <Box height="60vh" />
     </>

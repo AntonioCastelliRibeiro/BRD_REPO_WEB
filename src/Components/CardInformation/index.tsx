@@ -27,7 +27,7 @@ const ContentBgImage = styled.div`
     background-position: bottom;
     background-position: center; 
     background-repeat: no-repeat;
-    transition: ease 2000ms;
+    transition: ease-in-out 1900ms;
     &:hover{
         background-position: bottom;
     };

@@ -1,16 +1,41 @@
+import { Typography } from "@material-ui/core";
+import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
-const movieIntro = "https://bdrbucket.s3.sa-east-1.amazonaws.com/timelapse.mp4";
 import { useScroll } from "react-use-gesture";
+import styled from "styled-components";
+import DescScrollDown from "../DescScrollDown";
+
+const movieIntro = "https://bdrbucket.s3.sa-east-1.amazonaws.com/timelapse.mp4";
+
+const DescMovDesktop = styled(motion.div)`
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+`;
+
+const TypographyComp = styled(Typography)`
+  user-select: none;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-align: center;
+  font-family: ${(props) => props.fontFamily};
+`;
 
 const C_BRIGTHNESS_PADRAO = "80%";
 const C_BRIGTHNESS_FOOT = "70%"
 
-export default function CompMovie() {
+export default function CompMovie(props) {
   const [render, setRender] = useState(true);
   const [onBrightness, setBrightness] = useState(C_BRIGTHNESS_PADRAO);
+  const [onDescription, setDescription] = useState(true);
   const scroll = useScroll(
     ({ offset: [x, y] }) => {
       setPlayPause(y);
+      setOnOffDescription(y);
     },
     {
       domTarget: window
@@ -36,6 +61,23 @@ export default function CompMovie() {
     }
   }
 
+  async function setOnOffDescription(AEixoY) {
+    const C_SCROLL_TOP = Math.abs(AEixoY);
+    try {
+      const C_SCROLL_HEIGH = ref.current.scrollHeight;
+      if (C_SCROLL_HEIGH !== null) {
+        if (C_SCROLL_TOP >= ref.current.scrollHeight * 0.70) {
+          await setDescription(false);
+        } else {
+
+          await setDescription(true);
+        }
+      }
+    } catch (error) {
+      await setDescription(false);
+    }
+  }
+
   useEffect(() => {
     if (render) {
       playPauseMovie(true);
@@ -58,48 +100,31 @@ export default function CompMovie() {
     }
   }
 
-  // useEffect(() => {
-  //   const C_SCROLL_TOP = Math.abs(Scroll);
-  //   if (C_SCROLL_TOP >= ref.current.scrollHeight * 0.5) {
-  //     ref.current.pause();
-  //   } else {
-  //     ref.current.play();
-  //   }
-  //   return () => {
-  //     window.onscroll = null;
-  //   };
-  // }, [Scroll]);
-
-  // function handleScroll() {
-  //   if (document.documentElement.scrollTop >= ref.current.scrollHeight * 0.6) {
-  //     return false;
-  //   } else {
-  //     onScroll(document.documentElement.scrollTop);
-  //   }
-  // }
-
-  // window.onscroll = () => handleScroll();
-
   return (
-    <video
-      // onPlay={() => setOnPlay(true)}
-      // onPause={() => setOnPlay(false)}
-      style={{ filter: `brightness(${onBrightness})`, transition: "ease 0.3s" }}
-      id="video"
-      ref={ref}
-      autoPlay
-      loop
-      // controls
-      // contols={false}
-      playsInline
-      muted
-    >
-      <source
-        // src="https://css-tricks-post-videos.s3.us-east-1.amazonaws.com/708209935.mp4"
-        src={movieIntro/*mopvieIntro*/}
-        // src={video}
-        type="video/mp4"
-      />
-    </video>
+    <>
+      <video
+        style={{ filter: `brightness(${onBrightness})`, transition: "ease 0.3s" }}
+        id="video"
+        ref={ref}
+        autoPlay
+        loop
+        playsInline
+        muted
+      >
+        <source
+          src={movieIntro}
+          type="video/mp4"
+        />
+      </video>
+      {onDescription ?
+        <>
+          <DescMovDesktop
+            data-aos="fade2"
+            data-aos-delay="1000"
+            children={<TypographyComp fontFamily={props.fontFamily} variant="h1" children={props.namePrograma} />} />
+          <DescScrollDown principal fontFamily={props.fontFamily} />
+        </>
+        : false}
+    </>
   );
 }

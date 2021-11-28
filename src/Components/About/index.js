@@ -41,6 +41,7 @@ export default function AboutComp(props) {
           fontFamily={props.fontFamily}
           title={data.aboutTitle}
           img={data.aboutImage}
+          descPrinc={"Sobre bom dia rural"}
         />
       </ContentImage>
       <ContentHeight />

@@ -1,41 +1,30 @@
 import React from "react";
-import styled from "styled-components";
-import { CardMedia } from "@material-ui/core";
-import { IProps } from "./interface";
+// import styled from "styled-components";
+// import { CardMedia, Typography } from "@material-ui/core";
+// import { IProps } from "./interface";
+// import DescScrollDown from "../../DescScrollDown";
+// import ImageColab from "../../About/ImageAbout";
 
-const ImageBg = styled(CardMedia)`
-    position: fixed;
-    height: 105vh;
-    width: 100%;
-`;
+// const ImageBg = styled(CardMedia)`
+//     position: fixed;
+//     height: 105vh;
+//     width: 100%;
+// `;
 
-const DescPrincMobile = styled.div<IProps>`
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 10vw;
-  font-weight: 800;
-  font-family: ${(props) => props.fontFamily};
-  color: white;
-  letter-spacing: 1px;
-  &:hover {
-    background-color: "blue";
-  }
-`;
-
-export default function DescMobile(props: IProps) {
-    return (
-        <>
-            <ImageBg image={props.imgPrinc} />
-            <DescPrincMobile
-                data-aos="fade"
-                data-aos-delay="1000"
-                fontFamily={props.fontFamily}
-                children={props.namePrograma}
-            />
-        </>
-    )
-}
+// export default function DescMobile(props: IProps) {
+//     return (
+//         <>
+//             {/* <ImageBg image={props.imgPrinc} /> */}
+//             <ImageColab
+//                 img={props.imgPrinc}
+//             // fontFamily={props.fontFamily}
+//             // img={props.imgPrinc}
+//             // title={props.namePrograma}
+//             // fontSize={"props.fontSize"}
+//             // ocultaDesc={false}
+//             // descPrinc={"Matérias"}
+//             />
+//             {/* <DescScrollDown principal fontFamily={props.fontFamily} descPrinc={props.namePrograma} /> */}
+//         </>
+//     )
+// }

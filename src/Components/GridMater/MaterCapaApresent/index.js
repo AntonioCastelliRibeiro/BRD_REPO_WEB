@@ -11,6 +11,7 @@ export default function MaterCapaApresent(props) {
         title={props.title}
         fontSize={props.fontSize}
         ocultaDesc={props.ocultaDesc}
+        descPrinc={"Matérias"}
       />
       {props.noHeight ? false : <Box height="60vh" />}
     </>
