@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { AnimateSharedLayout } from "framer-motion";
 import {
     Grid,
-    createTheme,
-    ThemeProvider,
     Hidden
 } from "@material-ui/core";
 

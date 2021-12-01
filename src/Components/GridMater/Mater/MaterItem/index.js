@@ -135,11 +135,10 @@ const ContentImageSec = styled.div`
 
 const ContentTextPrinc = styled.div`
   color: #fff;
-  font-family: ${(props) => props.fontFamily};
   padding-bottom: 8px;
 `;
 
-const TypographyDescComp = styled.div`
+const TypographyDescComp = styled(Typography)`
   padding-bottom: 8px;
 `;
 
@@ -388,8 +387,8 @@ export default function MaterItem(props) {
                 <ContentDescPrinc>
                   <ContentDescSec data-aos="fade-up">
                     <ContentFlex className={styles.boxDesc}>
-                      <Typography variant="h4" children={dataMater.data.title} />
-                      <TypographyTittleDescComp variant="subtitle1" children={dataMater.data.desc} />
+                      <Typography variant="h3" children={dataMater.data.title} />
+                      <TypographyTittleDescComp variant="h5" children={dataMater.data.desc} />
                       <ButtonComp
                         name={onPlayMovie ? "Assitindo" : "Assistir"}
                         onClick={() => setPlayMovieTime()}
@@ -402,9 +401,9 @@ export default function MaterItem(props) {
             </HeaderComp>
             <ArticleComp>
               <ContentTextPrinc fontFamily={props.fontFamily}>
-                <TypographyDescComp variant="body1" data-aos="fade-up" children={dataMater.data.textPrinc} />
-                <TypographyDescComp variant="body1" data-aos="fade-up" children={dataMater.data.textSec} />
-                <TypographyDescComp variant="body1" data-aos="fade-up" children={dataMater.data.textThird} />
+                <TypographyDescComp variant="h6" data-aos="fade-up" children={dataMater.data.textPrinc} />
+                <TypographyDescComp variant="h6" data-aos="fade-up" children={dataMater.data.textSec} />
+                <TypographyDescComp variant="h6" data-aos="fade-up" children={dataMater.data.textThird} />
               </ContentTextPrinc>
             </ArticleComp>
             <ArticleComp>

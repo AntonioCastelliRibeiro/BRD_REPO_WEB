@@ -71,7 +71,11 @@ const IconVariants = {
 };
 
 export default function Principal(props) {
-  const [onLoad, setOnLoad] = useState(true);
+  const [onLoad, setLoad] = useState(true);
+
+  useEffect(() => {
+    setLoad(props.onLoad);
+  }, [props.onLoad])
 
   useEffect(() => {
     data.images.map((image, count) => {
@@ -80,9 +84,10 @@ export default function Principal(props) {
       window[image] = newImage;
     });
     setTimeout(() => {
-      setOnLoad(false);
-      window.scrollTo(0, 0);
+      setLoad(false);
+      // window.scrollTo(0, 0);
     }, 3000);
+    return () => { props.setLoad(false) }
   }, []);
 
   return (

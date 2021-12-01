@@ -171,7 +171,7 @@ export default function EquipeCapa(props: IProps) {
             </ContentAvatarPrinc>
             <ContentDesc>
               <Typography variant="h5" children={props.nome + " " + props.sobreNome} />
-              <Typography variant="subtitle2" children={props.cargo} />
+              <Typography variant="subtitle1" children={props.cargo} />
             </ContentDesc>
             <ContentSocial
               children={

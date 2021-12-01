@@ -189,7 +189,7 @@ export default function Card(props) {
           />
           <Content>
             <Title><Typography variant="h5" children={props.title} /></Title>
-            <Description><Typography variant="subtitle2" children={props.description} /></Description>
+            <Description><Typography variant="subtitle1" children={props.description} /></Description>
             <BottomBar background={props.hexa} />
           </Content>
         </Link>

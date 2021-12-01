@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { createTheme, ThemeProvider } from "@material-ui/core";
 import ReactRouter from "./Router";
 
 import Aos from "aos";
@@ -7,12 +8,22 @@ import "aos/dist/aos.css"; // You can also use <link> for styles
 
 const font = "'ABeeZee', sans-serif";
 
+const theme = createTheme({
+  typography: {
+    fontFamily: font
+  },
+});
+
+
 export default function App(props) {
   useEffect(() => {
     Aos.init();
   }, []);
 
   return (
-    <ReactRouter fontFamily={font} />
+    <ThemeProvider theme={theme}>
+      <ReactRouter />
+    </ThemeProvider>
+
   );
 }

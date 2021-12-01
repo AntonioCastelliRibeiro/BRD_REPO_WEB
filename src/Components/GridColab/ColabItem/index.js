@@ -157,7 +157,7 @@ export default function ColabItem(props) {
                       <Typography variant="h2" children={ADataColab.sobreNome} />
                     </Box>
                     <Box marginBottom="8px">
-                      <Typography variant="subtitle1" children={ADataColab.cargo} />
+                      <Typography variant="h5" children={ADataColab.cargo} />
                     </Box>
                     <Box height="50px" marginBottom="20px">
                       <CardActions style={{ padding: "6px" }}>
@@ -180,10 +180,10 @@ export default function ColabItem(props) {
                     </Box>
 
                     <Box marginBottom="8px" >
-                      <Typography variant="body1" children={ADataColab.descricao1} />
+                      <Typography variant="h6" children={ADataColab.descricao1} />
                     </Box>
                     <Box marginBottom="8px" >
-                      <Typography variant="body1" children={ADataColab.descricao2} />
+                      <Typography variant="h6" children={ADataColab.descricao2} />
                     </Box>
                   </Box>
                 </div>

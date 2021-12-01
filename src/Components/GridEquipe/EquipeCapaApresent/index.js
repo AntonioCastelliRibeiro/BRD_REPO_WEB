@@ -1,10 +1,8 @@
 import { Box } from "@material-ui/core";
 import ImageColab from "../../About/ImageAbout";
-import TextureImage from "../../TextureImg";
 
 export default function EquipeCapaApresent(props) {
   return (
-    // <TextureImage>
     <>
       <ImageColab
         fontFamily={props.fontFamily}
@@ -15,6 +13,5 @@ export default function EquipeCapaApresent(props) {
       />
       <Box height="60vh" />
     </>
-    // </TextureImage >
   );
 }

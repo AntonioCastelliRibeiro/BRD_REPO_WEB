@@ -8,12 +8,12 @@ const transition = { duration: 0.45, ease: "easeInOut" };
 
 
 interface IDescPrincMobile {
-    height?: string;
+  height?: string;
 }
 
 interface IPropsStyled extends IDescPrincMobile {
-    fontFamily?: string;
-    transition?: string;
+  fontFamily?: string;
+  transition?: string;
 }
 
 const TypographyComp = styled(Typography) <IPropsStyled>`
@@ -62,17 +62,17 @@ const DescPrincMobile = styled.div<IDescPrincMobile>`
 const ContentFadeDesc = styled(motion.div)``;
 
 export default function DescScrollDown(props: IProps) {
-    return (
-        <ContentFadeDesc animate={{ opacity: 1 }} transition={transition} >
-            <DescPrincMobile
-                height={props.principal ? "98vh" : "60vh"}
-                data-aos="fade"
-                data-aos-delay="1000"
-                children={<TypographyComp variant="h1" fontFamily={props.fontFamily} children={props.descPrinc} />}
-            />
-            <DescScroll height={props.principal ? "100vh" : "60vh"} transition={"ease-in-out .45s"} data-aos="fade-down" data-aos-delay="1000">
-                <Box paddingBottom="35px"><TypographyCompDesc fontFamily={props.fontFamily} variant="h5" children={"Rolar para Baixo"} /> </Box>
-            </DescScroll>
-        </ContentFadeDesc>
-    )
+  return (
+    <ContentFadeDesc animate={{ opacity: 1 }} transition={transition} >
+      <DescPrincMobile
+        height={props.principal ? "98vh" : "60vh"}
+        data-aos="fade"
+        data-aos-delay="1000"
+        children={<TypographyComp variant="h1" fontFamily={props.fontFamily} children={props.descPrinc} />}
+      />
+      <DescScroll height={props.principal ? "100vh" : "60vh"} transition={"ease-in-out .45s"} data-aos="fade-down" data-aos-delay="1000">
+        <Box paddingBottom="35px"><TypographyCompDesc fontFamily={props.fontFamily} variant="h6" children={"Rolar para Baixo"} /> </Box>
+      </DescScroll>
+    </ContentFadeDesc>
+  )
 }

@@ -30,6 +30,7 @@ const ContentPrinc = styled.div`
 const ButtonComp = styled(Typography)`
   padding: 8px 18px;
   border-radius: 5px;
+  font-weight: 300;
   background-color: #004500;
   color: #fff;
   border: 1px solid #fff;
