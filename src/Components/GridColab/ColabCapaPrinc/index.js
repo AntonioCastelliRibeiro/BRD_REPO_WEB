@@ -94,7 +94,6 @@ const Style = styled.button`
   flex-shrink: 0;
   width: ${cardWidth};
   text-align: left;
-  /* background: #ffffff; */
   background-color: #fff;
   border-radius: ${borderRadius}px;
   cursor: pointer;
@@ -139,33 +138,6 @@ const Style = styled.button`
 
   }
 `;
-
-function retornarStyle(props, location) {
-  return (
-    <Style data-aos="fade-up">
-      <Link
-        style={{ textDecoration: "none", color: "black" }}
-        to={location.pathname + "/" + props.search}
-      >
-        <DivScreenshot
-          children={
-            <Screenshot
-              borderRadius={props.nome === "Cresol" ? "50%" : "0%"}
-              draggable={false}
-              alt="patrocImage"
-              src={props.image}
-            />
-          }
-        />
-        <Content>
-          <Title>{props.title}</Title>
-          <Description>{props.description}</Description>
-          <BottomBar background={props.hexa} />
-        </Content>
-      </Link>
-    </Style >
-  );
-}
 
 
 export default function Card(props) {

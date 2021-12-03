@@ -22,6 +22,7 @@ import objData from "../../data.js";
 import CardNextPrev from "./CardNextPrev";
 import CrSelMater from "./CrSelMater";
 import MaterCapaApresent from "../../MaterCapaApresent";
+import ContentLoad from "./ContentLoad";
 
 // import logo from "../../Image/logo.svg";
 
@@ -447,5 +448,5 @@ export default function MaterItem(props) {
     )
   }
 
-  return dataMater.open ? retornarConteudo() : retornarLoadForm();
+  return dataMater.open ? retornarConteudo() : <ContentLoad />;
 }

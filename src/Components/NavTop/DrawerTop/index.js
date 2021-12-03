@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
-import { Drawer } from "@material-ui/core";
+import { Drawer, Hidden } from "@material-ui/core";
 
 import AHrefHover from "../../AHrefHover";
 import Slider from "../../Slider";
@@ -28,7 +28,6 @@ const ContentAHref = styled.div`
 `;
 
 const ContentPrincAHref = styled.div`
-  font-family: ${(props) => props.fontFamily};
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -38,6 +37,7 @@ const ContentPrincAHref = styled.div`
   position: absolute;
   z-index: 2;
 `;
+
 
 export default function DrawerTop(props) {
   const history = useHistory();
@@ -52,6 +52,83 @@ export default function DrawerTop(props) {
     props.onClose();
   }
 
+
+  function AHrefMobile() {
+    return (
+      <ContentAHref>
+        <AHrefHover desc={"bom dia rural"} variant={"h4"} lineHeight={"0.7vw"}
+          onClick={() => onCloseProps("/")}
+          onHoverStart={() => setPage(1)}
+        />
+        <AHrefHover desc={"Matérias"} variant={"h4"} lineHeight={"0.6vw"}
+          onClick={() => onCloseProps("/materias")}
+          onHoverStart={() => setPage(2)}
+        />
+        <AHrefHover desc={"Colaboradores"} variant={"h4"} lineHeight={"0.6vw"}
+          onClick={() => onCloseProps("/colaboradores")}
+          onHoverStart={() => setPage(3)}
+        />
+        <AHrefHover desc={"Equipe"} variant={"h4"} lineHeight={"0.6vw"}
+          onClick={() => onCloseProps("/equipe")}
+          onHoverStart={() => setPage(4)}
+        />
+        <AHrefHover desc={"Sobre"} variant={"h4"} lineHeight={"0.6vw"}
+          onClick={() => onCloseProps("/sobre")}
+          onHoverStart={() => setPage(5)}
+        />
+        <ContentMedia>
+          <AHrefHover desc={"Facebook"} variant={"h6"} lineHeight={"0.3vw"}
+            onHoverStart={() => false}
+          />
+          <AHrefHover desc={"Instagram"} variant={"h6"} lineHeight={"0.3vw"}
+            onHoverStart={() => false}
+          />
+          <AHrefHover desc={"Youtube"} variant={"h6"} lineHeight={"0.3vw"}
+            onHoverStart={() => false}
+          />
+        </ContentMedia>
+      </ContentAHref>
+    )
+  }
+
+  function AHrefDesktop() {
+    return (
+      <ContentAHref>
+        <AHrefHover desc={"bom dia rural"} variant={"h2"} lineHeight={"0.7vw"}
+          onClick={() => onCloseProps("/")}
+          onHoverStart={() => setPage(1)}
+        />
+        <AHrefHover desc={"Matérias"} variant={"h3"} lineHeight={"0.6vw"}
+          onClick={() => onCloseProps("/materias")}
+          onHoverStart={() => setPage(2)}
+        />
+        <AHrefHover desc={"Colaboradores"} variant={"h3"} lineHeight={"0.6vw"}
+          onClick={() => onCloseProps("/colaboradores")}
+          onHoverStart={() => setPage(3)}
+        />
+        <AHrefHover desc={"Equipe"} variant={"h3"} lineHeight={"0.6vw"}
+          onClick={() => onCloseProps("/equipe")}
+          onHoverStart={() => setPage(4)}
+        />
+        <AHrefHover desc={"Sobre"} variant={"h3"} lineHeight={"0.6vw"}
+          onClick={() => onCloseProps("/sobre")}
+          onHoverStart={() => setPage(5)}
+        />
+        <ContentMedia>
+          <AHrefHover desc={"Facebook"} variant={"h4"} lineHeight={"0.3vw"}
+            onHoverStart={() => false}
+          />
+          <AHrefHover desc={"Instagram"} variant={"h4"} lineHeight={"0.3vw"}
+            onHoverStart={() => false}
+          />
+          <AHrefHover desc={"Youtube"} variant={"h4"} lineHeight={"0.3vw"}
+            onHoverStart={() => false}
+          />
+        </ContentMedia>
+      </ContentAHref>
+    )
+  }
+
   return (
     <CompDrawer
       elevation={3}
@@ -60,48 +137,11 @@ export default function DrawerTop(props) {
       open={props.open}
       onClose={props.toggleDrawer(false)}
     >
-      <ContentPrincAHref fontFamily={props.fontFamily}>
-        <ContentAHref
-          data-aos="fade-up"
-          data-aos-delay="800"
-        >
-          <AHrefHover desc={"bom dia rural"} variant={"h2"} lineHeight={"0.7vw"}
-            onClick={() => onCloseProps("/")}
-            onHoverStart={() => setPage(1)}
-          />
-          <AHrefHover desc={"Matérias"} variant={"h3"} lineHeight={"0.6vw"}
-            onClick={() => onCloseProps("/materias")}
-            onHoverStart={() => setPage(2)}
-          />
-          <AHrefHover desc={"Colaboradores"} variant={"h3"} lineHeight={"0.6vw"}
-            onClick={() => onCloseProps("/colaboradores")}
-            onHoverStart={() => setPage(3)}
-          />
-          <AHrefHover desc={"Equipe"} variant={"h3"} lineHeight={"0.6vw"}
-            onClick={() => onCloseProps("/equipe")}
-            onHoverStart={() => setPage(4)}
-          />
-          <AHrefHover desc={"Sobre"} variant={"h3"} lineHeight={"0.6vw"}
-            onClick={() => onCloseProps("/sobre")}
-            onHoverStart={() => setPage(5)}
-          />
-          <ContentMedia>
-            <AHrefHover desc={"Facebook"} variant={"h4"} lineHeight={"0.3vw"}
-              onHoverStart={() => false}
-            //  onClick={() => onCloseProps("/sobre")}
-            />
-            <AHrefHover desc={"Instagram"} variant={"h4"} lineHeight={"0.3vw"}
-              onHoverStart={() => false}
-            //  onClick={() => onCloseProps("/sobre")}
-            />
-            <AHrefHover desc={"Youtube"} variant={"h4"} lineHeight={"0.3vw"}
-              onHoverStart={() => false}
-            //  onClick={() => onCloseProps("/sobre")}
-            />
-          </ContentMedia>
-        </ContentAHref>
-      </ContentPrincAHref>
+      <ContentPrincAHref>
+        <Hidden smUp children={AHrefMobile()} />
+        <Hidden xsDown children={AHrefDesktop()} />
+      </ContentPrincAHref >
       <Slider images={images} Mater={false} isNav={true} onPage={onPage} />
-    </CompDrawer>
+    </CompDrawer >
   );
 }

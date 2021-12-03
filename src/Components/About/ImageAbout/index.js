@@ -14,6 +14,7 @@ const BgImage = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  filter: brightness(80%);
   transform: scale(${(props) => props.scale});
 `;
 

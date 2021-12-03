@@ -20,7 +20,7 @@ const TypographyComp = styled(Typography) <IPropsStyled>`
   user-select: none;
   font-weight: 600;
   letter-spacing: 2px;
-  text-align: center;
+  text-align: center;  
   font-family: ${(props) => props.fontFamily};
 `;
 
@@ -53,13 +53,16 @@ const DescPrincMobile = styled.div<IDescPrincMobile>`
   justify-content: center;
   align-items: center;
   font-weight: 800;
+  z-index: 10;
   color: white;
   &:hover {
     background-color: "blue";
   }
 `;
 
-const ContentFadeDesc = styled(motion.div)``;
+const ContentFadeDesc = styled(motion.div)`
+  
+`;
 
 export default function DescScrollDown(props: IProps) {
   return (

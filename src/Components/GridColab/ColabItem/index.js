@@ -19,11 +19,10 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import ArrowBack from "@material-ui/icons/ArrowBack";
 import ColabImgCapa from "../ColabImgCapa";
+import ContentLoad from "../ContentLoad";
 
 const ContentBgColor = styled.div`
   height: 100%;
-
-  
 `;
 
 const ContentRelative = styled.div`
@@ -40,8 +39,6 @@ const ContainerComp = styled(Container)`
   display: inherit;
 `;
 
-// import data from "../data.js";
-
 const useStyles = makeStyles((theme) => ({
   boxPrinc: {
     display: "flex",
@@ -57,26 +54,14 @@ const useStyles = makeStyles((theme) => ({
   },
   cardMedia: {
     height: "auto",
-    // color: "#4caf50",
     backgroundColor: "#fff",
     borderRadius: 0,
-    // marginLeft: "-4vw",
-    // marginRight: "-4vw",
     overflow: "hidden",
     width: "inherit",
-    [theme.breakpoints.down("sm")]: {
-      // height: "inherit"
-    },
-    [theme.breakpoints.up("md")]: {
-      // height: "100%"
-    }
   },
   cardPrinc: {
-    // height: "60vh",
-    // backgroundColor: "#4caf50",
     width: "100%",
     [theme.breakpoints.down("sm")]: {
-      // height: "100vw"
     },
     [theme.breakpoints.up("md")]: {
       display: "flex",
@@ -200,12 +185,7 @@ export default function ColabItem(props) {
                           color: "#fff",
                         }}
                       >
-                        {/* <CardMedia
-                    className={styles.cardMedia}
-                    image={ADataColab.img}
-                  /> */}
                         <img
-                          // onLoad={() => refSkeleton.current.remove()}
                           className={styles.cardMedia}
                           alt={"Imagem Colaborador"}
                           key={props.key}
@@ -225,6 +205,5 @@ export default function ColabItem(props) {
     );
   }
 
-  return dataColab.open ? retornarConteudo(dataColab.data) : false;
-  // <h1>Colaborador não encontrado </h1>
+  return dataColab.open ? retornarConteudo(dataColab.data) : <ContentLoad />;
 }
