@@ -5,14 +5,14 @@ import styled from "styled-components";
 const CardActionAreaComp = styled(CardActionArea)`
   height: 800px;
   width: 44vw;
-  border-radius: 4px;
+  border-radius: 9px;
   color: #fff;
 `;
 
 const CardMediaComp = styled(CardMedia)`
   height: 100%;
   width: 100%;
-  border-radius: 4px;
+  border-radius: 9px;
 `;
 
 const ContentDescLeftFlex = styled.div`

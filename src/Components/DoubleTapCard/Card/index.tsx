@@ -17,19 +17,19 @@ const CardMediaComp = styled(CardMedia)`
 const CardComponent = styled(motion.div)`
   height: inherit;
   width: inherit;
-  border-radius: 4px;
+  border-radius: 9px;
   transition: ${transition};
 `;
 
 const ContentPrinc = styled.div`
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 9px;
   transition: ${transition};
 `;
 
 const ButtonComp = styled(Typography)`
   padding: 8px 18px;
-  border-radius: 5px;
+  border-radius: 9px;
   font-weight: 300;
   background-color: #004500;
   color: #fff;
@@ -72,7 +72,7 @@ export default function CardComp(props: iProps) {
   }
 
   return (
-    <ContentPrinc key={props.count}>
+    <ContentPrinc data-aos="fade-up" data-aos-delay="200" key={props.count}>
       <ContentSec>
         <CardActionAreaComp onClick={() => onClick()} >
           <CardComponent children={<CardMediaComp image={props.datacard.img} />} />

@@ -1,12 +1,12 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 // import { Frame } from "framer";
 
-import ProfileImage from "./ProfileImage";
-import { Typography } from "@material-ui/core";
+// import ProfileImage from "./ProfileImage";
+import { CardActionArea, Typography } from "@material-ui/core";
 
 const cardWidth = "100%";
 const borderRadius = 8;
@@ -18,7 +18,6 @@ const DivScreenshot = styled.div`
 `;
 
 const Screenshot = styled.img`
-  /* background-color: #4caf50; */
   z-index: 200;
   position: relative;
   margin: 0;
@@ -139,32 +138,40 @@ const Style = styled.button`
   }
 `;
 
+const CardActionAreaComp = styled(CardActionArea)`
+  color: #fff;
+`;
+
 
 export default function Card(props) {
   const location = useLocation();
+  const history = useHistory();
+
+  function setarRouter() {
+    setTimeout(() => {
+      history.push(location.pathname + "/" + props.search)
+    }, 300);
+  }
+
   return (
-    <motion.div style={{ width: "100%" }} >
+    <CardActionAreaComp onClick={() => setarRouter()} >
       <Style data-aos="fade-up">
-        <Link
-          style={{ textDecoration: "none", color: "black" }}
-          to={location.pathname + "/" + props.search}
-        >
-          <DivScreenshot
-            children={
-              <Screenshot
-                borderRadius={props.nome === "Cresol" ? "50%" : "0%"}
-                draggable={false}
-                alt="patrocImage"
-                src={props.image}
-              />
-            }
-          />
-          <Content>
-            <Title><Typography variant="h5" children={props.title} /></Title>
-            <Description><Typography variant="subtitle1" children={props.description} /></Description>
-            <BottomBar background={props.hexa} />
-          </Content>
-        </Link>
-      </Style >
-    </motion.div>)
+        <DivScreenshot
+          children={
+            <Screenshot
+              borderRadius={props.nome === "Cresol" ? "50%" : "0%"}
+              draggable={false}
+              alt="patrocImage"
+              src={props.image}
+            />
+          }
+        />
+        <Content>
+          <Title><Typography variant="h5" children={props.title} /></Title>
+          <Description><Typography variant="subtitle1" children={props.description} /></Description>
+          <BottomBar background={props.hexa} />
+        </Content>
+      </Style>
+    </CardActionAreaComp>
+  )
 }

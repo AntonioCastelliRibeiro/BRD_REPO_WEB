@@ -76,7 +76,7 @@ export default function AboutComp(props) {
           fontSize="26px"
           lineHeight="1.43"
         />
-        <ContainerComp data-aos="fade-up" data-aos-delay="200" size="xl">
+        <ContainerComp size="xl">
           <DoubleCard fontFamily={props.fontFamily} />
         </ContainerComp>
         <TextLast fontFamily={props.fontFamily} desc={data.fourDesc} name={data.fourName} />

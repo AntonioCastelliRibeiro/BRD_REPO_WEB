@@ -22,6 +22,7 @@ const ContentDesc = styled.div`
 
 const DescTitle = styled(Typography)`
   text-align: center;
+  font-weight: 800;
 `;
 
 const ContentItemDesc = styled.div`

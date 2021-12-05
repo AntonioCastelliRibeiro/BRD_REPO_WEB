@@ -102,7 +102,9 @@ const Foot = function FootComp(props) {
   const history = useHistory();
 
   function setarRouter(AQueryParams) {
-    history.push(AQueryParams);
+    setTimeout(() => {
+      history.push(AQueryParams);
+    }, 300);
   }
 
   return (

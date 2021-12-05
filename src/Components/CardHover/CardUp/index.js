@@ -142,6 +142,12 @@ export default memo(function CardUp(props) {
     });
   };
 
+  function setarRouter() {
+    setTimeout(() => {
+      history.push(props.pathName);
+    }, 300);
+  }
+
   return (
     <ContentImgLeft
       initial={props.mobile ? sequenceUp : sequenceDown}
@@ -150,7 +156,7 @@ export default memo(function CardUp(props) {
       onHoverStart={props.mobile ? "" : sequenceUp}
       onHoverEnd={props.mobile ? "" : sequenceDown}
     >
-      <CardActionAreaComp onClick={() => history.push(props.pathName)} isLeft={props.isLeft} isMid={props.isMid} >
+      <CardActionAreaComp onClick={() => setarRouter()} isLeft={props.isLeft} isMid={props.isMid} >
         <ContentHover>
           <ContentDesc>
             <Box display="flex" flexDirection="column">

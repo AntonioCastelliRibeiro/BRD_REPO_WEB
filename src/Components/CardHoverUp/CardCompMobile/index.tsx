@@ -91,19 +91,15 @@ const ContentItemDesc = styled(motion.div)`
   transition: ${transition};
 `;
 
-const DescTop = styled(motion.div)`
-  font-family: inherit;
+const DescTop = styled(Typography)`
   user-select: none;
   position: absolute;
   z-index: 3;
   top: 12px;
   transform: translateX(16px);
   color: #fff;
-  font-size: 2.5vw;
-  font-weight: 700;
   letter-spacing: 1px;
   line-height: 13px;
-  text-transform: uppercase;
   transition: ${transition};
 `;
 
@@ -168,10 +164,8 @@ const ContentPrinc = styled(motion.div) <iContentPadding>`
       border-top-right-radius: 0px;
     }
     ${ContentDesc} {
-      /* transform: scale(0.97); */
     }
     ${DescTop} {
-      transform: translateX(17px);
     }
   }
 `;
@@ -189,7 +183,7 @@ export default function CardCompMobile(props: iProps) {
       <ContentSec>
         <CardActionComp>
           <CardComponent>
-            <DescTop children={props.datacard.title} />
+            <DescTop variant="subtitle1" children={props.datacard.title} />
             <ContentButton>
               <IconPlay />
               {/* <IconButtonComp

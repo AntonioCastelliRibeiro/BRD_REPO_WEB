@@ -89,7 +89,7 @@ export default memo(function GridColab(props) {
   function onSetColabItem(e) {
     setTimeout(() => {
       history.push(`${match.path}/${e}`);
-    }, C_TIME_FADE);
+    }, 300);
   }
 
   return (

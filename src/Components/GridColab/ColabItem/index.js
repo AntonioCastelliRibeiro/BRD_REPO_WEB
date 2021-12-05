@@ -101,6 +101,12 @@ export default function ColabItem(props) {
     return dataReturn !== null ? dataReturn : null;
   }
 
+  function setarRouter() {
+    setTimeout(() => {
+      history.push(props.pathName);
+    }, 300);
+  }
+
   function retornarConteudo(ADataColab) {
     return (
       <ContentBgColor>
@@ -119,15 +125,10 @@ export default function ColabItem(props) {
                 <div data-aos="fade-left" style={{ width: "100%" }}>
                   <Box height="inherit">
                     <Box display="flex" paddingLeft="0px" marginBottom="24px">
-                      <Link
-                        style={{ textDecoration: "none", color: "#fff" }}
-                        to={props.pathName}
-                      >
-                        <Button style={{ letterSpacing: "1px", fontFamily: props.fontFamily, color: "#fff" }}>
-                          <ArrowBack />
-                          <Box margin="0px 9px 0px 9px"><Typography variant="button" children={props.descButton} /></Box>
-                        </Button>
-                      </Link>
+                      <Button onClick={() => setarRouter()} style={{ letterSpacing: "1px", fontFamily: props.fontFamily, color: "#fff" }}>
+                        <ArrowBack />
+                        <Box margin="0px 9px 0px 9px"><Typography variant="button" children={props.descButton} /></Box>
+                      </Button>
                     </Box>
                     <Box
                       style={{ textTransform: "uppercase" }}

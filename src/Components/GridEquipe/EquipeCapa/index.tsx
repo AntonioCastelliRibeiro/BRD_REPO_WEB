@@ -1,6 +1,6 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Avatar, IconButton, Typography } from "@material-ui/core";
+import { useLocation, useHistory } from "react-router-dom";
+import { Avatar, CardActionArea, IconButton, Typography } from "@material-ui/core";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
@@ -27,23 +27,6 @@ const ContentAvatar = styled.div`
   z-index: 5;
 `;
 
-const DescName = styled.div`
-  text-align: center;
-  margin-bottom: 5px;
-  padding-top: 5px;
-  color: #004500;
-  font-size: 25px;
-  font-weight: 600;
-`;
-
-const DescCargo = styled.div`
-  font-weight: 500;
-  padding-bottom: 5px;
-  color: #1a1a1a;
-  line-height: 24px;
-  text-align: center;
-`;
-
 const ContentSocial = styled.div`
   opacity: 1;
   z-index: -1;
@@ -68,7 +51,6 @@ const Content = styled.div`
   justify-content: center;
   z-index: 5;
   align-items: center;
-  /* padding-top: 20px; */
   height: 100%;
   width: 100%;
 `;
@@ -119,7 +101,6 @@ const CardComp = styled.div`
   flex-direction: column;
   align-items: center;
   @media(max-width: 599px) {
-    /* border: 1px solid #fff; */
     ${ContentAvatar} {
       border: 4px solid #4caf50;
       transform: scale(0.96);
@@ -151,13 +132,17 @@ const CardComp = styled.div`
 
 export default function EquipeCapa(props: IProps) {
   const location = useLocation();
-  return (
+  const history = useHistory();
 
-    <Content data-aos="fade-up">
-      <Link
-        style={{ textDecoration: "none", color: "black", width: "100%" }}
-        to={location.pathname + "/" + props.search}
-      >
+  function setarPath() {
+    setTimeout(() => {
+      history.push(location.pathname + "/" + props.search);
+    }, 300);
+  }
+
+  return (
+    <CardActionArea onClick={() => setarPath()}>
+      <Content data-aos="fade-up">
         <CardComp>
           <ContentItem fontFamily={props.fontFamily}>
             <ContentCircle />
@@ -184,7 +169,8 @@ export default function EquipeCapa(props: IProps) {
             />
           </ContentItem>
         </CardComp>
-      </Link>
-    </Content>
+      </Content>
+    </CardActionArea>
+
   );
 }

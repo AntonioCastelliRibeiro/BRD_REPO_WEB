@@ -137,7 +137,7 @@ const DescTop = styled(motion.div)`
   user-select: none;
   position: absolute;
   z-index: 3;
-  top: 12px;
+  top: 6px;
   left: 16px;
   color: #fff;
   font-family: inherit;
