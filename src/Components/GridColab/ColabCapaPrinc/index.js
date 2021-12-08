@@ -7,6 +7,7 @@ import styled from "styled-components";
 
 // import ProfileImage from "./ProfileImage";
 import { CardActionArea, Typography } from "@material-ui/core";
+import { motion } from "framer-motion";
 
 const cardWidth = "100%";
 const borderRadius = 8;
@@ -101,7 +102,7 @@ const Style = styled.button`
   transition: ${transition};
 
   &:hover {
-    transform: scale(1.04);
+    /* transform: scale(1.04); */
 
     ${Title},
     ${Description},
@@ -142,6 +143,11 @@ const CardActionAreaComp = styled(CardActionArea)`
   color: #fff;
 `;
 
+const transitionMotion = {
+  duration: 0.5,
+  ease: [0.04, 0.62, 0.23, 0.98]
+};
+
 
 export default function Card(props) {
   const location = useLocation();
@@ -155,7 +161,7 @@ export default function Card(props) {
 
   return (
     <CardActionAreaComp onClick={() => setarRouter()} >
-      <Style data-aos="fade-up">
+      <Style data-aos="fade" data-aos-delay={100} >
         <DivScreenshot
           children={
             <Screenshot

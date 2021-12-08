@@ -17,7 +17,7 @@ const theme = createTheme({
 
 export default function App(props) {
   useEffect(() => {
-    Aos.init();
+    Aos.init({ once: true });
   }, []);
 
   return (

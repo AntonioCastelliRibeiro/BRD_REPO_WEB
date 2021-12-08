@@ -32,19 +32,12 @@ const ContentImage = styled(motion.figure)`
 `;
 
 const DescCenter = styled(motion.div)`
-  /* font-family: ${(props) => props.fontFamily}; */
-  /* -webkit-text-fill-color: #4caf50;//#3767B9; */
   display: flex;
   width: inherit;
   color: #004500;
   text-align: center;
   align-items: center;
   justify-content: center;
-  /* font-size: 39px;
-  font-style: normal;
-  font-weight: 800;
-  letter-spacing: 3px;
-  line-height: 1.2; */
 `;
 
 const ContentLeft = styled(motion.div)`
@@ -60,36 +53,6 @@ const ContentLeftFlex = styled(motion.div)`
   padding-top: 10px;
   color: #004500;
   text-align: start;
-`;
-
-const DescTitleRight = styled(motion.div)`
-  color: hsl(338, 77%, 57%);
-  font-size: ${(props) => (props.isMobile ? "6vw" : "16px")};
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 1px;
-  line-height: 1.2;
-  text-align: left;
-`;
-
-const DescRight = styled(motion.div)`
-  font-size: ${(props) => (props.isMobile ? "7vw" : "2.9vw")};
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 1px;
-  line-height: 1.2;
-  text-align: left;
-  color: #4caf50;//#477DDC;
-`;
-
-const DescSubRight = styled(motion.div)`
-  color: #4caf50;//#477DDC;
-  font-size: ${(props) => (props.isMobile ? "8vw" : "2.8vw")};
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 1px;
-  line-height: 1.2;
-  text-align: left;
 `;
 
 const AHrefHistory = styled(motion.a)`

@@ -56,7 +56,7 @@ export default function GridEquipe(props) {
             {dataEquipe.map((e, count) => {
               return (
                 < Grid key={count} item xs={12} sm={6} md={3} xl={3} >
-                  <EquipeCapa fontFamily={props.fontFamily} {...e} />
+                  <EquipeCapa fontFamily={props.fontFamily} {...e} count={count} />
                 </Grid>
               );
             })}

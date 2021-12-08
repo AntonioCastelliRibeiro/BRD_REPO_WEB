@@ -142,7 +142,7 @@ export default function EquipeCapa(props: IProps) {
 
   return (
     <CardActionArea onClick={() => setarPath()}>
-      <Content data-aos="fade-up">
+      <Content data-aos="fade" data-aos-delay={100} >
         <CardComp>
           <ContentItem fontFamily={props.fontFamily}>
             <ContentCircle />

@@ -115,6 +115,7 @@ export default memo(function GridColab(props) {
                   style={{ display: "flex", justifyContent: "center" }}
                 >
                   <ColabCapaPrinc
+                    count={key}
                     fontFamily={props.fontFamily}
                     search={e.search}
                     hexa={e.hexa}
