@@ -37,7 +37,8 @@ export default function DescHover(props: IProps) {
       hover={props.hover}
       transitionDelay={props.hover ? "300ms" : "0ms"}
     >
-      <Typography variant="h2" children={props.desc} />
+      {props.mobile ? <Typography variant="h4" children={props.desc} /> : <Typography variant="h2" children={props.desc} />}
+
     </DescHoverUp>
   );
 }

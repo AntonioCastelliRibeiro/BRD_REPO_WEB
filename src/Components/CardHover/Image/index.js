@@ -1,16 +1,18 @@
+import { useMediaQuery, useTheme } from "@material-ui/core";
 import { motion } from "framer-motion";
 import Styled from "styled-components";
+import ParallaxImg from "../../ParallaxImg";
 
 const Content = Styled.div`
-  margin-top: -450px;
+  margin-top: -650px;
   position: relative;
-  height: 450px;
+  height: 650px;
   width: 100%;
 `;
 
 const ImageLeft = Styled(motion.figure)`  
   margin: 0;
-  height: 450px;
+  height: 650px;
   width: 100%;
   /* border: 0; */
   /* border-top-left-radius: 15px;
@@ -31,10 +33,21 @@ const ImageLeft = Styled(motion.figure)`
   filter: brightness(50%);
 `;
 
+const ParallaxImgComp = Styled(ParallaxImg)`  
+  margin: 0;
+  transition: background-image 300ms linear;
+  transition-property: background-image;
+  transition-duration: 300ms;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+`;
+
 export default function Image(props) {
+  const theme = useTheme();
+  const isSm = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Content>
-      <ImageLeft image={props.image} />
+      {isSm ? <ImageLeft image={props.image} /> : <ParallaxImgComp filter={"brightness(60%)"} height="100%" width="100%" src={props.image} />}
     </Content>
   );
 }

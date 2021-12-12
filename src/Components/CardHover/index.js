@@ -9,7 +9,7 @@ import DescPrinc from "./DescPrinc";
 
 const Content = styled.div`
   display: flex;
-  height: 450px;
+  height: 650px;
   /* border-radius: 15px; */
   background-color: #b3b3b3;
 `;
@@ -68,7 +68,7 @@ export default function CardHover(props) {
               <DescPrinc descFirst={data.descFirst} descSec={data.descSec} />
             </ContainerPrinc>
             <ContentFade data-aos="fade-up" data-aos-delay="300">
-              <Hidden xsDown>
+              <Hidden smDown>
                 <Content>
                   <CardUp
                     key="0"
@@ -106,7 +106,7 @@ export default function CardHover(props) {
                 <ImageComp image={image} />
               </Hidden>
             </ContentFade>
-            <Hidden smUp>
+            <Hidden mdUp>
               <ContentFade data-aos="fade-up" data-aos-delay="300">
                 <Content>
                   <CardUp

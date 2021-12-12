@@ -15,25 +15,13 @@ interface IContent {
     left?: boolean;
 }
 
-const CardActionAreaComp = styled(CardActionArea)`
-  height: inherit;
-  width: 190px;
-  color: rgb(8, 127, 35);
-  font-family: inherit;
-  overflow: hidden;
-  border-radius: 18px;
-`;
-
 const ButtonCompLeft = styled.div<IContent>`
   border-radius: 9px;
   width: 100px;
   filter: brightness(90%);
   cursor: pointer;
-  /* border: ${(props) => (props.hoverBg ? "2px ridge #ffff" : "2px ridge transparent")}; */
   font-family: inherit;
-  /* z-index: 2; */
   color: black;
-  /* color: ${(props) => (props.hoverBg ? "#ffff" : "black")}; */
   padding: 17px 33px 17px 33px;
   user-select: none;
   opacity: ${(props) => (props.hover ? 0 : 1)};
@@ -41,7 +29,6 @@ const ButtonCompLeft = styled.div<IContent>`
   font-weight: 800;
   letter-spacing: 1.5px;
   background-color:  #fff;
-  /* background-color: ${(props) => (props.hoverBg ? "rgb(8, 127, 35)" : "#fff")}; */
   transition: ${transition};
   transition-delay: ${(props) => props.transitionDelay};
   transition-property: all;
@@ -60,20 +47,6 @@ const ContentButtonLeft = styled(motion.div) <IContent>`
   transition: ${transition};
   transform: translateX(${props => props.hover ? "0px" : props.left ? "25%" : "-25%"});
   transition-delay: 100ms;
-`;
-
-const BgBtnColor = styled.div<IContent>`
-  position: absolute;
-  height: 60px;
-  width: 200px;
-  z-index: 1;
-  background-color: rgb(0,69,0);
-  background-image: linear-gradient(180deg, rgba(0,69,0,1) 0%, rgba(76,175,80,1) 0%);
-  margin-left: -30px;
-  opacity: ${(props) => (props.hover ? 0 : 1)};
-  transition: ${transition};
-
-  /* padding: 8px 10px 8px 10px; */
 `;
 
 const TypographyComp = styled(Typography)`
@@ -102,9 +75,8 @@ export default function Butthover(props: IProps) {
                         <ButtonCompLeft
                             hoverLeft={props.hoverLeft}
                             hoverRight={props.hoverRight}
-                            // hoverBg={hoverBg}
                             hover={!hover}
-                            children={<TypographyComp variant="h6" children={props.desc} />}
+                            children={<TypographyComp variant="body2" children={props.desc} />}
                             transitionDelay={"0ms"}
                         />
                     ) : (
@@ -118,7 +90,6 @@ export default function Butthover(props: IProps) {
                             transitionDelay={hoverBg ? "350ms" : "0ms"}
                         />
                     )}
-                {/* <BgBtnColor hover={!hover} /> */}
             </ContentButtonLeft>
         </>
     );

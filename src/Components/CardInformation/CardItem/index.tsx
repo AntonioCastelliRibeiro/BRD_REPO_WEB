@@ -5,7 +5,7 @@ import ICardItem from "./interface";
 
 const ContentPrinc = styled.div`
   height: 100%;
-  width: 100%;
+  max-width: 800px;
   border-radius: 9px;
   border: 1px solid #fff;
   /* background-color: #4caf50; */
@@ -45,7 +45,6 @@ export default function CardItem(props: ICardItem) {
           <TypographyComp variant="h5" children={props.titleFirst} />
           <TypographyComp variant="h2" children={props.titleSec} />
           <Typography variant="h6" children={props.desc} />
-
         </ContentFlex>
       </CardActionAreaComp>
     </ContentPrinc>

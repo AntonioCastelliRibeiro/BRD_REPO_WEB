@@ -33,7 +33,7 @@ export default function DescHoverSec(props: IProps) {
     <DescHoverUp
       mobile={props.mobile}
       hover={props.hover}
-      children={<Typography variant="h4" children={props.desc} />}
+      children={props.mobile ? <Typography variant="h6" children={props.desc} /> : <Typography variant="h4" children={props.desc} />}
       transitionDelay={props.hover ? "300ms" : "0ms"}
     />
   );

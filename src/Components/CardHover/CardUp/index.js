@@ -29,7 +29,7 @@ const ContentImgLeft = styled(motion.div)`
   cursor: ${(props) => (props.mobile ? "pointer" : "")};
   border-right: ${(props) => (props.borderRight ? "1px solid #a1a1a1" : "0")};
   z-index: 1;
-  height: 450px;
+  height: 650px;
   width: ${(props) => (props.mobile ? "100%" : "50%")};
   &:hover {
     ${ButtonComp} {
