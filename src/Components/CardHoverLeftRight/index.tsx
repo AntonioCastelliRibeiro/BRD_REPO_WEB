@@ -18,6 +18,8 @@ import IState from "./interface";
 
 import dataCard from "./data.js";
 import DescPrinc from "../CardHover/DescPrinc";
+import { useHistory, useLocation } from "react-router-dom";
+import { useTheme } from "@material-ui/styles";
 
 // import IState from "./interface";
 
@@ -125,6 +127,7 @@ interface IProps {
 const C_DESC_SEC = "Bom dia Rural vem para auxiliar no conteúdo agricola no sudoeste do Paraná.";
 
 export default function CardHoverLeftRight(props: IProps) {
+    const history = useHistory();
     const [onHoverLeft, setHoverLeft] = useState(false);
     const [onHoverRight, setHoverRight] = useState(false);
     const [dataLeft, setDataLeft] = useState<IState>(dataCard[0]);
@@ -142,6 +145,12 @@ export default function CardHoverLeftRight(props: IProps) {
         }
     }, [onHoverLeft, onHoverRight]);
 
+    function setarRouter() {
+        setTimeout(() => {
+            history.push("/materias");
+        }, 300);
+    }
+
     return (
         <ContentFirst>
             <div style={{ width: "100%" }}>
@@ -150,7 +159,7 @@ export default function CardHoverLeftRight(props: IProps) {
                 </Container>
                 <div data-aos="fade-up" data-aos-delay="300">
                     <Hidden smDown>
-                        <CardActionAreaComp>
+                        <CardActionAreaComp onClick={() => setarRouter()} >
                             <ContentPrinc mobile={false}>
                                 <ContentLeft
                                     mobile={false}
@@ -225,7 +234,7 @@ export default function CardHoverLeftRight(props: IProps) {
                     <Hidden mdUp>
                         <ContentPrincMobile>
                             <ContentLeft mobile hover={false}>
-                                <CardActionAreaComp>
+                                <CardActionAreaComp onClick={() => setarRouter()} >
                                     <CardMediaComp image={dataLeft.img}>
                                         <ContentDesc fontFamily={props.fontFamily}>
                                             <LogoMid image={logo} />
@@ -253,7 +262,7 @@ export default function CardHoverLeftRight(props: IProps) {
                             </ContentLeft>
                             <div style={{ padding: 9 }} />
                             <ContentRight mobile hover={onHoverLeft}>
-                                <CardActionAreaComp>
+                                <CardActionAreaComp onClick={() => setarRouter()} >
                                     <CardMediaComp image={dataRight.img}>
                                         <ContentDesc fontFamily={props.fontFamily}>
                                             <LogoMid image={logo} />

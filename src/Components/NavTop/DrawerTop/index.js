@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
-import { Drawer, Hidden } from "@material-ui/core";
+import { Drawer, Hidden, Link } from "@material-ui/core";
 
 import AHrefHover from "../../AHrefHover";
 import Slider from "../../Slider";
@@ -37,7 +37,6 @@ const ContentPrincAHref = styled.div`
   position: absolute;
   z-index: 2;
 `;
-
 
 export default function DrawerTop(props) {
   const history = useHistory();
@@ -115,15 +114,15 @@ export default function DrawerTop(props) {
           onHoverStart={() => setPage(5)}
         />
         <ContentMedia>
-          <AHrefHover desc={"Facebook"} variant={"h4"} lineHeight={"0.3vw"}
+          <Link style={{ color: "inherit", textDecoration: "none" }} href="https://www.facebook.com/bomdiarural" target="_blank" children={<AHrefHover desc={"Facebook"} variant={"h4"} lineHeight={"0.3vw"}
             onHoverStart={() => false}
-          />
-          <AHrefHover desc={"Instagram"} variant={"h4"} lineHeight={"0.3vw"}
+          />} />
+          <Link style={{ color: "inherit", textDecoration: "none" }} h href="https://www.instagram.com/bomdiaruraltv" target="_blank" children={<AHrefHover desc={"Instagram"} variant={"h4"} lineHeight={"0.3vw"}
             onHoverStart={() => false}
-          />
-          <AHrefHover desc={"Youtube"} variant={"h4"} lineHeight={"0.3vw"}
+          />} />
+          <Link style={{ color: "inherit", textDecoration: "none" }} h href="https://www.youtube.com/channel/UCbFX6KlIvmunDv0uXrp2wDw" target="_blank" children={<AHrefHover desc={"Youtube"} variant={"h4"} lineHeight={"0.3vw"}
             onHoverStart={() => false}
-          />
+          />} />
         </ContentMedia>
       </ContentAHref>
     )

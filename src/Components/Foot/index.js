@@ -8,7 +8,8 @@ import {
   IconButton,
   Container,
   Divider,
-  Typography
+  Typography,
+  Link
 } from "@material-ui/core";
 
 
@@ -107,6 +108,12 @@ const Foot = function FootComp(props) {
     }, 300);
   }
 
+  function setarLinkExternal(ALink) {
+    setTimeout(() => {
+      history.push(ALink);
+    }, 300);
+  }
+
   return (
     <Box
       position="absolute"
@@ -162,9 +169,9 @@ const Foot = function FootComp(props) {
               }}
             >
               <Box textAlign={"center"} mt={{ xs: 2, md: 0 }} my={2}>
-                <IconButton className={classes.btnSocial} size="medium" children={<FacebookIcon />} />
-                <IconButton className={classes.btnSocial} size="medium" children={<InstagramIcon />} />
-                <IconButton className={classes.btnSocial} size="medium" children={<YouTubeIcon />} />
+                <Link href="https://www.facebook.com/bomdiarural" target="_blank" children={<IconButton className={classes.btnSocial} size="medium" children={<FacebookIcon />} />} />
+                <Link href="https://www.instagram.com/bomdiaruraltv" target="_blank" children={<IconButton className={classes.btnSocial} size="medium" children={<InstagramIcon />} />} />
+                <Link href="https://www.youtube.com/channel/UCbFX6KlIvmunDv0uXrp2wDw" target="_blank" children={<IconButton className={classes.btnSocial} size="medium" children={<YouTubeIcon />} />} />
               </Box>
             </div>
           </div>

@@ -12,6 +12,11 @@ const theme = createTheme({
   typography: {
     fontFamily: font
   },
+  transitions: {
+    duration: {
+      standard: 300
+    }
+  }
 });
 
 
